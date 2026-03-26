@@ -1,0 +1,1112 @@
+/**
+ * 文学部デジタルパンフレット（Figma node 2704:10595 準拠）
+ */
+
+:root {
+	--ru-cream: #fdfcf0;
+	--ru-cream-card: #fefcf2;
+	--ru-green: #386f6b;
+	--ru-green-dark: #2d5a56;
+	--ru-yellow: #e9c46a;
+	--ru-yellow-bar: #e7d56d;
+	--ru-yellow-deep: #f4c058;
+	--ru-modal: #e8e6f4;
+	--ru-text: #1a1a1a;
+	--ru-muted: #5c5c5c;
+	--ru-shadow: 0 4px 14px rgba(56, 111, 107, 0.12);
+}
+
+.ru-pamphlet {
+	background: var(--ru-cream);
+	color: var(--ru-text);
+	font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+	font-size: 16px;
+	line-height: 1.65;
+}
+
+.ru-pamphlet * {
+	box-sizing: border-box;
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.ru-pamphlet a {
+	color: var(--ru-green);
+	text-decoration: none;
+}
+
+.ru-pamphlet a:hover {
+	text-decoration: underline;
+}
+
+/* ヘッダー（Figma 2703:8728） */
+.ru-header {
+	width: 100%;
+}
+
+.ru-header__inner {
+	max-width: 1714px;
+	margin: 0 auto;
+	padding: 10px clamp(20px, 4vw, 103px) 12px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	column-gap: min(503px, 8vw);
+	row-gap: 16px;
+}
+
+.ru-header__brand {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	gap: 24px;
+	min-width: 0;
+	flex: 1 1 auto;
+}
+
+.ru-header__logo-line {
+	display: block;
+	height: 18.975px;
+	width: auto;
+	max-width: 271.47px;
+	flex: 0 0 auto;
+}
+
+.ru-header__kanji {
+	flex: 1 1 0;
+	min-width: 0;
+	max-width: 656.9px;
+	height: 41.685px;
+}
+
+.ru-header__kanji img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: left bottom;
+}
+
+.ru-header__nav {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 24px;
+	font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.45;
+	color: #266443;
+	white-space: nowrap;
+}
+
+.ru-header__nav a {
+	color: #266443;
+}
+
+.ru-header__nav a:hover {
+	color: #1d4a32;
+}
+
+/* ヒーロー MV（Figma 2704:9421・全レイヤー書き出し・1604×830） */
+.ru-hero {
+	padding: clamp(8px, 1.5vw, 28px) clamp(16px, 3vw, 55px) 0;
+	overflow-x: clip;
+	overflow-y: visible;
+}
+
+.ru-hero__mv {
+	position: relative;
+	width: 100%;
+	max-width: 1604px;
+	margin: 0 auto;
+	aspect-ratio: 1604 / 830;
+}
+
+.ru-hero__layer {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+.ru-hero__layer img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center center;
+}
+
+/*
+ * MV 人物イラスト（インタラクティブレイヤー）— ホバーで右に 15° 傾ける
+ * 親 div のインライン rotate と競合させないよう img に transform を付与
+ */
+.ru-hero__layer[data-node-id='2703:8401'],
+.ru-hero__layer[data-node-id='2703:8564'],
+.ru-hero__layer[data-node-id='2703:8730'],
+.ru-hero__layer[data-node-id='2703:9187'],
+.ru-hero__layer[data-node-id='2703:8482'] {
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+.ru-hero__layer[data-node-id='2703:8401'] img,
+.ru-hero__layer[data-node-id='2703:8564'] img,
+.ru-hero__layer[data-node-id='2703:8730'] img,
+.ru-hero__layer[data-node-id='2703:9187'] img,
+.ru-hero__layer[data-node-id='2703:8482'] img {
+	transform-origin: center bottom;
+	transition: transform 0.25s ease;
+}
+
+.ru-hero__layer[data-node-id='2703:8401']:hover,
+.ru-hero__layer[data-node-id='2703:8564']:hover,
+.ru-hero__layer[data-node-id='2703:8730']:hover,
+.ru-hero__layer[data-node-id='2703:9187']:hover,
+.ru-hero__layer[data-node-id='2703:8482']:hover {
+	z-index: 20;
+}
+
+.ru-hero__layer[data-node-id='2703:8401']:hover img,
+.ru-hero__layer[data-node-id='2703:8564']:hover img,
+.ru-hero__layer[data-node-id='2703:8730']:hover img,
+.ru-hero__layer[data-node-id='2703:9187']:hover img,
+.ru-hero__layer[data-node-id='2703:8482']:hover img {
+	transform: rotate(15deg);
+}
+
+/* min-height は aspect-ratio と矛盾しレイヤー％座標を崩すため付けない */
+
+/* ナビカード行（Figma 2703:4716）
+ * 角丸は固定 px だと縮小時に比率だけ変わる → 1920 幅デザインと同じ見え方で等比 */
+.ru-navcards {
+	--ru-nav-board: 1920;
+	--ru-navcard-radius: min(21px, calc(21 * 100vw / var(--ru-nav-board)));
+	background: #e7d56d;
+	padding: 26px clamp(16px, 3vw, 64px) 21px;
+}
+
+.ru-navcards__inner {
+	max-width: 1792px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 12px;
+	align-items: stretch;
+}
+
+/* 768px 幅までは 4 列 1 行。767px 以下で 2×2、560px 以下で 1 列 */
+@media (max-width: 767px) {
+	.ru-navcards__inner {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 560px) {
+	.ru-navcards__inner {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ru-navcard--figma {
+	position: relative;
+	display: block;
+	border-radius: var(--ru-navcard-radius);
+	overflow: hidden;
+	box-shadow: var(--ru-shadow);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	text-decoration: none;
+	color: inherit;
+}
+
+.ru-navcard--figma:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(56, 111, 107, 0.18);
+}
+
+.ru-navcard--figma:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 3px;
+}
+
+/* Figma カード基準 439×108.62 */
+.ru-navcard__canvas {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 439 / 108.62;
+	border-radius: var(--ru-navcard-radius);
+	overflow: hidden;
+	background: transparent;
+}
+
+.ru-navcard__layer {
+	position: absolute;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+
+.ru-navcard__layer img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.ru-navcard__flat {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+/* セクション見出し */
+.ru-section {
+	padding: clamp(40px, 6vw, 72px) clamp(20px, 4vw, 120px);
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.ru-section__title {
+	font-size: clamp(32px, 6vw, 56px);
+	font-weight: 900;
+	line-height: 1.1;
+	margin: 0 0 8px;
+	letter-spacing: 0.04em;
+}
+
+.ru-section__title span {
+	color: var(--ru-yellow-deep);
+	-webkit-text-stroke: 2px var(--ru-green);
+	paint-order: stroke fill;
+}
+
+.ru-section__title--grad .ru-accent {
+	color: #f9a825;
+	-webkit-text-stroke-width: 0;
+}
+
+.ru-section__title--grad .ru-word {
+	color: var(--ru-text);
+}
+
+/* 学生インタビュー（Figma 2707:10699） */
+.ru-section--students-voice {
+	overflow-x: clip;
+	overflow-y: visible;
+}
+
+/* アートボード 1625.48×893 に合わせた周辺イラスト（2704:10591 装飾レイヤー）
+ * MV と同様、ステージ幅に連動してグリッド・カードをスケール（container + cqw） */
+.ru-sv__stage {
+	--ru-sv-board: 1625.48046875;
+	/* タイトル SVG 用：ビューポート連動（768px 幅のレイアウト切替時も同じ比率） */
+	--ru-sv-vw-board: 1920;
+	position: relative;
+	width: 100%;
+	max-width: 1625px;
+	margin: 0 auto;
+	overflow: visible;
+	container-type: inline-size;
+	container-name: ru-sv-stage;
+}
+
+.ru-sv__stage::before {
+	content: "";
+	display: block;
+	width: 100%;
+	padding-bottom: calc(893 / 1625.48046875 * 100%);
+}
+
+.ru-sv__decor {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	overflow: visible;
+}
+
+.ru-sv-decor__layer {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.ru-sv-decor__layer img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.ru-sv__main {
+	position: absolute;
+	inset: 0;
+	z-index: 40;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: clamp(8px, calc(44 / var(--ru-sv-board) * 100 * 1cqw), 44px);
+	box-sizing: border-box;
+}
+
+.ru-sv {
+	width: 100%;
+	margin: 0;
+}
+
+.ru-sv__row--middle,
+.ru-sv__row--bottom {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: start;
+	justify-items: center;
+	gap: clamp(8px, calc(32 / var(--ru-sv-board) * 100 * 1cqw), 32px);
+}
+
+.ru-sv__row--bottom {
+	margin-top: clamp(12px, calc(40 / var(--ru-sv-board) * 100 * 1cqw), 40px);
+}
+
+/* 社会学 voice03：グリッドセル内でやや左へ（ステージ幅に比例） */
+.ru-sv__slot--bl .ru-sv-card {
+	transform: translateX(clamp(-40px, calc(-24 / var(--ru-sv-board) * 100 * 1cqw), -8px));
+}
+
+.ru-sv__title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	justify-self: center;
+	padding: min(16px, calc(16 * 100vw / var(--ru-sv-vw-board))) 0;
+	width: 100%;
+	max-width: min(100%, 420px, calc(420 * 100vw / var(--ru-sv-vw-board)));
+}
+
+.ru-sv__title-img {
+	display: block;
+	width: 100%;
+	max-width: min(100%, 389px, calc(389 * 100vw / var(--ru-sv-vw-board)));
+	height: auto;
+}
+
+.ru-sv-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0;
+	width: 100%;
+	max-width: min(100%, clamp(140px, calc(340 / var(--ru-sv-board) * 100 * 1cqw), 340px));
+	margin: 0;
+	margin-inline: auto;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font: inherit;
+	text-align: center;
+	text-decoration: none;
+	color: inherit;
+	box-sizing: border-box;
+}
+
+.ru-sv-card:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 4px;
+}
+
+.ru-sv-card__photo-wrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.ru-sv-card__photo {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* voice01.svg 実寸 286×397 に合わせる */
+.ru-sv-card--philosophy .ru-sv-card__photo-wrap {
+	aspect-ratio: 296 / 387;
+	max-width: min(100%, clamp(130px, calc(280 / var(--ru-sv-board) * 100 * 1cqw), 280px));
+}
+
+.ru-sv-card--philosophy .ru-sv-card__photo {
+	-webkit-mask-image: url("../images/students-voice/mask-philosophy.svg");
+	mask-image: url("../images/students-voice/mask-philosophy.svg");
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+}
+
+.ru-sv-card--history .ru-sv-card__photo-wrap {
+	aspect-ratio: 382.2 / 390.19;
+	max-width: min(100%, clamp(140px, calc(370 / var(--ru-sv-board) * 100 * 1cqw), 370px));
+	border-radius: 50%;
+}
+
+.ru-sv-card--sociology .ru-sv-card__photo-wrap {
+	aspect-ratio: 339.13 / 424.51;
+	max-width: min(100%, clamp(130px, calc(290 / var(--ru-sv-board) * 100 * 1cqw), 290px));
+}
+
+.ru-sv-card--sociology .ru-sv-card__photo {
+	-webkit-mask-image: url("../images/students-voice/mask-sociology.svg");
+	mask-image: url("../images/students-voice/mask-sociology.svg");
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+}
+
+.ru-sv-card--japanese-lit .ru-sv-card__photo-wrap {
+	aspect-ratio: 345.37 / 446.27;
+	max-width: min(100%, clamp(130px, calc(300 / var(--ru-sv-board) * 100 * 1cqw), 300px));
+}
+
+.ru-sv-card--japanese-lit .ru-sv-card__photo {
+	-webkit-mask-image: url("../images/students-voice/mask-japanese-lit.svg");
+	mask-image: url("../images/students-voice/mask-japanese-lit.svg");
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+}
+
+.ru-sv-card--english-lit .ru-sv-card__photo-wrap {
+	aspect-ratio: 342.86 / 435.19;
+	max-width: min(100%, clamp(140px, calc(320 / var(--ru-sv-board) * 100 * 1cqw), 320px));
+}
+
+.ru-sv-card--english-lit .ru-sv-card__photo {
+	-webkit-mask-image: url("../images/students-voice/mask-english-lit.svg");
+	mask-image: url("../images/students-voice/mask-english-lit.svg");
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+}
+
+/* Figma 合成 SVG（voice01〜05）は枠・マスク込み。コース別 .ru-sv-card--* .ru-sv-card__photo と詳細度が同じなので、このブロックは必ず後に置く（さもないと mask が再適用され画像が消える） */
+.ru-sv-card--figma-face .ru-sv-card__photo {
+	-webkit-mask-image: none;
+	mask-image: none;
+	object-fit: contain;
+	object-position: center bottom;
+}
+
+/* voice01：src 差し替えでも同一レイアウト（Figma 合成 SVG は中央寄せ） */
+.ru-sv-card--figma-face.ru-sv-card--philosophy .ru-sv-card__photo {
+	object-position: center center;
+}
+
+.ru-sv-card--figma-face.ru-sv-card--history .ru-sv-card__photo-wrap {
+	border-radius: 0;
+}
+
+/* voice04 / voice05：縮小時も枠内・セル内で幾何中心を維持（全体の bottom 合わせは外す） */
+.ru-sv-card--figma-face.ru-sv-card--japanese-lit .ru-sv-card__photo,
+.ru-sv-card--figma-face.ru-sv-card--english-lit .ru-sv-card__photo {
+	object-position: center center;
+}
+
+@media (max-width: 768px) {
+	.ru-sv__row--middle,
+	.ru-sv__row--bottom {
+		grid-template-columns: 1fr;
+	}
+
+	.ru-sv__title {
+		order: -1;
+	}
+}
+
+/* 卒業生 INTERVIEW（Figma 2707:10702） */
+.ru-section--graduates {
+	overflow-x: clip;
+	overflow-y: visible;
+	padding-bottom: calc(20px + clamp(40px, 6vw, 120px));
+}
+
+.ru-grad__stage {
+	--ru-grad-board: 1606.6954345703125;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1607px;
+	margin: 0 auto;
+	overflow: visible;
+	container-type: inline-size;
+	container-name: ru-grad-stage;
+}
+
+/* Figma フレーム相当の高さ（装飾・タイトル・カード行）。コメントは canvas の外で縦に積む */
+.ru-grad__canvas {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1606.6954345703125 / 545.7464599609375;
+	flex-shrink: 0;
+}
+
+.ru-grad__decor {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 3;
+	overflow: visible;
+}
+
+.ru-grad-decor__layer {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.ru-grad-decor__layer img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.ru-grad__main {
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: calc(65 / var(--ru-grad-board) * 100 * 1cqw);
+	padding: 0 clamp(8px, calc(24 / var(--ru-grad-board) * 100 * 1cqw), 24px);
+	box-sizing: border-box;
+}
+
+.ru-grad__title-wrap {
+	position: relative;
+	width: calc(620.872802734375 / var(--ru-grad-board) * 100 * 1cqw);
+	height: calc(83.3932876586914 / var(--ru-grad-board) * 100 * 1cqw);
+	flex-shrink: 0;
+}
+
+.ru-grad-title__layer {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 卒業生タイトル差し替え（interview-titile.svg）を他レイヤーより手前に */
+.ru-grad__title-wrap .ru-grad-title__layer[data-node-id="2707:10708"] {
+	z-index: 10;
+}
+
+.ru-grad-title__layer img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.ru-grad__row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	align-items: center;
+	justify-content: center;
+	gap: calc(56 / var(--ru-grad-board) * 100 * 1cqw);
+	width: 100%;
+	flex: 1 1 auto;
+	min-height: 0;
+	align-content: center;
+}
+
+/* 卒業生コメント（voice-text01 等）：行の直下、高さは SVG の縦横比に追従 */
+.ru-grad__voice-text {
+	width: 100%;
+	max-width: calc(1606.6954345703125 / var(--ru-grad-board) * 100 * 1cqw);
+	margin-inline: auto;
+	margin-top: clamp(12px, calc(24 / var(--ru-grad-board) * 100 * 1cqw), 24px);
+	box-sizing: border-box;
+}
+
+.ru-grad__voice-text[hidden] {
+	display: none !important;
+}
+
+.ru-grad__voice-text-img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	vertical-align: top;
+}
+
+.ru-grad__col {
+	flex: 0 0 auto;
+	width: calc(var(--ru-grad-col-w) / var(--ru-grad-board) * 100 * 1cqw);
+	max-width: 100%;
+}
+
+.ru-grad-illo {
+	width: 100%;
+	position: relative;
+	overflow: visible;
+}
+
+.ru-grad-illo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.ru-grad-illo-btn {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font: inherit;
+	position: relative;
+	overflow: hidden;
+}
+
+.ru-grad-illo-btn:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 4px;
+}
+
+.ru-grad-illo-btn img {
+	position: absolute;
+	inset: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.ru-grad-card {
+	display: block;
+	width: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font: inherit;
+}
+
+.ru-grad-card:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 4px;
+}
+
+.ru-grad-card__stack {
+	position: absolute;
+	inset: 0;
+	display: block;
+	pointer-events: none;
+}
+
+.ru-grad-card__layer {
+	position: absolute;
+	display: block;
+	pointer-events: none;
+	overflow: visible;
+}
+
+.ru-grad-card__layer img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.ru-grad-card__photo {
+	position: absolute;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.ru-grad-card__photo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+.ru-grad-card__flat {
+	position: absolute;
+	inset: 0;
+	display: block;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+/* interview02〜05：cover だとアスペクト差で左右／片側が欠ける → 全体を収める */
+.ru-grad-card__flat img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center center;
+}
+
+@media (max-width: 1100px) {
+	.ru-grad__col--illo {
+		flex: 1 1 220px;
+		max-width: min(100%, 280px);
+	}
+
+	.ru-grad__col--card {
+		flex: 1 1 180px;
+		max-width: min(100%, 240px);
+	}
+}
+
+@media (max-width: 640px) {
+	.ru-grad__title-wrap {
+		width: min(94cqw, calc(620.872802734375 / var(--ru-grad-board) * 100 * 1cqw));
+		height: auto;
+		aspect-ratio: 620.872802734375 / 83.3932876586914;
+	}
+
+	.ru-grad__main {
+		gap: clamp(20px, 5vw, 36px);
+		padding-top: clamp(4px, 2vw, 12px);
+	}
+}
+
+/* 動画紹介ブロック */
+.ru-video-block {
+	margin-top: 48px;
+	padding: 32px clamp(16px, 3vw, 40px);
+	background: rgba(255, 255, 255, 0.65);
+	border-radius: 24px;
+	border: 2px dashed rgba(56, 111, 107, 0.25);
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.ru-video-block h2 {
+	margin: 0 0 20px;
+	font-size: 18px;
+	font-weight: 800;
+	color: var(--ru-green);
+}
+
+.ru-video-block__courses {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 24px;
+}
+
+.ru-video-block__courses img {
+	max-width: 180px;
+	height: auto;
+}
+
+/* インタビューモーダル */
+.ru-modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(45, 90, 86, 0.45);
+	z-index: 100000;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 24px 16px;
+	overflow: auto;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.ru-modal-overlay.is-open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.ru-modal {
+	background: var(--ru-modal);
+	border: 3px dashed var(--ru-green);
+	border-radius: 24px;
+	max-width: 920px;
+	width: 100%;
+	padding: clamp(20px, 4vw, 40px);
+	position: relative;
+	margin: auto 0;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.ru-modal__close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 50%;
+	background: #fff;
+	color: var(--ru-green);
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+	box-shadow: var(--ru-shadow);
+}
+
+.ru-modal__close:hover {
+	background: var(--ru-cream);
+}
+
+.ru-modal__tag {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 800;
+	color: var(--ru-green);
+	margin-bottom: 12px;
+}
+
+.ru-modal__title {
+	font-size: clamp(20px, 3.5vw, 28px);
+	font-weight: 800;
+	line-height: 1.45;
+	margin: 0 0 16px;
+}
+
+.ru-modal__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 16px;
+	margin-bottom: 24px;
+	font-size: 14px;
+}
+
+.ru-modal__meta time {
+	background: #fff;
+	padding: 6px 12px;
+	border-radius: 8px;
+	font-weight: 700;
+	color: var(--ru-muted);
+}
+
+.ru-modal__body h3 {
+	font-size: 15px;
+	margin: 24px 0 8px;
+	color: var(--ru-green-dark);
+}
+
+.ru-modal__body p {
+	margin: 0 0 12px;
+}
+
+body.ru-modal-open {
+	overflow: hidden;
+}
+
+/* フッター（Figma 2752:17145）
+ * 768px 超: 1920 アートボード基準で min(設計px, calc(設計px * 100vw / 1920)) により等比。
+ * 767px 以下: SNS は 2×2→1 列へ（横一列は解除）。 */
+.ru-footer-pamphlet {
+	--ru-footer-board: 1920;
+	padding: min(48px, calc(48 * 100vw / var(--ru-footer-board))) 0
+		min(40px, calc(40 * 100vw / var(--ru-footer-board)));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: min(37px, calc(37 * 100vw / var(--ru-footer-board)));
+	text-align: center;
+}
+
+.ru-footer-pamphlet__heading-wrap {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.ru-footer-pamphlet__heading {
+	margin: 0;
+	width: min(386px, calc(386 * 100vw / var(--ru-footer-board)));
+	max-width: 100%;
+	line-height: 0;
+}
+
+.ru-footer-pamphlet__heading-img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.ru-footer-pamphlet__bar {
+	width: 100vw;
+	max-width: 100%;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	background: #e7d56d;
+	padding: min(32px, calc(32 * 100vw / var(--ru-footer-board)))
+		min(16px, calc(16 * 100vw / var(--ru-footer-board)))
+		min(46px, calc(46 * 100vw / var(--ru-footer-board)));
+	box-sizing: border-box;
+	min-height: min(258px, calc(258 * 100vw / var(--ru-footer-board)));
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+/* 769px 以上: 横 1 列・gap / アイコンも同一スケール */
+.ru-footer-pamphlet__social-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	justify-content: center;
+	gap: min(100px, calc(100 * 100vw / var(--ru-footer-board)));
+	width: min(920px, calc(920 * 100vw / var(--ru-footer-board)));
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+	/* グリッド時は等比 vw をやめ、タップしやすい余白に */
+	.ru-footer-pamphlet {
+		padding: 28px 0 24px;
+		gap: 24px;
+	}
+
+	.ru-footer-pamphlet__heading {
+		width: min(386px, 88vw);
+	}
+
+	.ru-footer-pamphlet__bar {
+		min-height: 0;
+		padding: 24px 16px 32px;
+	}
+
+	.ru-footer-pamphlet__social-row {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 100%;
+		gap: 28px clamp(16px, 5vw, 32px);
+		justify-items: center;
+	}
+}
+
+@media (max-width: 560px) {
+	.ru-footer-pamphlet__social-row {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ru-footer-pamphlet__col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 0 auto;
+	gap: 0;
+	color: inherit;
+	text-decoration: none;
+	min-width: 0;
+}
+
+.ru-footer-pamphlet__col:hover {
+	text-decoration: none;
+	opacity: 0.92;
+}
+
+.ru-footer-pamphlet__col:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 6px;
+	border-radius: 4px;
+}
+
+/* SNS 各カラムは facebook.svg / instagram.svg / x.svg / ticktock.svg の1枚表示
+ * X(117×178) は縦長のため max-width だけだと他より大きく見える → 共通枠 + contain で統一 */
+.ru-footer-pamphlet__asset {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	line-height: 0;
+	flex-shrink: 0;
+	width: min(180px, calc(180 * 100vw / var(--ru-footer-board)));
+	height: min(175px, calc(175 * 100vw / var(--ru-footer-board)));
+	box-sizing: border-box;
+}
+
+.ru-footer-pamphlet__asset img {
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	object-position: bottom center;
+	margin: 0;
+}
+
+@media (max-width: 767px) {
+	.ru-footer-pamphlet__asset {
+		width: min(180px, 42vw);
+		height: min(175px, calc(175 * min(180px, 42vw) / 180));
+	}
+}
+
+@media (max-width: 560px) {
+	.ru-footer-pamphlet__asset {
+		width: min(200px, 70vw);
+		height: min(175px, calc(175 * min(200px, 70vw) / 180));
+	}
+}
+
+.ru-footer-pamphlet__copy {
+	font-size: 13px;
+	color: var(--ru-muted);
+	margin: clamp(8px, 2vw, 16px) 0 0;
+	width: 100%;
+	max-width: 960px;
+}

@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1716.99 1076.17">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: SourceSerifRoman-Bold, 'Source Serif Variable';
+        font-variation-settings: 'wght' 700;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-4, .cls-5 {
+        font-size: 49.05px;
+      }
+
+      .cls-6 {
+        stroke: #fffcf2;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13 {
+        fill: none;
+      }
+
+      .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-40, .cls-41, .cls-42 {
+        font-family: TsukuBRdGothic-Regular-83pv-RKSJ-H, 'Tsukushi B Round Gothic';
+      }
+
+      .cls-2 {
+        font-size: 26.88px;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: TsukuBRdGothic-Bold-83pv-RKSJ-H, 'Tsukushi B Round Gothic';
+      }
+
+      .cls-2, .cls-43 {
+        fill: #231815;
+      }
+
+      .cls-7, .cls-8, .cls-11 {
+        stroke-linejoin: round;
+      }
+
+      .cls-7, .cls-8, .cls-11, .cls-13 {
+        stroke-linecap: round;
+      }
+
+      .cls-7, .cls-13 {
+        stroke: #231f20;
+        stroke-width: 2px;
+      }
+
+      .cls-44, .cls-10 {
+        font-size: 16.98px;
+      }
+
+      .cls-44, .cls-10, .cls-45, .cls-12 {
+        font-family: ShinMGoPro-Ultra, 'ShinMGoPro Ultra-83pv-RKSJ-H';
+      }
+
+      .cls-44, .cls-45 {
+        fill: #fff;
+      }
+
+      .cls-46 {
+        fill: #fffcf2;
+      }
+
+      .cls-8 {
+        stroke-width: 2.25px;
+      }
+
+      .cls-8, .cls-9, .cls-11 {
+        stroke: #000;
+      }
+
+      .cls-9 {
+        stroke-width: 1.5px;
+      }
+
+      .cls-9, .cls-13 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-10, .cls-12 {
+        stroke: #386f6b;
+      }
+
+      .cls-47 {
+        fill: #dfd6ea;
+      }
+
+      .cls-45, .cls-12 {
+        font-size: 43.72px;
+        letter-spacing: .08em;
+      }
+
+      .cls-48, .cls-43 {
+        font-size: 21.62px;
+      }
+
+      .cls-49, .cls-50, .cls-51, .cls-52, .cls-53, .cls-54, .cls-55, .cls-56, .cls-57, .cls-58, .cls-59, .cls-60 {
+        font-size: 39.15px;
+      }
+
+      .cls-61 {
+        letter-spacing: 0em;
+      }
+
+      .cls-50 {
+        letter-spacing: 0em;
+      }
+
+      .cls-51 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-52 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-62 {
+        opacity: .63;
+      }
+
+      .cls-11 {
+        stroke-width: 1.37px;
+      }
+
+      .cls-53 {
+        letter-spacing: -.15em;
+      }
+
+      .cls-54 {
+        letter-spacing: -.12em;
+      }
+
+      .cls-55 {
+        letter-spacing: -.13em;
+      }
+
+      .cls-56 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-57 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-58 {
+        letter-spacing: -.5em;
+      }
+
+      .cls-59 {
+        letter-spacing: -.56em;
+      }
+
+      .cls-60 {
+        letter-spacing: -.62em;
+      }
+
+      .cls-63 {
+        letter-spacing: -.3em;
+      }
+
+      .cls-64 {
+        letter-spacing: -.3em;
+      }
+
+      .cls-65 {
+        letter-spacing: -.3em;
+      }
+
+      .cls-66 {
+        letter-spacing: -.32em;
+      }
+
+      .cls-67 {
+        letter-spacing: -.32em;
+      }
+
+      .cls-68 {
+        letter-spacing: -.32em;
+      }
+
+      .cls-69 {
+        letter-spacing: -.34em;
+      }
+
+      .cls-70 {
+        letter-spacing: -.36em;
+      }
+
+      .cls-71 {
+        letter-spacing: -.25em;
+      }
+
+      .cls-72, .cls-36 {
+        letter-spacing: -.26em;
+      }
+
+      .cls-73, .cls-37 {
+        letter-spacing: -.26em;
+      }
+
+      .cls-74 {
+        letter-spacing: -.26em;
+      }
+
+      .cls-75, .cls-38 {
+        letter-spacing: -.26em;
+      }
+
+      .cls-76 {
+        letter-spacing: -.28em;
+      }
+
+      .cls-77 {
+        letter-spacing: -.28em;
+      }
+
+      .cls-78 {
+        letter-spacing: -.28em;
+      }
+
+      .cls-79 {
+        letter-spacing: -.27em;
+      }
+
+      .cls-80 {
+        letter-spacing: -.29em;
+      }
+
+      .cls-81 {
+        letter-spacing: -.29em;
+      }
+
+      .cls-82 {
+        letter-spacing: -.31em;
+      }
+
+      .cls-83 {
+        letter-spacing: -.31em;
+      }
+
+      .cls-84 {
+        letter-spacing: -.31em;
+      }
+
+      .cls-85 {
+        letter-spacing: -.24em;
+      }
+
+      .cls-86 {
+        letter-spacing: -.24em;
+      }
+
+      .cls-87 {
+        letter-spacing: -.24em;
+      }
+
+      .cls-88 {
+        letter-spacing: -.23em;
+      }
+
+      .cls-89 {
+        letter-spacing: -.23em;
+      }
+
+      .cls-90, .cls-39 {
+        letter-spacing: -.23em;
+      }
+
+      .cls-91 {
+        letter-spacing: -.23em;
+      }
+
+      .cls-92 {
+        letter-spacing: -.25em;
+      }
+
+      .cls-93 {
+        letter-spacing: -.5em;
+      }
+
+      .cls-94, .cls-41 {
+        letter-spacing: -.5em;
+      }
+
+      .cls-95 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-96 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-97 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-98, .cls-40 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-99 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-100 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-101 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-102 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-103, .cls-42 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-104 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-105 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-106 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-107, .cls-19 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-108, .cls-20 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-109 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-110 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-111 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-112 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-113, .cls-21 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-114 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-115 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-116 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-117 {
+        letter-spacing: -.19em;
+      }
+
+      .cls-118 {
+        letter-spacing: -.19em;
+      }
+
+      .cls-119, .cls-23 {
+        letter-spacing: -.19em;
+      }
+
+      .cls-120 {
+        letter-spacing: -.19em;
+      }
+
+      .cls-121, .cls-22 {
+        letter-spacing: -.2em;
+      }
+
+      .cls-122 {
+        letter-spacing: -.2em;
+      }
+
+      .cls-123 {
+        letter-spacing: -.2em;
+      }
+
+      .cls-124 {
+        letter-spacing: -.21em;
+      }
+
+      .cls-125, .cls-24 {
+        letter-spacing: -.21em;
+      }
+
+      .cls-126 {
+        letter-spacing: -.21em;
+      }
+
+      .cls-127, .cls-25 {
+        letter-spacing: -.21em;
+      }
+
+      .cls-128 {
+        letter-spacing: -.22em;
+      }
+
+      .cls-129 {
+        letter-spacing: -.22em;
+      }
+
+      .cls-130 {
+        letter-spacing: -.22em;
+      }
+
+      .cls-131, .cls-29 {
+        letter-spacing: -.16em;
+      }
+
+      .cls-132, .cls-28 {
+        letter-spacing: -.16em;
+      }
+
+      .cls-133 {
+        letter-spacing: -.16em;
+      }
+
+      .cls-134 {
+        letter-spacing: -.17em;
+      }
+
+      .cls-135 {
+        letter-spacing: -.17em;
+      }
+
+      .cls-136 {
+        letter-spacing: -.17em;
+      }
+
+      .cls-137, .cls-27 {
+        letter-spacing: -.17em;
+      }
+
+      .cls-138 {
+        letter-spacing: -.18em;
+      }
+
+      .cls-139 {
+        letter-spacing: -.18em;
+      }
+
+      .cls-140, .cls-26 {
+        letter-spacing: -.18em;
+      }
+
+      .cls-141 {
+        letter-spacing: -.12em;
+      }
+
+      .cls-142 {
+        letter-spacing: -.12em;
+      }
+
+      .cls-143 {
+        letter-spacing: -.12em;
+      }
+
+      .cls-144 {
+        letter-spacing: -.13em;
+      }
+
+      .cls-145, .cls-33 {
+        letter-spacing: -.13em;
+      }
+
+      .cls-146, .cls-34 {
+        letter-spacing: -.13em;
+      }
+
+      .cls-147 {
+        letter-spacing: -.13em;
+      }
+
+      .cls-148 {
+        letter-spacing: -.14em;
+      }
+
+      .cls-149, .cls-32 {
+        letter-spacing: -.14em;
+      }
+
+      .cls-150, .cls-30 {
+        letter-spacing: -.15em;
+      }
+
+      .cls-151 {
+        letter-spacing: -.15em;
+      }
+
+      .cls-152 {
+        letter-spacing: -.15em;
+      }
+
+      .cls-153, .cls-31 {
+        letter-spacing: -.15em;
+      }
+
+      .cls-154 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-155 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-156 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-157 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-158, .cls-16 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-159 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-160 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-161, .cls-17 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-162 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-163, .cls-18 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-164 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-165 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-166 {
+        letter-spacing: 0em;
+      }
+
+      .cls-167 {
+        letter-spacing: 0em;
+      }
+
+      .cls-168 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-169 {
+        letter-spacing: 0em;
+      }
+
+      .cls-170, .cls-15 {
+        letter-spacing: 0em;
+      }
+
+      .cls-171 {
+        letter-spacing: .08em;
+      }
+
+      .cls-172 {
+        letter-spacing: .07em;
+      }
+
+      .cls-173 {
+        letter-spacing: .04em;
+      }
+
+      .cls-174 {
+        letter-spacing: .04em;
+      }
+
+      .cls-175 {
+        letter-spacing: .06em;
+      }
+
+      .cls-176 {
+        letter-spacing: .05em;
+      }
+
+      .cls-177 {
+        letter-spacing: .04em;
+      }
+
+      .cls-35 {
+        letter-spacing: -.36em;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <g id="voice-text04">
+      <path class="cls-47" d="M1628.29,1017.97H45.64c-6.44,0-11.71-5.27-11.71-11.71V87.68c0-6.44,5.27-11.71,11.71-11.71h1046.16c5.2,0,10-2.77,12.6-7.27l25.86-44.8c3.53-6.11,12.35-6.11,15.88,0l25.86,44.8c2.6,4.5,7.4,7.27,12.6,7.27h443.7c6.44,0,11.71,5.27,11.71,11.71v918.58c0,6.44-5.27,11.71-11.71,11.71Z"/>
+      <path class="cls-13" d="M60.39,92.27v-22.91c0-6.44,5.27-11.71,11.71-11.71h1046.16c5.2,0,10-2.77,12.6-7.27l25.86-44.8c3.53-6.11,12.35-6.11,15.88,0l25.86,44.8c2.6,4.5,7.4,7.27,12.6,7.27h443.7c6.44,0,11.71,5.27,11.71,11.71v918.58c0,6.44-5.27,11.71-11.71,11.71H72.1c-6.44,0-11.71-5.27-11.71-11.71V145.94"/>
+      <polygon class="cls-6" points="395.65 338.92 380.07 311.93 411.23 311.93 395.65 338.92"/>
+      <polygon class="cls-6" points="1385 975.45 1369.42 948.46 1400.58 948.46 1385 975.45"/>
+      <circle class="cls-7" cx="164.08" cy="92.41" r="15.37"/>
+      <circle class="cls-6" cx="1452.85" cy="315.8" r="15.37"/>
+      <rect class="cls-6" x="84.37" y="305" width="28.54" height="28.54"/>
+      <polyline class="cls-7" points="122.08 106.54 101.9 126.72 81.72 106.54 61.54 126.72 41.36 106.54 21.18 126.72 1 106.54"/>
+      <polyline class="cls-6" points="1055.93 951.34 1035.75 971.52 1015.57 951.34 995.39 971.52 975.21 951.34 955.03 971.52 934.85 951.34"/>
+      <rect class="cls-6" x="1435.2" y="70.93" width="28.54" height="28.54"/>
+      <rect class="cls-46" x="1573.89" y="95.94" width="38.92" height="38.92"/>
+      <polygon points="1608.48 104.62 1605.33 101.46 1599.5 107.29 1593.67 101.46 1590.52 104.62 1596.35 110.44 1590.52 116.27 1593.67 119.43 1599.5 113.6 1605.33 119.43 1608.48 116.27 1602.65 110.44 1608.48 104.62"/>
+      <rect class="cls-9" x="1580.99" y="90.76" width="37.01" height="37.01"/>
+      <rect class="cls-46" x="384.66" y="210.46" width="162.55" height="28.83"/>
+      <g class="cls-62">
+        <g>
+          <circle class="cls-46" cx="174.38" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="174.38" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="174.38" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="174.38" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="197.76" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="197.76" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M197.76,957.76c-1.68,0-3.05-1.37-3.05-3.05s1.37-3.05,3.05-3.05,3.05,1.37,3.05,3.05-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="197.76" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="221.14" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="221.14" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M221.14,957.76c-1.68,0-3.05-1.37-3.05-3.05,0-1.68,1.37-3.05,3.05-3.05s3.05,1.37,3.05,3.05-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="221.14" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="244.52" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="244.52" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="244.52" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="244.52" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="267.9" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="267.9" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="267.9" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="267.9" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="291.28" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="291.28" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="291.28" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="291.28" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="314.65" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="314.65" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M314.65,957.76c-1.68,0-3.05-1.37-3.05-3.05,0-1.68,1.37-3.05,3.05-3.05s3.05,1.37,3.05,3.05c0,1.68-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="314.65" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="338.03" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="338.03" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M338.03,957.76c-1.68,0-3.05-1.37-3.05-3.05,0-1.68,1.37-3.05,3.05-3.05s3.05,1.37,3.05,3.05-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="338.03" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="361.41" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="361.41" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="361.41" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="361.41" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="384.79" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="384.79" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="384.79" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="384.79" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="408.17" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="408.17" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="408.17" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="408.17" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="431.55" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="431.55" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M431.55,957.76c-1.68,0-3.05-1.37-3.05-3.05,0-1.68,1.37-3.05,3.05-3.05s3.05,1.37,3.05,3.05-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="431.55" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="454.93" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="454.93" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M454.93,957.76c-1.68,0-3.05-1.37-3.05-3.05s1.37-3.05,3.05-3.05,3.05,1.37,3.05,3.05c0,1.68-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="454.93" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="478.3" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="478.3" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M478.3,957.76c-1.68,0-3.05-1.37-3.05-3.05,0-1.68,1.37-3.05,3.05-3.05s3.05,1.37,3.05,3.05-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="478.3" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="501.68" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="501.68" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="501.68" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="501.68" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="525.06" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="525.06" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="525.06" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="525.06" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="174.38" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="174.38" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="197.76" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="197.76" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="221.14" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="221.14" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="244.52" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="244.52" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="267.9" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="267.9" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="291.28" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="291.28" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="314.65" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="314.65" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="338.03" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="338.03" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="10.73" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="10.73" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="10.73" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="10.73" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="34.11" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="34.11" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="34.11" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="34.11" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="57.49" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="57.49" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M57.49,957.76c-1.68,0-3.05-1.37-3.05-3.05s1.37-3.05,3.05-3.05,3.05,1.37,3.05,3.05c0,1.68-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="57.49" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="80.87" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="80.87" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M80.87,957.76c-1.68,0-3.05-1.37-3.05-3.05s1.37-3.05,3.05-3.05,3.05,1.37,3.05,3.05-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="80.87" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="104.25" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="104.25" cy="931.33" r="3.05"/>
+          <path class="cls-46" d="M104.25,957.76c-1.68,0-3.05-1.37-3.05-3.05s1.37-3.05,3.05-3.05,3.05,1.37,3.05,3.05-1.37,3.05-3.05,3.05Z"/>
+          <circle class="cls-46" cx="104.25" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="127.63" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="127.63" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="127.63" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="127.63" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="151" cy="907.95" r="3.05"/>
+          <circle class="cls-46" cx="151" cy="931.33" r="3.05"/>
+          <circle class="cls-46" cx="151" cy="954.71" r="3.05"/>
+          <circle class="cls-46" cx="151" cy="978.09" r="3.05"/>
+          <circle class="cls-46" cx="10.73" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="10.73" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="34.11" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="34.11" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="57.49" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="57.49" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="80.87" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="80.87" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="104.25" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="104.25" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="127.63" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="127.63" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="151" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="151" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="361.41" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="361.41" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="384.79" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="384.79" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="408.17" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="408.17" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="431.55" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="431.55" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="454.93" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="454.93" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="478.3" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="478.3" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="501.68" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="501.68" cy="884.58" r="3.05"/>
+          <circle class="cls-46" cx="525.06" cy="861.2" r="3.05"/>
+          <circle class="cls-46" cx="525.06" cy="884.58" r="3.05"/>
+        </g>
+      </g>
+      <g>
+        <polygon class="cls-6" points="1597.35 999.85 1581.77 972.87 1612.93 972.87 1597.35 999.85"/>
+        <line class="cls-11" x1="1554.89" y1="961.98" x2="1583.36" y2="933.51"/>
+        <line class="cls-11" x1="1546.39" y1="984.36" x2="1605.74" y2="925.01"/>
+        <line class="cls-11" x1="1545.37" y1="999.24" x2="1620.61" y2="924"/>
+        <line class="cls-11" x1="1545.98" y1="1012.49" x2="1633.87" y2="924.6"/>
+        <line class="cls-11" x1="1645.01" y1="927.32" x2="1548.71" y2="1023.64"/>
+        <line class="cls-11" x1="1552.76" y1="1033.44" x2="1654.83" y2="931.38"/>
+        <line class="cls-11" x1="1557.79" y1="1042.27" x2="1663.66" y2="936.41"/>
+        <line class="cls-11" x1="1563.88" y1="1050.05" x2="1671.43" y2="942.5"/>
+        <line class="cls-11" x1="1570.81" y1="1056.99" x2="1678.37" y2="949.43"/>
+        <line class="cls-11" x1="1684.45" y1="957.21" x2="1578.59" y2="1063.07"/>
+        <line class="cls-11" x1="1689.48" y1="966.04" x2="1587.42" y2="1068.1"/>
+        <line class="cls-11" x1="1597.24" y1="1072.16" x2="1693.54" y2="975.85"/>
+        <line class="cls-11" x1="1696.26" y1="987" x2="1608.38" y2="1074.88"/>
+        <line class="cls-11" x1="1696.87" y1="1000.25" x2="1621.63" y2="1075.49"/>
+        <line class="cls-11" x1="1695.86" y1="1015.12" x2="1636.5" y2="1074.48"/>
+        <line class="cls-11" x1="1687.35" y1="1037.5" x2="1658.88" y2="1065.97"/>
+        <polygon class="cls-8" points="1696.87 926.59 1715.86 960.45 1696.87 960.45 1677.89 960.45 1696.87 926.59"/>
+      </g>
+      <text class="cls-3" transform="translate(383.25 182.32) scale(.98 1)"><tspan class="cls-49" x="0" y="0">大</tspan><tspan class="cls-52" x="39.15" y="0">学の</tspan><tspan class="cls-49" x="113.53" y="0">授</tspan><tspan class="cls-56" x="152.68" y="0">業</tspan><tspan class="cls-49" x="189.48" y="0">で</tspan><tspan class="cls-52" x="228.63" y="0">学</tspan><tspan class="cls-56" x="265.82" y="0">ん</tspan><tspan class="cls-58" x="302.62" y="0">だ</tspan><tspan class="cls-49" x="322.2" y="0">「</tspan><tspan class="cls-5" x="361.35" y="0">文</tspan><tspan class="cls-4" x="410.4" y="0">学の</tspan><tspan class="cls-5" x="503.6" y="0">魅力</tspan><tspan class="cls-60" x="601.71" y="0">」</tspan><tspan class="cls-51" x="616.59" y="0">を</tspan><tspan class="cls-49" x="654.17" y="0">中学</tspan><tspan class="cls-56" x="732.47" y="0">生</tspan><tspan class="cls-53" x="769.27" y="0">に</tspan><tspan class="cls-55" x="802.55" y="0">も</tspan><tspan class="cls-57" x="836.61" y="0">伝</tspan><tspan class="cls-54" x="872.23" y="0">え</tspan><tspan class="cls-56" x="906.68" y="0">た</tspan><tspan class="cls-50" x="943.48" y="0">い</tspan><tspan class="cls-59" x="982.24" y="0">。</tspan></text>
+      <text class="cls-44" transform="translate(118.94 219.05)"><tspan class="cls-177" x="0" y="0">日</tspan><tspan class="cls-172" x="17.57" y="0">本</tspan><tspan class="cls-177" x="35.82" y="0">語日</tspan><tspan class="cls-171" x="70.96" y="0">本文学専</tspan><tspan class="cls-177" x="143.96" y="0">攻</tspan><tspan class="cls-173" x="161.53" y="0">コ</tspan><tspan class="cls-167" x="179.27" y="0">ー</tspan><tspan class="cls-176" x="196.17" y="0">ス</tspan></text>
+      <text class="cls-10" transform="translate(118.12 217.63)"><tspan class="cls-177" x="0" y="0">日</tspan><tspan class="cls-172" x="17.57" y="0">本</tspan><tspan class="cls-177" x="35.82" y="0">語日</tspan><tspan class="cls-171" x="70.96" y="0">本文学専</tspan><tspan class="cls-177" x="143.96" y="0">攻</tspan><tspan class="cls-174" x="161.53" y="0">コ</tspan><tspan class="cls-166" x="179.27" y="0">ー</tspan><tspan class="cls-175" x="196.16" y="0">ス</tspan></text>
+      <text class="cls-48" transform="translate(395.98 234.13) scale(.98 1)"><tspan class="cls-1" x="0" y="0">2021</tspan><tspan class="cls-14" x="46.88" y="0">年</tspan><tspan class="cls-1" x="68.51" y="0">3</tspan><tspan class="cls-20" x="80.23" y="0">月</tspan><tspan class="cls-14" x="100.12" y="0">卒業</tspan></text>
+      <text class="cls-2" transform="translate(557.72 234.43) scale(.98 1)"><tspan x="0" y="0">東京都中学校国語科教諭</tspan></text>
+      <text class="cls-45" transform="translate(119.17 183.88)"><tspan x="0" y="0">文学科</tspan></text>
+      <text class="cls-12" transform="translate(114.93 182.67)"><tspan x="0" y="0">文学科</tspan></text>
+      <text class="cls-43" transform="translate(121.69 309.13) scale(.98 1)"><tspan class="cls-3"><tspan x="0" y="0">仲</tspan><tspan class="cls-113" x="21.62" y="0">間</tspan><tspan class="cls-158" x="41.95" y="0">に</tspan><tspan class="cls-104" x="62.49" y="0">励</tspan><tspan class="cls-86" x="81.74" y="0">ま</tspan><tspan class="cls-135" x="98.17" y="0">さ</tspan><tspan class="cls-143" x="116.12" y="0">れ</tspan><tspan class="cls-158" x="135.15" y="0">て</tspan><tspan x="155.69" y="0">最</tspan><tspan class="cls-104" x="177.32" y="0">後</tspan><tspan class="cls-73" x="196.56" y="0">ま</tspan><tspan class="cls-156" x="212.56" y="0">で</tspan><tspan class="cls-158" x="233.75" y="0">がん</tspan><tspan class="cls-161" x="274.84" y="0">ば</tspan><tspan class="cls-113" x="295.6" y="0">れ</tspan><tspan class="cls-163" x="315.92" y="0">た</tspan></tspan><tspan class="cls-14"><tspan x="0" y="32.11">中</tspan><tspan class="cls-113" x="21.62" y="32.11">学</tspan><tspan class="cls-158" x="41.95" y="32.11">の</tspan><tspan x="62.49" y="32.11">担</tspan><tspan class="cls-113" x="84.12" y="32.11">任</tspan><tspan class="cls-157" x="104.44" y="32.11">の</tspan><tspan x="124.99" y="32.11">先</tspan><tspan class="cls-163" x="146.61" y="32.11">生</tspan><tspan class="cls-113" x="167.58" y="32.11">へ</tspan><tspan class="cls-103" x="187.91" y="32.11">の</tspan><tspan class="cls-119" x="207.16" y="32.11">あ</tspan><tspan class="cls-150" x="224.67" y="32.11">こ</tspan><tspan class="cls-161" x="243.05" y="32.11">が</tspan><tspan class="cls-163" x="263.81" y="32.11">れ</tspan><tspan class="cls-149" x="284.79" y="32.11">か</tspan><tspan class="cls-98" x="303.38" y="32.11">ら</tspan><tspan x="322.84" y="32.11">教</tspan><tspan class="cls-146" x="344.47" y="32.11">員</tspan><tspan class="cls-158" x="363.28" y="32.11">を</tspan><tspan class="cls-132" x="383.82" y="32.11">志</tspan><tspan class="cls-99" x="401.99" y="32.11">し</tspan><tspan x="421.45" y="32.11">、高校、大</tspan><tspan class="cls-146" x="529.57" y="32.11">学</tspan><tspan class="cls-159" x="548.38" y="32.11">を</tspan><tspan class="cls-109" x="568.92" y="32.11">経</tspan><tspan class="cls-95" x="589.03" y="32.11">て</tspan><tspan class="cls-146" x="608.71" y="32.11">、</tspan><tspan class="cls-118" x="627.52" y="32.11">そ</tspan><tspan class="cls-157" x="645.04" y="32.11">の</tspan><tspan class="cls-163" x="665.58" y="32.11">思い</tspan><tspan class="cls-136" x="707.53" y="32.11">が</tspan><tspan class="cls-66" x="725.48" y="32.11">よ</tspan><tspan class="cls-136" x="740.18" y="32.11">り</tspan><tspan class="cls-119" x="758.13" y="32.11">強</tspan><tspan class="cls-80" x="775.65" y="32.11">く</tspan><tspan class="cls-130" x="791" y="32.11">な</tspan><tspan class="cls-133" x="807.87" y="32.11">っ</tspan><tspan class="cls-106" x="826.03" y="32.11">て</tspan><tspan class="cls-132" x="845.92" y="32.11">い</tspan><tspan class="cls-87" x="864.09" y="32.11">き</tspan><tspan class="cls-68" x="880.52" y="32.11">ま</tspan><tspan class="cls-133" x="895.23" y="32.11">し</tspan><tspan class="cls-162" x="913.39" y="32.11">た</tspan><tspan x="934.37" y="32.11">。大</tspan><tspan class="cls-113" x="977.61" y="32.11">学で</tspan><tspan class="cls-163" x="1018.27" y="32.11">は</tspan><tspan class="cls-132" x="1039.24" y="32.11">同</tspan><tspan class="cls-115" x="1057.41" y="32.11">じ</tspan><tspan class="cls-146" x="1077.73" y="32.11">道</tspan><tspan class="cls-105" x="1096.55" y="32.11">を</tspan><tspan class="cls-115" x="1115.79" y="32.11">目</tspan><tspan class="cls-154" x="1136.12" y="32.11">指す</tspan><tspan x="1178.5" y="32.11">仲</tspan><tspan class="cls-113" x="1200.12" y="32.11">間</tspan><tspan class="cls-158" x="1220.45" y="32.11">の</tspan><tspan class="cls-141" x="1240.99" y="32.11">励</tspan><tspan class="cls-68" x="1260.02" y="32.11">まし</tspan><tspan class="cls-121" x="1289.43" y="32.11">も</tspan><tspan class="cls-133" x="1306.73" y="32.11">あっ</tspan><tspan class="cls-95" x="1343.06" y="32.11">て</tspan><tspan x="1362.73" y="32.11">、最</tspan><tspan class="cls-141" x="1405.98" y="32.11">後</tspan><tspan class="cls-85" x="1425.01" y="32.11">ま</tspan><tspan class="cls-162" x="1441.44" y="32.11">で</tspan><tspan class="cls-113" x="1462.42" y="32.11">が</tspan><tspan class="cls-156" x="1482.75" y="32.11">ん</tspan></tspan><tspan class="cls-14"><tspan class="cls-141" x="-.86" y="64.23">ば</tspan><tspan class="cls-87" x="18.16" y="64.23">る</tspan><tspan class="cls-63" x="34.6" y="64.23">こ</tspan><tspan class="cls-136" x="49.73" y="64.23">と</tspan><tspan class="cls-113" x="67.68" y="64.23">が</tspan><tspan class="cls-132" x="88.01" y="64.23">で</tspan><tspan class="cls-87" x="106.17" y="64.23">き</tspan><tspan class="cls-68" x="122.61" y="64.23">ま</tspan><tspan class="cls-132" x="137.31" y="64.23">し</tspan><tspan class="cls-162" x="155.48" y="64.23">た</tspan><tspan class="cls-93" x="176.45" y="64.23">。</tspan></tspan><tspan class="cls-14" x="0" y="96.34">現</tspan><tspan class="cls-16" x="21.62" y="96.34">在</tspan><tspan class="cls-18" x="42.17" y="96.34">は</tspan><tspan class="cls-14" x="63.14" y="96.34">大規</tspan><tspan class="cls-40" x="106.39" y="96.34">模</tspan><tspan class="cls-17" x="125.85" y="96.34">な</tspan><tspan class="cls-14" x="146.61" y="96.34">中学</tspan><tspan class="cls-21" x="189.86" y="96.34">校</tspan><tspan class="cls-15" x="210.18" y="96.34">で</tspan><tspan class="cls-1" x="231.59" y="96.34">1</tspan><tspan class="cls-14" x="243.31" y="96.34">年</tspan><tspan class="cls-21" x="264.94" y="96.34">生</tspan><tspan class="cls-16" x="285.26" y="96.34">の</tspan><tspan class="cls-14" x="305.8" y="96.34">担</tspan><tspan class="cls-34" x="327.43" y="96.34">任</tspan><tspan class="cls-25" x="346.24" y="96.34">を</tspan><tspan class="cls-37" x="363.32" y="96.34">し</tspan><tspan class="cls-42" x="379.32" y="96.34">て</tspan><tspan class="cls-23" x="398.57" y="96.34">お</tspan><tspan class="cls-39" x="416.09" y="96.34">り</tspan><tspan class="cls-14" x="432.74" y="96.34">、生</tspan><tspan class="cls-21" x="475.98" y="96.34">徒</tspan><tspan class="cls-30" x="496.31" y="96.34">た</tspan><tspan class="cls-38" x="514.69" y="96.34">ち</tspan><tspan class="cls-24" x="530.69" y="96.34">と</tspan><tspan class="cls-31" x="547.77" y="96.34">日</tspan><tspan class="cls-33" x="566.16" y="96.34">々</tspan><tspan class="cls-28" x="584.97" y="96.34">楽</tspan><tspan class="cls-35" x="603.13" y="96.34">し</tspan><tspan class="cls-23" x="616.97" y="96.34">く</tspan><tspan class="cls-32" x="634.49" y="96.34">過</tspan><tspan class="cls-22" x="653.08" y="96.34">ご</tspan><tspan class="cls-36" x="670.38" y="96.34">し</tspan><tspan class="cls-19" x="686.38" y="96.34">て</tspan><tspan class="cls-29" x="706.28" y="96.34">い</tspan><tspan class="cls-27" x="724.44" y="96.34">ま</tspan><tspan class="cls-26" x="742.39" y="96.34">す</tspan><tspan class="cls-41" x="760.12" y="96.34">。</tspan><tspan class="cls-3"><tspan x="0" y="160.57">文</tspan><tspan class="cls-141" x="21.62" y="160.57">学</tspan><tspan class="cls-161" x="40.65" y="160.57">を</tspan><tspan x="61.41" y="160.57">消</tspan><tspan class="cls-154" x="83.04" y="160.57">費</tspan><tspan class="cls-136" x="104.23" y="160.57">す</tspan><tspan class="cls-99" x="122.18" y="160.57">る</tspan><tspan class="cls-163" x="141.64" y="160.57">人</tspan><tspan class="cls-146" x="162.61" y="160.57">か</tspan><tspan class="cls-95" x="181.42" y="160.57">ら</tspan><tspan x="201.1" y="160.57">生</tspan><tspan class="cls-154" x="222.73" y="160.57">産</tspan><tspan class="cls-134" x="243.92" y="160.57">す</tspan><tspan class="cls-99" x="261.86" y="160.57">る</tspan><tspan class="cls-163" x="281.33" y="160.57">人</tspan><tspan x="302.3" y="160.57">へ</tspan></tspan><tspan class="cls-14"><tspan x="0" y="192.68">大</tspan><tspan class="cls-113" x="21.62" y="192.68">学</tspan><tspan class="cls-158" x="41.95" y="192.68">の</tspan><tspan class="cls-113" x="62.49" y="192.68">学び</tspan><tspan class="cls-170" x="103.15" y="192.68">で</tspan><tspan class="cls-113" x="124.55" y="192.68">特</tspan><tspan class="cls-157" x="144.88" y="192.68">に</tspan><tspan x="165.42" y="192.68">印</tspan><tspan class="cls-113" x="187.05" y="192.68">象</tspan><tspan class="cls-158" x="207.37" y="192.68">に</tspan><tspan class="cls-104" x="227.92" y="192.68">残</tspan><tspan class="cls-132" x="247.16" y="192.68">っ</tspan><tspan class="cls-108" x="265.32" y="192.68">て</tspan><tspan class="cls-146" x="285.22" y="192.68">い</tspan><tspan class="cls-133" x="304.03" y="192.68">る</tspan><tspan class="cls-101" x="322.19" y="192.68">の</tspan><tspan class="cls-163" x="341.66" y="192.68">は、</tspan><tspan class="cls-139" x="383.61" y="192.68">ゼ</tspan><tspan class="cls-90" x="401.34" y="192.68">ミ</tspan><tspan class="cls-141" x="417.99" y="192.68">で</tspan><tspan class="cls-123" x="437.02" y="192.68">も</tspan><tspan class="cls-169" x="454.32" y="192.68">お</tspan><tspan x="475.72" y="192.68">世</tspan><tspan class="cls-113" x="497.35" y="192.68">話</tspan><tspan class="cls-150" x="517.67" y="192.68">に</tspan><tspan class="cls-130" x="536.06" y="192.68">な</tspan><tspan class="cls-152" x="552.92" y="192.68">っ</tspan><tspan class="cls-162" x="571.3" y="192.68">た</tspan><tspan x="592.28" y="192.68">葉名尻竜一先</tspan><tspan class="cls-113" x="722.02" y="192.68">生</tspan><tspan class="cls-158" x="742.35" y="192.68">の</tspan><tspan x="762.89" y="192.68">「消</tspan><tspan class="cls-154" x="806.14" y="192.68">費</tspan><tspan class="cls-136" x="827.33" y="192.68">す</tspan><tspan class="cls-99" x="845.28" y="192.68">る</tspan><tspan class="cls-163" x="864.74" y="192.68">人</tspan><tspan class="cls-149" x="885.71" y="192.68">か</tspan><tspan class="cls-98" x="904.31" y="192.68">ら</tspan><tspan x="923.77" y="192.68">生</tspan><tspan class="cls-154" x="945.39" y="192.68">産</tspan><tspan class="cls-134" x="966.59" y="192.68">す</tspan><tspan class="cls-98" x="984.53" y="192.68">る</tspan><tspan class="cls-163" x="1003.99" y="192.68">人</tspan><tspan x="1024.97" y="192.68">へ</tspan><tspan class="cls-136" x="1046.59" y="192.68">」</tspan><tspan class="cls-139" x="1064.54" y="192.68">とい</tspan><tspan class="cls-152" x="1100" y="192.68">う</tspan><tspan x="1118.38" y="192.68">言</tspan><tspan class="cls-113" x="1140.01" y="192.68">葉</tspan><tspan class="cls-162" x="1160.33" y="192.68">で</tspan><tspan class="cls-139" x="1181.31" y="192.68">す</tspan><tspan x="1199.04" y="192.68">。作</tspan><tspan class="cls-113" x="1242.29" y="192.68">品</tspan><tspan class="cls-157" x="1262.62" y="192.68">に</tspan><tspan class="cls-132" x="1283.16" y="192.68">対</tspan><tspan class="cls-72" x="1301.32" y="192.68">し</tspan><tspan class="cls-95" x="1317.32" y="192.68">て</tspan><tspan class="cls-113" x="1337" y="192.68">、</tspan><tspan class="cls-108" x="1357.33" y="192.68">た</tspan><tspan class="cls-170" x="1377.22" y="192.68">だ</tspan><tspan x="1398.63" y="192.68">面</tspan><tspan class="cls-163" x="1420.25" y="192.68">白</tspan><tspan class="cls-169" x="1441.23" y="192.68">い</tspan><tspan class="cls-161" x="1462.64" y="192.68">、</tspan><tspan class="cls-155" x="1483.4" y="192.68">つ</tspan></tspan><tspan class="cls-14"><tspan class="cls-81" x="-2.59" y="224.8">ま</tspan><tspan class="cls-122" x="12.76" y="224.8">ら</tspan><tspan class="cls-111" x="30.06" y="224.8">な</tspan><tspan class="cls-91" x="50.17" y="224.8">い</tspan><tspan class="cls-152" x="66.82" y="224.8">と</tspan><tspan x="85.2" y="224.8">感</tspan><tspan class="cls-146" x="106.82" y="224.8">想</tspan><tspan class="cls-159" x="125.63" y="224.8">を</tspan><tspan class="cls-132" x="146.18" y="224.8">言</tspan><tspan class="cls-126" x="164.34" y="224.8">う</tspan><tspan class="cls-101" x="181.42" y="224.8">の</tspan><tspan class="cls-163" x="200.89" y="224.8">は</tspan><tspan x="221.86" y="224.8">「消費</tspan><tspan class="cls-113" x="286.73" y="224.8">」</tspan><tspan class="cls-109" x="307.06" y="224.8">で</tspan><tspan class="cls-131" x="327.17" y="224.8">あっ</tspan><tspan class="cls-95" x="363.5" y="224.8">て</tspan><tspan x="383.17" y="224.8">、</tspan><tspan class="cls-113" x="404.8" y="224.8">学び</tspan><tspan class="cls-98" x="445.45" y="224.8">に</tspan><tspan class="cls-146" x="464.91" y="224.8">は</tspan><tspan class="cls-139" x="483.73" y="224.8">な</tspan><tspan class="cls-121" x="501.46" y="224.8">ら</tspan><tspan class="cls-109" x="518.76" y="224.8">な</tspan><tspan class="cls-170" x="538.87" y="224.8">い</tspan><tspan x="560.27" y="224.8">。作</tspan><tspan class="cls-146" x="603.52" y="224.8">品</tspan><tspan class="cls-128" x="622.33" y="224.8">をど</tspan><tspan class="cls-152" x="656.07" y="224.8">う</tspan><tspan x="674.45" y="224.8">解</tspan><tspan class="cls-132" x="696.07" y="224.8">釈</tspan><tspan class="cls-99" x="714.23" y="224.8">し</tspan><tspan class="cls-136" x="733.7" y="224.8">、</tspan><tspan class="cls-146" x="751.64" y="224.8">ど</tspan><tspan class="cls-127" x="770.46" y="224.8">の</tspan><tspan class="cls-63" x="787.54" y="224.8">よ</tspan><tspan class="cls-78" x="802.68" y="224.8">う</tspan><tspan class="cls-161" x="818.25" y="224.8">な</tspan><tspan x="839" y="224.8">意</tspan><tspan class="cls-146" x="860.63" y="224.8">味</tspan><tspan class="cls-159" x="879.44" y="224.8">を</tspan><tspan class="cls-163" x="899.98" y="224.8">見</tspan><tspan class="cls-97" x="920.96" y="224.8">い</tspan><tspan class="cls-163" x="940.64" y="224.8">だ</tspan><tspan class="cls-159" x="961.61" y="224.8">す</tspan><tspan class="cls-113" x="982.15" y="224.8">か</tspan><tspan class="cls-170" x="1002.48" y="224.8">で</tspan><tspan x="1023.89" y="224.8">「生産者</tspan><tspan class="cls-113" x="1110.38" y="224.8">」</tspan><tspan class="cls-153" x="1130.71" y="224.8">に</tspan><tspan class="cls-133" x="1149.09" y="224.8">な</tspan><tspan class="cls-85" x="1167.25" y="224.8">る</tspan><tspan class="cls-64" x="1183.69" y="224.8">こ</tspan><tspan class="cls-134" x="1198.83" y="224.8">と</tspan><tspan class="cls-113" x="1216.77" y="224.8">が</tspan><tspan class="cls-132" x="1237.1" y="224.8">で</tspan><tspan class="cls-86" x="1255.26" y="224.8">き</tspan><tspan class="cls-76" x="1271.7" y="224.8">る</tspan><tspan class="cls-138" x="1287.27" y="224.8">とい</tspan><tspan class="cls-126" x="1322.73" y="224.8">う</tspan><tspan class="cls-169" x="1339.81" y="224.8">お</tspan><tspan class="cls-113" x="1361.22" y="224.8">話</tspan><tspan class="cls-136" x="1381.55" y="224.8">で</tspan><tspan class="cls-133" x="1399.49" y="224.8">し</tspan><tspan class="cls-162" x="1417.66" y="224.8">た</tspan><tspan class="cls-93" x="1438.63" y="224.8">。</tspan></tspan><tspan class="cls-14"><tspan x="0" y="256.91">大</tspan><tspan class="cls-113" x="21.62" y="256.91">学</tspan><tspan class="cls-170" x="41.95" y="256.91">で</tspan><tspan class="cls-146" x="63.36" y="256.91">何</tspan><tspan class="cls-159" x="82.17" y="256.91">を</tspan><tspan class="cls-113" x="102.71" y="256.91">学</tspan><tspan class="cls-61" x="123.04" y="256.91">び、</tspan><tspan class="cls-146" x="166.29" y="256.91">何</tspan><tspan class="cls-159" x="185.1" y="256.91">を</tspan><tspan class="cls-141" x="205.64" y="256.91">得</tspan><tspan class="cls-133" x="224.67" y="256.91">る</tspan><tspan class="cls-147" x="242.83" y="256.91">か</tspan><tspan class="cls-159" x="261.65" y="256.91">を</tspan><tspan class="cls-108" x="282.19" y="256.91">改</tspan><tspan class="cls-143" x="302.08" y="256.91">め</tspan><tspan class="cls-159" x="321.11" y="256.91">て</tspan><tspan x="341.66" y="256.91">意</tspan><tspan class="cls-132" x="363.28" y="256.91">識</tspan><tspan class="cls-99" x="381.44" y="256.91">し</tspan><tspan class="cls-113" x="400.9" y="256.91">、自</tspan><tspan class="cls-154" x="441.56" y="256.91">分</tspan><tspan x="462.75" y="256.91">が文学</tspan><tspan class="cls-113" x="527.62" y="256.91">部</tspan><tspan class="cls-169" x="547.95" y="256.91">で</tspan><tspan class="cls-161" x="569.35" y="256.91">学</tspan><tspan class="cls-149" x="590.11" y="256.91">ぶ</tspan><tspan class="cls-65" x="608.71" y="256.91">こ</tspan><tspan class="cls-126" x="623.85" y="256.91">と</tspan><tspan class="cls-158" x="640.93" y="256.91">に</tspan><tspan class="cls-132" x="661.47" y="256.91">対</tspan><tspan class="cls-72" x="679.64" y="256.91">し</tspan><tspan class="cls-104" x="695.64" y="256.91">て</tspan><tspan class="cls-115" x="714.88" y="256.91">自</tspan><tspan class="cls-146" x="735.21" y="256.91">信</tspan><tspan class="cls-158" x="754.02" y="256.91">を</tspan><tspan class="cls-161" x="774.56" y="256.91">持</tspan><tspan class="cls-134" x="795.32" y="256.91">つ</tspan><tspan class="cls-79" x="813.27" y="256.91">き</tspan><tspan class="cls-141" x="829.06" y="256.91">っ</tspan><tspan class="cls-97" x="848.09" y="256.91">か</tspan><tspan class="cls-102" x="867.76" y="256.91">け</tspan><tspan class="cls-153" x="887.01" y="256.91">に</tspan><tspan class="cls-129" x="905.39" y="256.91">な</tspan><tspan class="cls-80" x="922.25" y="256.91">り</tspan><tspan class="cls-68" x="937.61" y="256.91">ま</tspan><tspan class="cls-132" x="952.31" y="256.91">し</tspan><tspan class="cls-163" x="970.48" y="256.91">た</tspan><tspan class="cls-94" x="991.45" y="256.91">。</tspan></tspan><tspan class="cls-3"><tspan x="0" y="321.14">学生同</tspan><tspan class="cls-154" x="64.87" y="321.14">士</tspan><tspan class="cls-161" x="86.06" y="321.14">が</tspan><tspan class="cls-104" x="106.82" y="321.14">つ</tspan><tspan class="cls-115" x="126.07" y="321.14">な</tspan><tspan class="cls-140" x="146.39" y="321.14">が</tspan><tspan class="cls-67" x="164.12" y="321.14">り</tspan><tspan class="cls-161" x="178.83" y="321.14">を</tspan><tspan class="cls-113" x="199.59" y="321.14">持</tspan><tspan class="cls-136" x="219.91" y="321.14">て</tspan><tspan class="cls-87" x="237.86" y="321.14">る</tspan><tspan class="cls-76" x="254.3" y="321.14">よ</tspan><tspan class="cls-153" x="269.87" y="321.14">う</tspan><tspan class="cls-164" x="288.25" y="321.14">サ</tspan><tspan class="cls-141" x="309.22" y="321.14">ポ</tspan><tspan class="cls-75" x="328.25" y="321.14">ー</tspan><tspan class="cls-149" x="344.25" y="321.14">ト</tspan></tspan><tspan class="cls-14"><tspan class="cls-113" x="-1.3" y="353.25">日</tspan><tspan x="19.03" y="353.25">本</tspan><tspan class="cls-113" x="40.65" y="353.25">語日</tspan><tspan x="81.31" y="353.25">本文学専</tspan><tspan class="cls-95" x="167.8" y="353.25">攻</tspan><tspan class="cls-134" x="187.48" y="353.25">コ</tspan><tspan class="cls-117" x="205.43" y="353.25">ー</tspan><tspan class="cls-149" x="222.94" y="353.25">ス</tspan><tspan class="cls-113" x="241.54" y="353.25">で</tspan><tspan class="cls-162" x="261.86" y="353.25">は</tspan><tspan x="282.84" y="353.25">、学生同</tspan><tspan class="cls-154" x="369.33" y="353.25">士</tspan><tspan x="390.53" y="353.25">が</tspan><tspan class="cls-163" x="412.15" y="353.25">関</tspan><tspan class="cls-119" x="433.13" y="353.25">わ</tspan><tspan class="cls-84" x="450.64" y="353.25">り</tspan><tspan class="cls-159" x="465.56" y="353.25">を</tspan><tspan class="cls-141" x="486.1" y="353.25">持</tspan><tspan class="cls-148" x="505.13" y="353.25">ち</tspan><tspan class="cls-163" x="523.73" y="353.25">や</tspan><tspan class="cls-159" x="544.7" y="353.25">す</tspan><tspan class="cls-138" x="565.25" y="353.25">い</tspan><tspan class="cls-65" x="582.98" y="353.25">よ</tspan><tspan class="cls-120" x="598.12" y="353.25">う</tspan><tspan class="cls-161" x="615.63" y="353.25">、</tspan><tspan class="cls-75" x="636.39" y="353.25">オ</tspan><tspan class="cls-126" x="652.39" y="353.25">リ</tspan><tspan class="cls-136" x="669.47" y="353.25">エ</tspan><tspan class="cls-98" x="687.42" y="353.25">ン</tspan><tspan class="cls-145" x="706.88" y="353.25">テ</tspan><tspan class="cls-149" x="725.7" y="353.25">ー</tspan><tspan class="cls-74" x="744.29" y="353.25">シ</tspan><tspan class="cls-88" x="760.3" y="353.25">ョ</tspan><tspan class="cls-146" x="776.94" y="353.25">ン</tspan><tspan class="cls-91" x="795.76" y="353.25">キ</tspan><tspan class="cls-121" x="812.41" y="353.25">ャ</tspan><tspan class="cls-149" x="829.71" y="353.25">ン</tspan><tspan class="cls-136" x="848.3" y="353.25">プ</tspan><tspan class="cls-140" x="866.25" y="353.25">とい</tspan><tspan class="cls-150" x="901.71" y="353.25">う</tspan><tspan x="920.1" y="353.25">行</tspan><tspan class="cls-154" x="941.72" y="353.25">事</tspan><tspan class="cls-114" x="962.91" y="353.25">が</tspan><tspan class="cls-91" x="983.24" y="353.25">あ</tspan><tspan class="cls-81" x="999.89" y="353.25">り</tspan><tspan class="cls-68" x="1015.24" y="353.25">ま</tspan><tspan class="cls-132" x="1029.94" y="353.25">し</tspan><tspan class="cls-162" x="1048.11" y="353.25">た</tspan><tspan x="1069.08" y="353.25">。入学直</tspan><tspan class="cls-113" x="1155.58" y="353.25">後</tspan><tspan class="cls-158" x="1175.91" y="353.25">の</tspan><tspan x="1196.45" y="353.25">不</tspan><tspan class="cls-98" x="1218.07" y="353.25">安</tspan><tspan class="cls-161" x="1237.53" y="353.25">な</tspan><tspan x="1258.29" y="353.25">気</tspan><tspan class="cls-141" x="1279.92" y="353.25">持</tspan><tspan class="cls-105" x="1298.95" y="353.25">ち</tspan><tspan x="1318.19" y="353.25">が解</tspan><tspan class="cls-104" x="1361.44" y="353.25">消</tspan><tspan class="cls-137" x="1380.68" y="353.25">さ</tspan><tspan x="1398.63" y="353.25">れ</tspan><tspan class="cls-136" x="1420.25" y="353.25">、</tspan><tspan class="cls-129" x="1438.2" y="353.25">と</tspan><tspan class="cls-131" x="1455.07" y="353.25">て</tspan><tspan class="cls-149" x="1473.23" y="353.25">も</tspan><tspan x="1491.83" y="353.25">思</tspan></tspan><tspan class="cls-14"><tspan class="cls-170" x="-.65" y="385.36">い</tspan><tspan class="cls-113" x="20.76" y="385.36">出</tspan><tspan class="cls-157" x="41.08" y="385.36">に</tspan><tspan class="cls-104" x="61.63" y="385.36">残</tspan><tspan class="cls-133" x="80.87" y="385.36">っ</tspan><tspan class="cls-108" x="99.04" y="385.36">て</tspan><tspan class="cls-131" x="118.93" y="385.36">い</tspan><tspan class="cls-136" x="137.1" y="385.36">ま</tspan><tspan class="cls-140" x="155.04" y="385.36">す</tspan><tspan class="cls-94" x="172.77" y="385.36">。</tspan></tspan><tspan class="cls-14"><tspan class="cls-136" x="-1.3" y="417.48">の</tspan><tspan class="cls-152" x="16.65" y="417.48">ち</tspan><tspan class="cls-103" x="35.03" y="417.48">に</tspan><tspan class="cls-113" x="54.28" y="417.48">自</tspan><tspan class="cls-154" x="74.6" y="417.48">分</tspan><tspan x="95.79" y="417.48">が先</tspan><tspan class="cls-136" x="139.04" y="417.48">輩</tspan><tspan class="cls-83" x="156.99" y="417.48">と</tspan><tspan class="cls-72" x="171.91" y="417.48">し</tspan><tspan class="cls-146" x="187.91" y="417.48">て</tspan><tspan class="cls-90" x="206.72" y="417.48">キ</tspan><tspan class="cls-123" x="223.37" y="417.48">ャ</tspan><tspan class="cls-148" x="240.67" y="417.48">ン</tspan><tspan class="cls-146" x="259.27" y="417.48">プ</tspan><tspan class="cls-158" x="278.08" y="417.48">を</tspan><tspan x="298.63" y="417.48">企</tspan><tspan class="cls-132" x="320.25" y="417.48">画し</tspan><tspan class="cls-126" x="356.58" y="417.48">た</tspan><tspan class="cls-91" x="373.66" y="417.48">り</tspan><tspan class="cls-95" x="390.31" y="417.48">、</tspan><tspan class="cls-117" x="409.99" y="417.48">コ</tspan><tspan class="cls-144" x="427.5" y="417.48">ロ</tspan><tspan class="cls-158" x="446.32" y="417.48">ナ</tspan><tspan class="cls-113" x="466.86" y="417.48">禍</tspan><tspan class="cls-169" x="487.18" y="417.48">で</tspan><tspan x="508.59" y="417.48">開</tspan><tspan class="cls-154" x="530.22" y="417.48">催</tspan><tspan x="551.41" y="417.48">が</tspan><tspan class="cls-132" x="573.03" y="417.48">難</tspan><tspan class="cls-70" x="591.2" y="417.48">し</tspan><tspan class="cls-80" x="605.04" y="417.48">く</tspan><tspan class="cls-129" x="620.39" y="417.48">な</tspan><tspan class="cls-150" x="637.25" y="417.48">っ</tspan><tspan class="cls-121" x="655.63" y="417.48">た</tspan><tspan class="cls-63" x="672.93" y="417.48">と</tspan><tspan class="cls-136" x="688.07" y="417.48">き</tspan><tspan class="cls-163" x="706.02" y="417.48">は</tspan><tspan class="cls-113" x="726.99" y="417.48">「日</tspan><tspan class="cls-95" x="767.65" y="417.48">文</tspan><tspan class="cls-124" x="787.32" y="417.48">ラ</tspan><tspan class="cls-139" x="804.41" y="417.48">ウ</tspan><tspan class="cls-142" x="822.14" y="417.48">ン</tspan><tspan class="cls-162" x="841.17" y="417.48">ジ</tspan><tspan class="cls-136" x="862.14" y="417.48">」</tspan><tspan class="cls-139" x="880.09" y="417.48">とい</tspan><tspan class="cls-119" x="915.55" y="417.48">う</tspan><tspan class="cls-134" x="933.07" y="417.48">オ</tspan><tspan class="cls-148" x="951.02" y="417.48">ン</tspan><tspan class="cls-71" x="969.61" y="417.48">ラ</tspan><tspan class="cls-79" x="985.83" y="417.48">イ</tspan><tspan class="cls-103" x="1001.62" y="417.48">ン</tspan><tspan class="cls-158" x="1020.86" y="417.48">の</tspan><tspan x="1041.4" y="417.48">企</tspan><tspan class="cls-146" x="1063.03" y="417.48">画</tspan><tspan class="cls-159" x="1081.84" y="417.48">を</tspan><tspan class="cls-95" x="1102.38" y="417.48">考</tspan><tspan class="cls-145" x="1122.06" y="417.48">え</tspan><tspan class="cls-127" x="1140.87" y="417.48">た</tspan><tspan class="cls-69" x="1157.96" y="417.48">り</tspan><tspan class="cls-150" x="1172.23" y="417.48">と</tspan><tspan class="cls-136" x="1190.61" y="417.48">、</tspan><tspan class="cls-125" x="1208.56" y="417.48">と</tspan><tspan class="cls-106" x="1225.64" y="417.48">に</tspan><tspan class="cls-119" x="1245.53" y="417.48">かく</tspan><tspan x="1280.56" y="417.48">学生同</tspan><tspan class="cls-154" x="1345.44" y="417.48">士</tspan><tspan class="cls-161" x="1366.63" y="417.48">が</tspan><tspan class="cls-141" x="1387.39" y="417.48">つ</tspan><tspan class="cls-115" x="1406.42" y="417.48">な</tspan><tspan class="cls-140" x="1426.74" y="417.48">が</tspan><tspan class="cls-82" x="1444.47" y="417.48">り</tspan><tspan class="cls-159" x="1459.39" y="417.48">を</tspan><tspan x="1479.94" y="417.48">持</tspan></tspan><tspan class="cls-14"><tspan class="cls-121" x="-1.51" y="449.59">て</tspan><tspan class="cls-92" x="15.79" y="449.59">る</tspan><tspan class="cls-63" x="32" y="449.59">よ</tspan><tspan class="cls-119" x="47.14" y="449.59">う</tspan><tspan x="64.66" y="449.59">、学</tspan><tspan class="cls-158" x="107.9" y="449.59">生</tspan><tspan class="cls-170" x="128.45" y="449.59">や</tspan><tspan x="149.85" y="449.59">教職員</tspan><tspan class="cls-113" x="214.72" y="449.59">み</tspan><tspan class="cls-143" x="235.05" y="449.59">ん</tspan><tspan class="cls-100" x="254.08" y="449.59">な</tspan><tspan class="cls-156" x="273.54" y="449.59">で</tspan><tspan class="cls-163" x="294.73" y="449.59">サ</tspan><tspan class="cls-145" x="315.71" y="449.59">ポ</tspan><tspan class="cls-78" x="334.52" y="449.59">ー</tspan><tspan class="cls-83" x="350.09" y="449.59">ト</tspan><tspan class="cls-72" x="365.01" y="449.59">し</tspan><tspan class="cls-108" x="381.01" y="449.59">て</tspan><tspan class="cls-132" x="400.91" y="449.59">い</tspan><tspan class="cls-68" x="419.07" y="449.59">ま</tspan><tspan class="cls-133" x="433.77" y="449.59">し</tspan><tspan class="cls-165" x="451.94" y="449.59">た</tspan><tspan class="cls-93" x="472.91" y="449.59">。</tspan></tspan><tspan class="cls-14"><tspan x="0" y="513.82">大</tspan><tspan class="cls-113" x="21.62" y="513.82">学</tspan><tspan class="cls-170" x="41.95" y="513.82">で</tspan><tspan class="cls-113" x="63.36" y="513.82">学</tspan><tspan class="cls-110" x="83.68" y="513.82">ん</tspan><tspan class="cls-168" x="103.8" y="513.82">だ</tspan><tspan x="125.2" y="513.82">「文</tspan><tspan class="cls-113" x="168.45" y="513.82">学</tspan><tspan class="cls-158" x="188.78" y="513.82">の</tspan><tspan x="209.32" y="513.82">魅力</tspan><tspan class="cls-146" x="252.57" y="513.82">」</tspan><tspan class="cls-158" x="271.38" y="513.82">を</tspan><tspan x="291.92" y="513.82">中学</tspan><tspan class="cls-113" x="335.17" y="513.82">生</tspan><tspan class="cls-157" x="355.5" y="513.82">に</tspan><tspan class="cls-95" x="376.04" y="513.82">伝</tspan><tspan class="cls-144" x="395.72" y="513.82">え</tspan><tspan class="cls-115" x="414.53" y="513.82">た</tspan><tspan class="cls-170" x="434.85" y="513.82">い</tspan></tspan><tspan class="cls-14"><tspan x="0" y="545.93">教</tspan><tspan class="cls-136" x="21.62" y="545.93">員</tspan><tspan class="cls-83" x="39.57" y="545.93">と</tspan><tspan class="cls-72" x="54.49" y="545.93">し</tspan><tspan class="cls-104" x="70.49" y="545.93">て</tspan><tspan class="cls-152" x="89.74" y="545.93">日</tspan><tspan class="cls-119" x="108.12" y="545.93">々</tspan><tspan class="cls-157" x="125.63" y="545.93">の</tspan><tspan x="146.18" y="545.93">仕</tspan><tspan class="cls-113" x="167.8" y="545.93">事</tspan><tspan class="cls-158" x="188.13" y="545.93">に</tspan><tspan class="cls-163" x="208.67" y="545.93">追</tspan><tspan class="cls-158" x="229.65" y="545.93">わ</tspan><tspan class="cls-141" x="250.19" y="545.93">れ</tspan><tspan class="cls-99" x="269.22" y="545.93">る</tspan><tspan class="cls-113" x="288.68" y="545.93">毎</tspan><tspan class="cls-143" x="309" y="545.93">日</tspan><tspan class="cls-162" x="328.03" y="545.93">で</tspan><tspan class="cls-161" x="349.01" y="545.93">す</tspan><tspan class="cls-163" x="369.77" y="545.93">が</tspan><tspan x="390.74" y="545.93">、</tspan><tspan class="cls-132" x="412.37" y="545.93">少</tspan><tspan class="cls-141" x="430.53" y="545.93">し</tspan><tspan class="cls-159" x="449.56" y="545.93">ず</tspan><tspan class="cls-107" x="470.1" y="545.93">つ</tspan><tspan class="cls-116" x="490" y="545.93">自</tspan><tspan class="cls-98" x="510.32" y="545.93">分</tspan><tspan class="cls-129" x="529.79" y="545.93">な</tspan><tspan class="cls-90" x="546.65" y="545.93">り</tspan><tspan class="cls-112" x="563.3" y="545.93">のル</tspan><tspan class="cls-141" x="603.52" y="545.93">ー</tspan><tspan class="cls-70" x="622.55" y="545.93">テ</tspan><tspan class="cls-74" x="636.39" y="545.93">ィ</tspan><tspan class="cls-109" x="652.39" y="545.93">ン</tspan><tspan x="672.5" y="545.93">が確</tspan><tspan class="cls-113" x="715.75" y="545.93">立</tspan><tspan class="cls-132" x="736.08" y="545.93">で</tspan><tspan class="cls-139" x="754.24" y="545.93">き</tspan><tspan class="cls-136" x="771.97" y="545.93">た</tspan><tspan class="cls-98" x="789.92" y="545.93">ら</tspan><tspan x="809.38" y="545.93">、大</tspan><tspan class="cls-113" x="852.63" y="545.93">学</tspan><tspan class="cls-170" x="872.95" y="545.93">で</tspan><tspan class="cls-113" x="894.36" y="545.93">学</tspan><tspan class="cls-110" x="914.69" y="545.93">ん</tspan><tspan class="cls-168" x="934.8" y="545.93">だ</tspan><tspan x="956.21" y="545.93">「文</tspan><tspan class="cls-113" x="999.45" y="545.93">学</tspan><tspan class="cls-158" x="1019.78" y="545.93">の</tspan><tspan x="1040.32" y="545.93">魅力</tspan><tspan class="cls-146" x="1083.57" y="545.93">」</tspan><tspan class="cls-158" x="1102.38" y="545.93">を</tspan><tspan x="1122.93" y="545.93">中学</tspan><tspan class="cls-113" x="1166.17" y="545.93">生</tspan><tspan class="cls-131" x="1186.5" y="545.93">に</tspan><tspan class="cls-149" x="1204.67" y="545.93">も</tspan><tspan class="cls-95" x="1223.26" y="545.93">伝</tspan><tspan class="cls-90" x="1242.94" y="545.93">え</tspan><tspan class="cls-92" x="1259.59" y="545.93">る</tspan><tspan class="cls-63" x="1275.81" y="545.93">よ</tspan><tspan class="cls-78" x="1290.94" y="545.93">う</tspan><tspan class="cls-160" x="1306.51" y="545.93">な</tspan><tspan x="1327.27" y="545.93">授</tspan><tspan class="cls-146" x="1348.9" y="545.93">業</tspan><tspan class="cls-126" x="1367.71" y="545.93">を</tspan><tspan class="cls-132" x="1384.79" y="545.93">し</tspan><tspan class="cls-113" x="1402.95" y="545.93">た</tspan><tspan class="cls-89" x="1423.28" y="545.93">い</tspan><tspan class="cls-151" x="1439.93" y="545.93">と</tspan><tspan class="cls-95" x="1458.31" y="545.93">考</tspan><tspan class="cls-109" x="1477.99" y="545.93">え</tspan></tspan><tspan class="cls-14"><tspan class="cls-108" x="-1.51" y="578.05">て</tspan><tspan class="cls-131" x="18.38" y="578.05">い</tspan><tspan class="cls-134" x="36.55" y="578.05">ま</tspan><tspan class="cls-139" x="54.49" y="578.05">す</tspan><tspan class="cls-94" x="72.22" y="578.05">。</tspan></tspan><tspan class="cls-14"><tspan x="0" y="610.16">立正大</tspan><tspan class="cls-158" x="64.87" y="610.16">学</tspan><tspan class="cls-163" x="85.41" y="610.16">は</tspan><tspan x="106.39" y="610.16">、学生同士、学</tspan><tspan class="cls-136" x="257.76" y="610.16">生</tspan><tspan class="cls-152" x="275.7" y="610.16">と</tspan><tspan x="294.08" y="610.16">教職</tspan><tspan class="cls-136" x="337.33" y="610.16">員</tspan><tspan class="cls-140" x="355.28" y="610.16">と</tspan><tspan class="cls-141" x="373.01" y="610.16">い</tspan><tspan class="cls-150" x="392.04" y="610.16">っ</tspan><tspan class="cls-163" x="410.42" y="610.16">た</tspan><tspan class="cls-136" x="431.39" y="610.16">人</tspan><tspan class="cls-152" x="449.34" y="610.16">と</tspan><tspan class="cls-113" x="467.72" y="610.16">人</tspan><tspan class="cls-95" x="488.05" y="610.16">の</tspan><tspan class="cls-141" x="507.73" y="610.16">つ</tspan><tspan class="cls-115" x="526.76" y="610.16">な</tspan><tspan class="cls-139" x="547.08" y="610.16">が</tspan><tspan class="cls-83" x="564.81" y="610.16">り</tspan><tspan class="cls-158" x="579.73" y="610.16">を</tspan><tspan x="600.28" y="610.16">大</tspan><tspan class="cls-113" x="621.9" y="610.16">切</tspan><tspan class="cls-127" x="642.23" y="610.16">に</tspan><tspan class="cls-72" x="659.31" y="610.16">し</tspan><tspan class="cls-108" x="675.31" y="610.16">て</tspan><tspan class="cls-146" x="695.2" y="610.16">い</tspan><tspan class="cls-77" x="714.02" y="610.16">る</tspan><tspan class="cls-151" x="729.59" y="610.16">と</tspan><tspan class="cls-163" x="747.97" y="610.16">思</tspan><tspan class="cls-132" x="768.94" y="610.16">い</tspan><tspan class="cls-136" x="787.11" y="610.16">ま</tspan><tspan class="cls-138" x="805.05" y="610.16">す</tspan><tspan x="822.79" y="610.16">。学</tspan><tspan class="cls-158" x="866.03" y="610.16">生</tspan><tspan class="cls-163" x="886.58" y="610.16">は</tspan><tspan x="907.55" y="610.16">積極</tspan><tspan class="cls-113" x="950.8" y="610.16">的</tspan><tspan class="cls-106" x="971.13" y="610.16">に</tspan><tspan class="cls-98" x="991.02" y="610.16">い</tspan><tspan class="cls-96" x="1010.48" y="610.16">ろ</tspan><tspan class="cls-98" x="1030.16" y="610.16">い</tspan><tspan class="cls-132" x="1049.62" y="610.16">ろ</tspan><tspan class="cls-139" x="1067.79" y="610.16">な</tspan><tspan class="cls-63" x="1085.52" y="610.16">こ</tspan><tspan class="cls-126" x="1100.65" y="610.16">と</tspan><tspan class="cls-158" x="1117.74" y="610.16">に</tspan><tspan class="cls-139" x="1138.28" y="610.16">取</tspan><tspan class="cls-137" x="1156.01" y="610.16">り</tspan><tspan class="cls-113" x="1173.96" y="610.16">組</tspan><tspan class="cls-95" x="1194.28" y="610.16">ん</tspan><tspan class="cls-115" x="1213.96" y="610.16">で</tspan><tspan x="1234.29" y="610.16">、</tspan><tspan class="cls-139" x="1255.91" y="610.16">周</tspan><tspan class="cls-90" x="1273.64" y="610.16">り</tspan><tspan class="cls-158" x="1290.29" y="610.16">の</tspan><tspan class="cls-113" x="1310.84" y="610.16">人</tspan><tspan class="cls-150" x="1331.16" y="610.16">た</tspan><tspan class="cls-72" x="1349.54" y="610.16">ち</tspan><tspan class="cls-152" x="1365.55" y="610.16">と</tspan><tspan x="1383.93" y="610.16">一</tspan><tspan class="cls-113" x="1405.55" y="610.16">緒</tspan><tspan class="cls-158" x="1425.88" y="610.16">に</tspan><tspan class="cls-132" x="1446.42" y="610.16">楽</tspan><tspan class="cls-127" x="1464.58" y="610.16">し</tspan><tspan class="cls-170" x="1481.67" y="610.16">い</tspan></tspan><tspan class="cls-14"><tspan x="0" y="642.27">大学生</tspan><tspan class="cls-146" x="64.87" y="642.27">活</tspan><tspan class="cls-158" x="83.68" y="642.27">を</tspan><tspan class="cls-104" x="104.23" y="642.27">送</tspan><tspan class="cls-133" x="123.47" y="642.27">っ</tspan><tspan class="cls-97" x="141.64" y="642.27">て</tspan><tspan class="cls-119" x="161.31" y="642.27">ほ</tspan><tspan class="cls-126" x="178.83" y="642.27">し</tspan><tspan class="cls-91" x="195.91" y="642.27">い</tspan><tspan class="cls-151" x="212.56" y="642.27">と</tspan><tspan class="cls-163" x="230.94" y="642.27">思</tspan><tspan class="cls-131" x="251.92" y="642.27">い</tspan><tspan class="cls-136" x="270.08" y="642.27">ま</tspan><tspan class="cls-139" x="288.03" y="642.27">す</tspan><tspan class="cls-94" x="305.76" y="642.27">。</tspan></tspan></text>
+    </g>
+  </g>
+</svg>
