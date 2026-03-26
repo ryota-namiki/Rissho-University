@@ -16,6 +16,13 @@
 	--ru-shadow: 0 4px 14px rgba(56, 111, 107, 0.12);
 }
 
+/* ページ内アンカー（MV→学生の声・ヘッダーナビ等）をスムーズにスクロール */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
 .ru-pamphlet {
 	background: var(--ru-cream);
 	color: var(--ru-text);
@@ -145,6 +152,16 @@
 	box-sizing: border-box;
 }
 
+a.ru-hero__layer {
+	text-decoration: none;
+	color: inherit;
+}
+
+a.ru-hero__layer:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 4px;
+}
+
 .ru-hero__layer img {
 	display: block;
 	width: 100%;
@@ -154,8 +171,8 @@
 }
 
 /*
- * MV 人物イラスト（インタラクティブレイヤー）— ホバーで右に 15° 傾ける
- * 親 div のインライン rotate と競合させないよう img に transform を付与
+ * MV 人物イラスト（インタラクティブレイヤー）— ホバーで右に 5° 傾ける・#students-voice へジャンプ
+ * 親レイヤーのインライン rotate と競合させないよう img に transform を付与
  */
 .ru-hero__layer[data-node-id='2703:8401'],
 .ru-hero__layer[data-node-id='2703:8564'],
@@ -166,21 +183,26 @@
 	cursor: pointer;
 }
 
+/* 2703:9187（f90f96…d8b.svg）：常に手前。他人物ホバー時はそちらをより手前に（25） */
+.ru-hero__layer[data-node-id='2703:9187'] {
+	z-index: 20;
+}
+
 .ru-hero__layer[data-node-id='2703:8401'] img,
 .ru-hero__layer[data-node-id='2703:8564'] img,
 .ru-hero__layer[data-node-id='2703:8730'] img,
 .ru-hero__layer[data-node-id='2703:9187'] img,
 .ru-hero__layer[data-node-id='2703:8482'] img {
 	transform-origin: center bottom;
-	transition: transform 0.25s ease;
+	transition: transform 0.5s ease;
 }
 
+/* 2703:8730（19f4fd34…118.svg）はホバーで手前に出さない */
 .ru-hero__layer[data-node-id='2703:8401']:hover,
 .ru-hero__layer[data-node-id='2703:8564']:hover,
-.ru-hero__layer[data-node-id='2703:8730']:hover,
 .ru-hero__layer[data-node-id='2703:9187']:hover,
 .ru-hero__layer[data-node-id='2703:8482']:hover {
-	z-index: 20;
+	z-index: 25;
 }
 
 .ru-hero__layer[data-node-id='2703:8401']:hover img,
@@ -188,7 +210,7 @@
 .ru-hero__layer[data-node-id='2703:8730']:hover img,
 .ru-hero__layer[data-node-id='2703:9187']:hover img,
 .ru-hero__layer[data-node-id='2703:8482']:hover img {
-	transform: rotate(15deg);
+	transform: rotate(5deg);
 }
 
 /* min-height は aspect-ratio と矛盾しレイヤー％座標を崩すため付けない */
@@ -441,6 +463,39 @@
 	overflow: hidden;
 }
 
+/* 静止／ホバー画像のクロスフェード（0.5s） */
+.ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--rest,
+.ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--hover {
+	transition: opacity 0.5s ease;
+}
+
+.ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--hover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.ru-sv-card:hover .ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--rest,
+.ru-sv-card:focus-within .ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--rest {
+	opacity: 0;
+}
+
+.ru-sv-card:hover .ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--hover,
+.ru-sv-card:focus-within .ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--hover {
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--rest,
+	.ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--hover {
+		transition-duration: 0.01ms;
+	}
+}
+
 .ru-sv-card__photo {
 	display: block;
 	width: 100%;
@@ -658,17 +713,33 @@
 	align-content: center;
 }
 
-/* 卒業生コメント（voice-text01 等）：行の直下、高さは SVG の縦横比に追従 */
+/* 卒業生コメント（voice-text01 等）：行の直下、0.3s で高さ＋不透明度を開閉 */
 .ru-grad__voice-text {
+	--ru-grad-voice-dur: 0.3s;
+	display: grid;
+	grid-template-rows: 0fr;
 	width: 100%;
 	max-width: calc(1606.6954345703125 / var(--ru-grad-board) * 100 * 1cqw);
 	margin-inline: auto;
-	margin-top: clamp(12px, calc(24 / var(--ru-grad-board) * 100 * 1cqw), 24px);
+	margin-top: 0;
+	opacity: 0;
+	overflow: hidden;
 	box-sizing: border-box;
+	transition:
+		grid-template-rows var(--ru-grad-voice-dur) ease,
+		opacity var(--ru-grad-voice-dur) ease,
+		margin-top var(--ru-grad-voice-dur) ease;
 }
 
-.ru-grad__voice-text[hidden] {
-	display: none !important;
+.ru-grad__voice-text.is-expanded {
+	grid-template-rows: 1fr;
+	opacity: 1;
+	margin-top: clamp(12px, calc(24 / var(--ru-grad-board) * 100 * 1cqw), 24px);
+}
+
+.ru-grad__voice-text-inner {
+	min-height: 0;
+	overflow: hidden;
 }
 
 .ru-grad__voice-text-img {
@@ -677,6 +748,12 @@
 	height: auto;
 	max-width: 100%;
 	vertical-align: top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ru-grad__voice-text {
+		--ru-grad-voice-dur: 0.01ms;
+	}
 }
 
 .ru-grad__col {
@@ -955,8 +1032,7 @@ body.ru-modal-open {
  * 767px 以下: SNS は 2×2→1 列へ（横一列は解除）。 */
 .ru-footer-pamphlet {
 	--ru-footer-board: 1920;
-	padding: min(48px, calc(48 * 100vw / var(--ru-footer-board))) 0
-		min(40px, calc(40 * 100vw / var(--ru-footer-board)));
+	padding: min(48px, calc(48 * 100vw / var(--ru-footer-board))) 0 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1015,7 +1091,7 @@ body.ru-modal-open {
 @media (max-width: 767px) {
 	/* グリッド時は等比 vw をやめ、タップしやすい余白に */
 	.ru-footer-pamphlet {
-		padding: 28px 0 24px;
+		padding: 28px 0 0;
 		gap: 24px;
 	}
 
@@ -1101,12 +1177,4 @@ body.ru-modal-open {
 		width: min(200px, 70vw);
 		height: min(175px, calc(175 * min(200px, 70vw) / 180));
 	}
-}
-
-.ru-footer-pamphlet__copy {
-	font-size: 13px;
-	color: var(--ru-muted);
-	margin: clamp(8px, 2vw, 16px) 0 0;
-	width: 100%;
-	max-width: 960px;
 }

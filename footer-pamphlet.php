@@ -63,8 +63,6 @@ $footer_title = rissho_footer_2752_17145_heading_title_file();
 			<?php endforeach; ?>
 		</div>
 	</div>
-
-	<p class="ru-footer-pamphlet__copy"><?php esc_html_e( '© 2026立正大学文学部デジタルパンフレット', 'rissho-university' ); ?></p>
 </footer>
 
 <?php wp_footer(); ?>

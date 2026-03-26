@@ -45,6 +45,8 @@ $placeholder = rissho_university_img_url( 'avatar-placeholder.svg' );
 
 $mv_w = 1604;
 $mv_h = 830;
+/* MV 人物イラスト 5 体：クリックで #students-voice へ */
+$mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187', '2703:8482' );
 ?>
 
 <section class="ru-hero" data-figma-node="2704:9421" aria-labelledby="ru-hero-heading">
@@ -68,16 +70,26 @@ $mv_h = 830;
 			if ( isset( $layer['rot'] ) ) {
 				$style .= sprintf( 'transform:rotate(%.4fdeg);transform-origin:center center;', $layer['rot'] );
 			}
-			$is_title = ( '2703:9418' === $layer['node'] );
+			$is_title     = ( '2703:9418' === $layer['node'] );
+			$is_sv_anchor = in_array( $layer['node'], $mv_sv_anchor_nodes, true );
+			$layer_tag    = $is_sv_anchor ? 'a' : 'div';
 			?>
-			<div class="ru-hero__layer" style="<?php echo esc_attr( $style ); ?>" data-node-id="<?php echo esc_attr( $layer['node'] ); ?>">
+			<<?php echo esc_attr( $layer_tag ); ?>
+				class="ru-hero__layer"
+				style="<?php echo esc_attr( $style ); ?>"
+				data-node-id="<?php echo esc_attr( $layer['node'] ); ?>"
+				<?php if ( $is_sv_anchor ) : ?>
+				href="#students-voice"
+				aria-label="<?php echo esc_attr__( '学生の声セクションへ移動', 'rissho-university' ); ?>"
+				<?php endif; ?>
+			>
 				<img
 					src="<?php echo esc_url( rissho_university_img_url( $layer['file'] ) ); ?>"
 					alt="<?php echo $is_title ? esc_attr( __( 'ブンガク', 'rissho-university' ) ) : ''; ?>"
 					loading="<?php echo $is_title ? 'eager' : 'lazy'; ?>"
 					decoding="async"
 				>
-			</div>
+			</<?php echo esc_attr( $layer_tag ); ?>>
 		<?php endforeach; ?>
 	</div>
 </section>
@@ -194,20 +206,27 @@ $mv_h = 830;
 						<?php echo esc_html( $row['course'] ); ?>
 						<?php esc_html_e( '（インタビュー動画・YouTubeが別タブで開きます）', 'rissho-university' ); ?>
 					</span>
-					<span class="ru-sv-card__photo-wrap" aria-hidden="true">
+					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
 						<img
-							class="ru-sv-card__photo"
+							class="ru-sv-card__photo ru-sv-card__photo--rest"
 							src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
-							<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
-							data-src-rest="<?php echo esc_attr( rissho_university_img_url( $meta['photo'] ) ); ?>"
-							data-src-hover="<?php echo esc_attr( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
-							<?php endif; ?>
 							alt=""
 							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
 							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
 							loading="lazy"
 							decoding="async"
 						>
+						<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--hover"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php endif; ?>
 					</span>
 				</a>
 			</div>
@@ -238,20 +257,27 @@ $mv_h = 830;
 						<?php echo esc_html( $row['course'] ); ?>
 						<?php esc_html_e( '（インタビュー動画・YouTubeが別タブで開きます）', 'rissho-university' ); ?>
 					</span>
-					<span class="ru-sv-card__photo-wrap" aria-hidden="true">
+					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
 						<img
-							class="ru-sv-card__photo"
+							class="ru-sv-card__photo ru-sv-card__photo--rest"
 							src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
-							<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
-							data-src-rest="<?php echo esc_attr( rissho_university_img_url( $meta['photo'] ) ); ?>"
-							data-src-hover="<?php echo esc_attr( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
-							<?php endif; ?>
 							alt=""
 							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
 							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
 							loading="lazy"
 							decoding="async"
 						>
+						<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--hover"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php endif; ?>
 					</span>
 				</a>
 			</div>
@@ -273,20 +299,27 @@ $mv_h = 830;
 						<?php echo esc_html( $row['course'] ); ?>
 						<?php esc_html_e( '（インタビュー動画・YouTubeが別タブで開きます）', 'rissho-university' ); ?>
 					</span>
-					<span class="ru-sv-card__photo-wrap" aria-hidden="true">
+					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
 						<img
-							class="ru-sv-card__photo"
+							class="ru-sv-card__photo ru-sv-card__photo--rest"
 							src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
-							<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
-							data-src-rest="<?php echo esc_attr( rissho_university_img_url( $meta['photo'] ) ); ?>"
-							data-src-hover="<?php echo esc_attr( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
-							<?php endif; ?>
 							alt=""
 							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
 							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
 							loading="lazy"
 							decoding="async"
 						>
+						<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--hover"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php endif; ?>
 					</span>
 				</a>
 			</div>
@@ -435,8 +468,10 @@ $mv_h = 830;
 			</div>
 		</div>
 		</div>
-		<div id="ru-grad-voice-text" class="ru-grad__voice-text" hidden>
-			<img class="ru-grad__voice-text-img" src="" alt="<?php echo esc_attr__( '卒業生のコメント', 'rissho-university' ); ?>" decoding="async">
+		<div id="ru-grad-voice-text" class="ru-grad__voice-text" aria-hidden="true">
+			<div class="ru-grad__voice-text-inner">
+				<img class="ru-grad__voice-text-img" src="" alt="<?php echo esc_attr__( '卒業生のコメント', 'rissho-university' ); ?>" decoding="async">
+			</div>
 		</div>
 	</div>
 </section>

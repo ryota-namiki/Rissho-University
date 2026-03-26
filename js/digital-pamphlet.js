@@ -1,65 +1,57 @@
 /**
- * デジタルパンフレット：学生ボイス写真のホバー差し替え・卒業生コメント表示・モーダル開閉
+ * デジタルパンフレット：卒業生コメント表示・モーダル開閉（学生ボイス写真のホバーは CSS クロスフェード）
  */
 (function () {
 	'use strict';
-
-	/* .ru-sv-card__photo の src を data-src-hover / data-src-rest で切り替え */
-	document.querySelectorAll('.ru-sv-card__photo[data-src-hover][data-src-rest]').forEach(function (img) {
-		var rest = img.getAttribute('data-src-rest');
-		var hover = img.getAttribute('data-src-hover');
-		if (!rest || !hover) {
-			return;
-		}
-		var card = img.closest('.ru-sv-card');
-		if (!card) {
-			return;
-		}
-
-		function showHover() {
-			img.setAttribute('src', hover);
-		}
-
-		function showRest() {
-			img.setAttribute('src', rest);
-		}
-
-		card.addEventListener('mouseenter', showHover);
-		card.addEventListener('mouseleave', showRest);
-		card.addEventListener('focusin', showHover);
-		card.addEventListener('focusout', function (e) {
-			if (!card.contains(e.relatedTarget)) {
-				showRest();
-			}
-		});
-	});
 
 	/* 卒業生：voice-text SVG を .ru-grad__row 下にトグル表示 */
 	var voicePanel = document.getElementById('ru-grad-voice-text');
 	var voiceImg = voicePanel ? voicePanel.querySelector('.ru-grad__voice-text-img') : null;
 	var voiceButtons = document.querySelectorAll('[data-ru-grad-voice-text]');
+	var voiceCloseCleanupTimer = null;
 
 	function gradVoiceIsOpen() {
-		return voicePanel && !voicePanel.hasAttribute('hidden');
+		return voicePanel && voicePanel.classList.contains('is-expanded');
+	}
+
+	function gradVoiceCloseDelayMs() {
+		return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 50 : 330;
 	}
 
 	function closeGradVoicePanel() {
 		if (!voicePanel || !voiceImg) {
 			return;
 		}
-		voicePanel.setAttribute('hidden', '');
-		voiceImg.removeAttribute('src');
+		if (!voicePanel.classList.contains('is-expanded')) {
+			return;
+		}
+		clearTimeout(voiceCloseCleanupTimer);
+		voicePanel.classList.remove('is-expanded');
+		voicePanel.setAttribute('aria-hidden', 'true');
 		voiceButtons.forEach(function (b) {
 			b.setAttribute('aria-expanded', 'false');
 		});
+		voiceCloseCleanupTimer = setTimeout(function () {
+			voiceCloseCleanupTimer = null;
+			if (!voicePanel.classList.contains('is-expanded')) {
+				voiceImg.removeAttribute('src');
+			}
+		}, gradVoiceCloseDelayMs());
 	}
 
 	function openGradVoicePanel(url) {
 		if (!voicePanel || !voiceImg || !url) {
 			return;
 		}
+		clearTimeout(voiceCloseCleanupTimer);
+		voiceCloseCleanupTimer = null;
 		voiceImg.setAttribute('src', url);
-		voicePanel.removeAttribute('hidden');
+		voicePanel.setAttribute('aria-hidden', 'false');
+		requestAnimationFrame(function () {
+			requestAnimationFrame(function () {
+				voicePanel.classList.add('is-expanded');
+			});
+		});
 		voiceButtons.forEach(function (b) {
 			if (b.getAttribute('data-ru-grad-voice-text') === url) {
 				b.setAttribute('aria-expanded', 'true');
@@ -76,8 +68,8 @@
 			if (!url) {
 				return;
 			}
-			var same = gradVoiceIsOpen() && voiceImg && voiceImg.getAttribute('src') === url;
-			if (same) {
+			var sameOpen = gradVoiceIsOpen() && voiceImg && voiceImg.getAttribute('src') === url;
+			if (sameOpen) {
 				closeGradVoicePanel();
 			} else {
 				openGradVoicePanel(url);
