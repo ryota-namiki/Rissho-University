@@ -51,4 +51,5 @@ $h = 'figma-header-2703-8728';
 	</div>
 </header>
 
+<div class="ru-pamphlet-frame" data-figma-node="2696:5236">
 <main id="primary" class="site-main ru-pamphlet-main">
