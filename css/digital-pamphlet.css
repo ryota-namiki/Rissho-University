@@ -128,11 +128,13 @@
 	color: #1d4a32;
 }
 
-/* メイン枠線（Figma 2696:5236 Vector）— ヘッダー下〜フッター直上まで（main のみを囲む）。1820×角R110・stroke #386F6B */
+/* メイン枠線（Figma 2696:5236 Vector）— ヘッダー下〜フッター直上まで（main のみを囲む）。1820×角R110・stroke #386F6B
+ * 見た目の枠は ::after（z-index 高）で描画し、はみ出した ru-navcards の黄帯より手前に重ねて途切れないようにする */
 .ru-pamphlet-frame {
 	--ru-frame-board: 1920;
 	--ru-frame-r: min(110px, calc(110 * 100vw / var(--ru-frame-board)));
 	--ru-frame-stroke: min(3.79px, calc(3.79 * 100vw / var(--ru-frame-board)));
+	position: relative;
 	width: min(
 		1820px,
 		calc(100% - 2 * clamp(16px, calc(51 * 100vw / var(--ru-frame-board)), 51px))
@@ -141,11 +143,22 @@
 	margin-top: clamp(12px, calc(24 * 100vw / var(--ru-frame-board)), 28px);
 	margin-bottom: clamp(10px, calc(20 * 100vw / var(--ru-frame-board)), 24px);
 	padding: 0;
-	border: var(--ru-frame-stroke) solid var(--ru-green);
+	border: var(--ru-frame-stroke) solid transparent;
 	border-radius: var(--ru-frame-r);
 	background: transparent;
 	box-sizing: border-box;
 	overflow-x: visible;
+}
+
+.ru-pamphlet-frame::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 50;
+	border-radius: inherit;
+	border: var(--ru-frame-stroke) solid var(--ru-green);
+	box-sizing: border-box;
+	pointer-events: none;
 }
 
 /* ナビカード：緑枠より左右ともビューポート幅にはみ出す */
