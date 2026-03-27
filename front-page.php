@@ -45,6 +45,8 @@ $placeholder = rissho_university_img_url( 'avatar-placeholder.svg' );
 
 $mv_w = 1604;
 $mv_h = 830;
+$mv_sp_w = RISSHO_MV_SP_FIGMA_W;
+$mv_sp_h = RISSHO_MV_SP_FIGMA_H;
 /* MV 人物イラスト 5 体：クリックで #students-voice へ */
 $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187', '2703:8482' );
 ?>
@@ -53,13 +55,52 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 	<h1 id="ru-hero-heading" class="screen-reader-text">
 		<?php esc_html_e( '立正大学文学部デジタルパンフレット', 'rissho-university' ); ?>
 	</h1>
-	<div class="ru-hero__mv" role="presentation">
+	<div class="ru-hero__mv ru-hero__mv--desktop" role="presentation" data-figma-board="2704:9421">
 		<?php foreach ( rissho_mv_2704_9421_layers() as $layer ) : ?>
 			<?php
 			$left_pct = ( $layer['x'] / $mv_w ) * 100;
 			$top_pct  = ( $layer['y'] / $mv_h ) * 100;
 			$w_pct    = ( $layer['w'] / $mv_w ) * 100;
 			$h_pct    = ( $layer['h'] / $mv_h ) * 100;
+			$style    = sprintf(
+				'left:%s%%;top:%s%%;width:%s%%;height:%s%%;',
+				round( $left_pct, 4 ),
+				round( $top_pct, 4 ),
+				round( $w_pct, 4 ),
+				round( $h_pct, 4 )
+			);
+			if ( isset( $layer['rot'] ) ) {
+				$style .= sprintf( 'transform:rotate(%.4fdeg);transform-origin:center center;', $layer['rot'] );
+			}
+			$is_title     = ( '2703:9418' === $layer['node'] );
+			$is_sv_anchor = in_array( $layer['node'], $mv_sv_anchor_nodes, true );
+			$layer_tag    = $is_sv_anchor ? 'a' : 'div';
+			?>
+			<<?php echo esc_attr( $layer_tag ); ?>
+				class="ru-hero__layer"
+				style="<?php echo esc_attr( $style ); ?>"
+				data-node-id="<?php echo esc_attr( $layer['node'] ); ?>"
+				<?php if ( $is_sv_anchor ) : ?>
+				href="#students-voice"
+				aria-label="<?php echo esc_attr__( '学生の声セクションへ移動', 'rissho-university' ); ?>"
+				<?php endif; ?>
+			>
+				<img
+					src="<?php echo esc_url( rissho_university_img_url( $layer['file'] ) ); ?>"
+					alt="<?php echo $is_title ? esc_attr( __( 'ブンガク', 'rissho-university' ) ) : ''; ?>"
+					loading="<?php echo $is_title ? 'eager' : 'lazy'; ?>"
+					decoding="async"
+				>
+			</<?php echo esc_attr( $layer_tag ); ?>>
+		<?php endforeach; ?>
+	</div>
+	<div class="ru-hero__mv ru-hero__mv--sp" role="presentation" data-figma-node="2776:23194">
+		<?php foreach ( rissho_mv_sp_2776_23194_layers() as $layer ) : ?>
+			<?php
+			$left_pct = ( $layer['x'] / $mv_sp_w ) * 100;
+			$top_pct  = ( $layer['y'] / $mv_sp_h ) * 100;
+			$w_pct    = ( $layer['w'] / $mv_sp_w ) * 100;
+			$h_pct    = ( $layer['h'] / $mv_sp_h ) * 100;
 			$style    = sprintf(
 				'left:%s%%;top:%s%%;width:%s%%;height:%s%%;',
 				round( $left_pct, 4 ),
@@ -357,6 +398,13 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 		</div>
 		<div class="ru-grad__main">
 			<div class="ru-grad__title-wrap">
+				<img
+					class="ru-grad__title-sp"
+					src="<?php echo esc_url( rissho_university_img_url( 'figma-graduates-2707-10702/title-sp.svg' ) ); ?>"
+					alt=""
+					loading="lazy"
+					decoding="async"
+				>
 				<?php foreach ( rissho_graduates_2707_10702_title_layers() as $tl ) : ?>
 				<div
 					class="ru-grad-title__layer"
@@ -384,6 +432,9 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 						type="button"
 						class="ru-grad-illo-btn"
 						data-ru-grad-voice-text="<?php echo esc_url( rissho_university_img_url( $col['voice_text'] ) ); ?>"
+						<?php if ( ! empty( $col['voice_text_sp'] ) ) : ?>
+						data-ru-grad-voice-text-sp="<?php echo esc_url( rissho_university_img_url( $col['voice_text_sp'] ) ); ?>"
+						<?php endif; ?>
 						aria-expanded="false"
 						aria-controls="ru-grad-voice-text"
 						style="<?php echo esc_attr( $ar ); ?>"
@@ -412,6 +463,9 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 						class="ru-grad-card"
 						<?php if ( ! empty( $col['voice_text'] ) ) : ?>
 						data-ru-grad-voice-text="<?php echo esc_url( rissho_university_img_url( $col['voice_text'] ) ); ?>"
+						<?php if ( ! empty( $col['voice_text_sp'] ) ) : ?>
+						data-ru-grad-voice-text-sp="<?php echo esc_url( rissho_university_img_url( $col['voice_text_sp'] ) ); ?>"
+						<?php endif; ?>
 						aria-expanded="false"
 						aria-controls="ru-grad-voice-text"
 						<?php else : ?>

@@ -9,6 +9,39 @@
 	var voiceImg = voicePanel ? voicePanel.querySelector('.ru-grad__voice-text-img') : null;
 	var voiceButtons = document.querySelectorAll('[data-ru-grad-voice-text]');
 	var voiceCloseCleanupTimer = null;
+	var gradVoiceSpMql =
+		typeof window.matchMedia === 'function'
+			? window.matchMedia('(max-width: 768px)')
+			: null;
+
+	function gradVoiceIsSpViewport() {
+		if (gradVoiceSpMql && gradVoiceSpMql.matches) {
+			return true;
+		}
+		var w =
+			typeof document !== 'undefined' && document.documentElement
+				? document.documentElement.clientWidth
+				: typeof window.innerWidth === 'number'
+					? window.innerWidth
+					: 9999;
+		return w <= 768;
+	}
+
+	function gradVoiceSpDataUrl(btn) {
+		var sp =
+			btn.getAttribute('data-ru-grad-voice-text-sp') ||
+			(btn.dataset && btn.dataset.ruGradVoiceTextSp);
+		return sp || '';
+	}
+
+	function gradVoiceDisplayUrl(btn) {
+		var desk = btn.getAttribute('data-ru-grad-voice-text');
+		var sp = gradVoiceSpDataUrl(btn);
+		if (gradVoiceIsSpViewport() && sp) {
+			return sp;
+		}
+		return desk;
+	}
 
 	function gradVoiceIsOpen() {
 		return voicePanel && voicePanel.classList.contains('is-expanded');
@@ -39,13 +72,13 @@
 		}, gradVoiceCloseDelayMs());
 	}
 
-	function openGradVoicePanel(url) {
-		if (!voicePanel || !voiceImg || !url) {
+	function openGradVoicePanel(canonicalUrl, displayUrl) {
+		if (!voicePanel || !voiceImg || !canonicalUrl || !displayUrl) {
 			return;
 		}
 		clearTimeout(voiceCloseCleanupTimer);
 		voiceCloseCleanupTimer = null;
-		voiceImg.setAttribute('src', url);
+		voiceImg.setAttribute('src', displayUrl);
 		voicePanel.setAttribute('aria-hidden', 'false');
 		requestAnimationFrame(function () {
 			requestAnimationFrame(function () {
@@ -53,7 +86,7 @@
 			});
 		});
 		voiceButtons.forEach(function (b) {
-			if (b.getAttribute('data-ru-grad-voice-text') === url) {
+			if (b.getAttribute('data-ru-grad-voice-text') === canonicalUrl) {
 				b.setAttribute('aria-expanded', 'true');
 			} else {
 				b.setAttribute('aria-expanded', 'false');
@@ -64,18 +97,43 @@
 	voiceButtons.forEach(function (btn) {
 		btn.addEventListener('click', function (e) {
 			e.preventDefault();
-			var url = btn.getAttribute('data-ru-grad-voice-text');
-			if (!url) {
+			var canonical = btn.getAttribute('data-ru-grad-voice-text');
+			if (!canonical) {
 				return;
 			}
-			var sameOpen = gradVoiceIsOpen() && voiceImg && voiceImg.getAttribute('src') === url;
+			var display = gradVoiceDisplayUrl(btn);
+			var sameOpen =
+				gradVoiceIsOpen() && voiceImg && voiceImg.getAttribute('src') === display;
 			if (sameOpen) {
 				closeGradVoicePanel();
 			} else {
-				openGradVoicePanel(url);
+				openGradVoicePanel(canonical, display);
 			}
 		});
 	});
+
+	function onGradVoiceSpBreakpointChange() {
+		if (!voicePanel || !voiceImg || !gradVoiceIsOpen() || !voiceImg.getAttribute('src')) {
+			return;
+		}
+		var openBtn = null;
+		voiceButtons.forEach(function (b) {
+			if (b.getAttribute('aria-expanded') === 'true') {
+				openBtn = b;
+			}
+		});
+		if (openBtn) {
+			voiceImg.setAttribute('src', gradVoiceDisplayUrl(openBtn));
+		}
+	}
+
+	if (voicePanel && voiceImg && gradVoiceSpMql) {
+		if (typeof gradVoiceSpMql.addEventListener === 'function') {
+			gradVoiceSpMql.addEventListener('change', onGradVoiceSpBreakpointChange);
+		} else if (typeof gradVoiceSpMql.addListener === 'function') {
+			gradVoiceSpMql.addListener(onGradVoiceSpBreakpointChange);
+		}
+	}
 
 	var overlay = document.getElementById('ru-interview-modal');
 	/* voice-text パネル用ボタンと属性が重なってもモーダルを開かない */

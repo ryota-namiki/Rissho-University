@@ -58,11 +58,12 @@ function rissho_university_front_pamphlet_assets() {
 		return;
 	}
 
+	$pamphlet_js = get_template_directory() . '/js/digital-pamphlet.js';
 	wp_enqueue_script(
 		'rissho-university-digital-pamphlet',
 		get_template_directory_uri() . '/js/digital-pamphlet.js',
 		array(),
-		wp_get_theme()->get( 'Version' ),
+		file_exists( $pamphlet_js ) ? (string) filemtime( $pamphlet_js ) : wp_get_theme()->get( 'Version' ),
 		true
 	);
 

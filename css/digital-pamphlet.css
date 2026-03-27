@@ -173,14 +173,6 @@
 	box-sizing: border-box;
 }
 
-@media (max-width: 767px) {
-	.ru-pamphlet-frame {
-		width: calc(100% - 2 * clamp(10px, 3.2vw, 20px));
-		--ru-frame-r: min(48px, calc(48 * 100vw / var(--ru-frame-board)));
-		--ru-frame-stroke: 2.5px;
-	}
-}
-
 /* ヒーロー MV（Figma 2704:9421・全レイヤー書き出し・1604×830） */
 .ru-hero {
 	padding: clamp(8px, 1.5vw, 28px) clamp(16px, 3vw, 55px) 0;
@@ -194,6 +186,38 @@
 	max-width: 1604px;
 	margin: 0 auto;
 	aspect-ratio: 1604 / 830;
+}
+
+/* SP MV（Figma 2776:23194・370×595）— 768px 以下で差し替え。アセットは PC と同一 */
+.ru-hero__mv--sp {
+	display: none;
+	aspect-ratio: 370 / 595;
+	max-width: min(100%, 767px);
+}
+
+/* SP＝768px 以下：ナビカード非表示・MV 差し替え・枠のモバイル調整 */
+@media (max-width: 768px) {
+	.ru-pamphlet-frame {
+		width: calc(100% - 2 * clamp(10px, 2vw, 20px));
+		--ru-frame-r: min(48px, calc(48 * 100vw / var(--ru-frame-board)));
+		--ru-frame-stroke: 2.5px;
+	}
+
+	.ru-hero__mv--desktop {
+		display: none;
+	}
+
+	.ru-hero__mv--sp {
+		display: block;
+	}
+
+	.ru-hero {
+		padding-inline: clamp(10px, 4vw, 20px);
+	}
+
+	.ru-navcards {
+		display: none;
+	}
 }
 
 .ru-hero__layer {
@@ -239,6 +263,11 @@ a.ru-hero__layer:focus-visible {
 /* 2703:9187（f90f96…d8b.svg）：常に手前。他人物ホバー時はそちらをより手前に（25） */
 .ru-hero__layer[data-node-id='2703:9187'] {
 	z-index: 20;
+}
+
+/* 2703:9418（a9c7489…e0.svg・タイトル「ブンガク」）：人物ホバー（25）より上で常に最前列 */
+.ru-hero__layer[data-node-id='2703:9418'] {
+	z-index: 50;
 }
 
 .ru-hero__layer[data-node-id='2703:8401'] img,
@@ -628,15 +657,21 @@ a.ru-hero__layer:focus-visible {
 }
 
 /* Figma 合成 SVG（voice01〜05）は枠・マスク込み。コース別 .ru-sv-card--* .ru-sv-card__photo と詳細度が同じなので、このブロックは必ず後に置く（さもないと mask が再適用され画像が消える） */
+/*
+ * photo-wrap の max-width がコースごとに 280〜370px とバラつくと、cover で拡大したとき基準幅が違いイラスト同士の相対スケールが崩れる。
+ * 横幅上限だけ .ru-sv-card と同一 clamp に揃え、縦横比は上記コース別 aspect-ratio のまま（Figma 比は維持）。
+ */
+.ru-sv-card--figma-face .ru-sv-card__photo-wrap {
+	width: 100%;
+	max-width: min(100%, clamp(140px, calc(340 / var(--ru-sv-board) * 100 * 1cqw), 340px));
+	margin-inline: auto;
+	box-sizing: border-box;
+}
+
 .ru-sv-card--figma-face .ru-sv-card__photo {
 	-webkit-mask-image: none;
 	mask-image: none;
-	object-fit: contain;
-	object-position: center bottom;
-}
-
-/* voice01：src 差し替えでも同一レイアウト（Figma 合成 SVG は中央寄せ） */
-.ru-sv-card--figma-face.ru-sv-card--philosophy .ru-sv-card__photo {
+	object-fit: cover;
 	object-position: center center;
 }
 
@@ -644,20 +679,106 @@ a.ru-hero__layer:focus-visible {
 	border-radius: 0;
 }
 
-/* voice04 / voice05：縮小時も枠内・セル内で幾何中心を維持（全体の bottom 合わせは外す） */
-.ru-sv-card--figma-face.ru-sv-card--japanese-lit .ru-sv-card__photo,
-.ru-sv-card--figma-face.ru-sv-card--english-lit .ru-sv-card__photo {
-	object-position: center center;
-}
-
+/* SP（768px 以下）：2 列 × 3 段 — 1: voice01|タイトル、2: voice02|voice03、3: voice04|voice05 */
 @media (max-width: 768px) {
+	/* ::before の固定アスペクト + main:absolute だとグリッド実高さが文書フローに乗らず重なる */
+	.ru-sv__stage::before {
+		display: none;
+	}
+
+	/*
+	 * SP は ::before を外すためステージが縦に伸び、装飾レイヤーの％枠の縦横比が PC アートボードとずれる。
+	 * fill だと SVG が枠に引き伸ばされて歪む → contain で比率を保つ。
+	 */
+	.ru-sv-decor__layer img {
+		object-fit: contain;
+		object-position: center center;
+	}
+
+	.ru-sv__main {
+		position: relative;
+		inset: auto;
+		padding-inline: 0;
+	}
+
+	.ru-sv {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: clamp(8px, 3.5vw, 20px);
+		row-gap: clamp(10px, 3vw, 22px);
+		align-items: center;
+		justify-items: center;
+		width: 100%;
+	}
+
 	.ru-sv__row--middle,
 	.ru-sv__row--bottom {
-		grid-template-columns: 1fr;
+		display: contents;
+		margin-top: 0;
+	}
+
+	.ru-sv__slot--tl {
+		grid-column: 1;
+		grid-row: 1;
 	}
 
 	.ru-sv__title {
-		order: -1;
+		grid-column: 2;
+		grid-row: 1;
+		width: 80%;
+		max-width: 80%;
+		padding: 0;
+		justify-self: center;
+	}
+
+	.ru-sv__slot--tr {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.ru-sv__slot--bl {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.ru-sv__slot--bc {
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	.ru-sv__slot--br {
+		grid-column: 2;
+		grid-row: 3;
+	}
+
+	.ru-sv__slot--bl .ru-sv-card {
+		transform: none;
+	}
+
+	.ru-sv-card {
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	/*
+	 * グリッドセル / flex 子の min-width: auto により、SVG の width 属性（例 285px）が最小幅になりセルより広がり、
+	 * photo-wrap の overflow:hidden で意図せず切れる。セル幅に縮め、Figma 枠内に収める。
+	 */
+	.ru-sv__slot {
+		min-width: 0;
+	}
+
+	.ru-sv-card--figma-face .ru-sv-card__photo-wrap {
+		min-width: 0;
+		max-width: 100%;
+	}
+
+	.ru-sv-card--figma-face .ru-sv-card__photo {
+		max-width: 100%;
+	}
+
+	.ru-sv__title-img {
+		max-width: 100%;
 	}
 }
 
@@ -710,7 +831,8 @@ a.ru-hero__layer:focus-visible {
 	display: block;
 	width: 100%;
 	height: 100%;
-	object-fit: fill;
+	object-fit: contain;
+	object-position: center center;
 }
 
 .ru-grad__main {
@@ -731,6 +853,10 @@ a.ru-hero__layer:focus-visible {
 	width: calc(620.872802734375 / var(--ru-grad-board) * 100 * 1cqw);
 	height: calc(83.3932876586914 / var(--ru-grad-board) * 100 * 1cqw);
 	flex-shrink: 0;
+}
+
+.ru-grad__title-sp {
+	display: none;
 }
 
 .ru-grad-title__layer {
@@ -764,6 +890,112 @@ a.ru-hero__layer:focus-visible {
 	flex: 1 1 auto;
 	min-height: 0;
 	align-content: center;
+}
+
+/*
+ * SP（768px 以下）：ベースの .ru-grad__main（flex）・.ru-grad__row（flex）より後に置き、
+ * display:grid / display:contents が効くようにする（先頭の 768 ブロックだと上書きされる）。
+ */
+@media (max-width: 768px) {
+	.ru-grad__canvas {
+		aspect-ratio: unset;
+		height: auto;
+		min-height: 0;
+	}
+
+	/* 装飾 % は PC アートボード縦横比のエリア前提（縦長 canvas 全体に広げない） */
+	.ru-grad__decor {
+		inset: auto;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1606.6954345703125 / 545.7464599609375;
+	}
+
+	.ru-grad__main {
+		position: relative;
+		inset: auto;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: clamp(8px, 3.5vw, 20px);
+		row-gap: clamp(10px, 3vw, 22px);
+		align-items: center;
+		justify-items: center;
+		width: 100%;
+		box-sizing: border-box;
+		min-height: 0;
+	}
+
+	.ru-grad__row {
+		display: contents;
+	}
+
+	.ru-grad__col--illo {
+		grid-column: 1;
+		grid-row: 1;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.ru-grad__title-wrap {
+		grid-column: 2;
+		grid-row: 1;
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		min-width: 0;
+	}
+
+	.ru-grad__title-sp {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.ru-grad__title-wrap .ru-grad-title__layer {
+		display: none !important;
+	}
+
+	.ru-grad__row .ru-grad__col--card:nth-child(2) {
+		grid-column: 1;
+		grid-row: 2;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.ru-grad__row .ru-grad__col--card:nth-child(3) {
+		grid-column: 2;
+		grid-row: 2;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.ru-grad__row .ru-grad__col--card:nth-child(4) {
+		grid-column: 1;
+		grid-row: 3;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.ru-grad__row .ru-grad__col--card:nth-child(5) {
+		grid-column: 2;
+		grid-row: 3;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.ru-grad__col .ru-grad-card,
+	.ru-grad__col .ru-grad-illo-btn {
+		max-width: 100%;
+	}
 }
 
 /* 卒業生コメント（voice-text01 等）：行の直下、0.3s で高さ＋不透明度を開閉 */
@@ -924,25 +1156,32 @@ a.ru-hero__layer:focus-visible {
 	object-position: center center;
 }
 
+/* SP：.ru-grad__col / .ru-grad__voice-text のベース指定より後で上書き */
+@media (max-width: 768px) {
+	.ru-grad__main .ru-grad__col.ru-grad__col--illo,
+	.ru-grad__main .ru-grad__col.ru-grad__col--card {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	.ru-grad__stage .ru-grad__voice-text {
+		max-width: 100%;
+	}
+}
+
 /*
- * 1100px 以下：1100px 超と同じスケール（.ru-grad__col の cqw 幅・インライン aspect・flat=contain）のまま縮小。
- * 行に width 制限や margin を足さず、左右の余白で無理に狭めない。
+ * 769px〜1100px：.ru-grad__row のみ行間を詰める（768px 以下はグリッド化のため除外）。
  */
-@media (max-width: 1100px) {
+@media (max-width: 1100px) and (min-width: 769px) {
 	.ru-grad__row {
 		gap: clamp(4px, 0.9cqw, 14px);
 	}
 }
 
 @media (max-width: 640px) {
-	.ru-grad__title-wrap {
-		width: min(94cqw, calc(620.872802734375 / var(--ru-grad-board) * 100 * 1cqw));
-		height: auto;
-		aspect-ratio: 620.872802734375 / 83.3932876586914;
-	}
-
+	/* 768px グリッドの column-gap / row-gap を gap 一括指定で上書きしない */
 	.ru-grad__main {
-		gap: clamp(20px, 5vw, 36px);
 		padding-top: clamp(4px, 2vw, 12px);
 	}
 }
@@ -1079,8 +1318,8 @@ body.ru-modal-open {
 }
 
 /* フッター（Figma 2752:17145）
- * 768px 超: 1920 アートボード基準で min(設計px, calc(設計px * 100vw / 1920)) により等比。
- * 767px 以下: SNS は 2×2→1 列へ（横一列は解除）。 */
+ * 1920 アートボード基準の min(設計px, calc(設計px * 100vw / 1920)) で PC と同じ形状を等比縮小。
+ * 狭い幅で SNS 行がはみ出す場合はバー内を横スクロール（レイアウトは横一列のまま）。 */
 .ru-footer-pamphlet {
 	--ru-footer-board: 1920;
 	padding: min(48px, calc(48 * 100vw / var(--ru-footer-board))) 0 0;
@@ -1126,7 +1365,7 @@ body.ru-modal-open {
 	justify-content: center;
 }
 
-/* 769px 以上: 横 1 列・gap / アイコンも同一スケール */
+/* 横 1 列（SP も PC と同じ並び・同一スケール式） */
 .ru-footer-pamphlet__social-row {
 	display: flex;
 	flex-direction: row;
@@ -1137,36 +1376,23 @@ body.ru-modal-open {
 	width: min(920px, calc(920 * 100vw / var(--ru-footer-board)));
 	max-width: 100%;
 	box-sizing: border-box;
+	flex-shrink: 0;
 }
 
 @media (max-width: 767px) {
-	/* グリッド時は等比 vw をやめ、タップしやすい余白に */
-	.ru-footer-pamphlet {
-		padding: 28px 0 0;
-		gap: 24px;
-	}
-
-	.ru-footer-pamphlet__heading {
-		width: min(386px, 88vw);
-	}
-
 	.ru-footer-pamphlet__bar {
-		min-height: 0;
-		padding: 24px 16px 32px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior-x: contain;
+		justify-content: safe center;
 	}
 
+	/* 設計幅いっぱいの一行を保ち、狭い画面ではスクロール */
 	.ru-footer-pamphlet__social-row {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		width: 100%;
-		gap: 28px clamp(16px, 5vw, 32px);
-		justify-items: center;
-	}
-}
-
-@media (max-width: 560px) {
-	.ru-footer-pamphlet__social-row {
-		grid-template-columns: 1fr;
+		width: max-content;
+		max-width: none;
+		margin-inline: auto;
 	}
 }
 
@@ -1216,16 +1442,3 @@ body.ru-modal-open {
 	margin: 0;
 }
 
-@media (max-width: 767px) {
-	.ru-footer-pamphlet__asset {
-		width: min(180px, 42vw);
-		height: min(175px, calc(175 * min(180px, 42vw) / 180));
-	}
-}
-
-@media (max-width: 560px) {
-	.ru-footer-pamphlet__asset {
-		width: min(200px, 70vw);
-		height: min(175px, calc(175 * min(200px, 70vw) / 180));
-	}
-}

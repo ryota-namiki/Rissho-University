@@ -94,49 +94,56 @@ function rissho_graduates_2707_10702_title_layers() {
 /**
  * メイン行のカラム（左イラスト＋4カード）— Figma Frame 2707:10747 基準の幅比
  *
- * @return array<int, array{kind: string, col_w: float, photo?: string, flat?: bool, voice_text?: string, aspect?: array{w: float, h: float}, layers?: array<int, array<string, float|string>>}>
+ * @return array<int, array{kind: string, col_w: float, photo?: string, flat?: bool, voice_text?: string, voice_text_sp?: string, aspect?: array{w: float, h: float}, layers?: array<int, array<string, float|string>>}>
  */
 function rissho_graduates_2707_10702_row_columns() {
-	$base = 'figma-graduates-2707-10702/';
+	$base   = 'figma-graduates-2707-10702/';
+	$base_s = $base . 'SVG/';
 	return array(
 		array(
-			'kind'       => 'illo',
-			'col_w'      => 273.9984130859375,
-			'photo'      => $base . 'interview01.webp',
-			'voice_text' => $base . 'voice-text01.svg',
-			'aspect'     => array( 'w' => 273.9984130859375, 'h' => 340.1529846191406 ),
+			'kind'          => 'illo',
+			'col_w'         => 273.9984130859375,
+			'photo'         => $base . 'interview01.webp',
+			'voice_text'    => $base . 'voice-text01.svg',
+			'voice_text_sp' => $base_s . 'voice-text01-sp.svg',
+			'aspect'        => array( 'w' => 273.9984130859375, 'h' => 340.1529846191406 ),
 		),
 		array(
-			'kind'       => 'card',
-			'col_w'      => 265.1437683105469,
-			'photo'      => $base . 'interview02.webp',
-			'flat'       => true,
-			'voice_text' => $base . 'voice-text02.svg',
-			'aspect'     => array( 'w' => 265.1437683105469, 'h' => 341.1289367675781 ),
+			'kind'          => 'card',
+			'col_w'         => 265.1437683105469,
+			'photo'         => $base . 'interview02.webp',
+			'flat'          => true,
+			'voice_text'    => $base . 'voice-text02.svg',
+			'voice_text_sp' => $base_s . 'voice-text02-sp.svg',
+			'aspect'        => array( 'w' => 265.1437683105469, 'h' => 341.1289367675781 ),
 		),
 		array(
-			'kind'       => 'card',
-			'col_w'      => 292.89678955078125,
-			'photo'      => $base . 'interview03.webp',
-			'flat'       => true,
-			'voice_text' => $base . 'voice-text03.svg',
-			'aspect'     => array( 'w' => 292.89678955078125, 'h' => 397.3531799316406 ),
+			'kind'          => 'card',
+			'col_w'         => 292.89678955078125,
+			'photo'         => $base . 'interview03.webp',
+			'flat'          => true,
+			'voice_text'    => $base . 'voice-text03.svg',
+			'voice_text_sp' => $base_s . 'voice-text03-sp.svg',
+			'aspect'        => array( 'w' => 292.89678955078125, 'h' => 397.3531799316406 ),
+		),
+		// interview04 / 05：同一の枠（画像は flat + contain で収める）
+		array(
+			'kind'          => 'card',
+			'col_w'         => 336.299072265625,
+			'photo'         => $base . 'interview04.webp',
+			'flat'          => true,
+			'voice_text'    => $base . 'voice-text04.svg',
+			'voice_text_sp' => $base_s . 'voice-text04-sp.svg',
+			'aspect'        => array( 'w' => 336.299072265625, 'h' => 389.00634765625 ),
 		),
 		array(
-			'kind'       => 'card',
-			'col_w'      => 262.357421875,
-			'photo'      => $base . 'interview04.webp',
-			'flat'       => true,
-			'voice_text' => $base . 'voice-text04.svg',
-			'aspect'     => array( 'w' => 262.357421875, 'h' => 389.00634765625 ),
-		),
-		array(
-			'kind'       => 'card',
-			'col_w'      => 336.299072265625,
-			'photo'      => $base . 'interview05.webp',
-			'flat'       => true,
-			'voice_text' => $base . 'voice-text05.svg',
-			'aspect'     => array( 'w' => 336.299072265625, 'h' => 368.5242919921875 ),
+			'kind'          => 'card',
+			'col_w'         => 336.299072265625,
+			'photo'         => $base . 'interview05.webp',
+			'flat'          => true,
+			'voice_text'    => $base . 'voice-text05.svg',
+			'voice_text_sp' => $base_s . 'voice-text05-sp.svg',
+			'aspect'        => array( 'w' => 336.299072265625, 'h' => 389.00634765625 ),
 		),
 	);
 }
