@@ -820,15 +820,36 @@ a.ru-hero__layer:focus-visible {
 	box-sizing: border-box;
 }
 
+/* PC：voice01 は他カードより大きく見えやすいため、枠幅を少し絞る */
+.ru-sv-card--figma-face.ru-sv-card--philosophy .ru-sv-card__photo-wrap {
+	max-width: min(100%, clamp(130px, calc(320 / var(--ru-sv-board) * 100 * 1cqw), 320px));
+}
+
 .ru-sv-card--figma-face .ru-sv-card__photo {
 	-webkit-mask-image: none;
 	mask-image: none;
-	object-fit: cover;
-	object-position: center center;
+	object-fit: contain;
+	object-position: center bottom;
 }
 
 .ru-sv-card--figma-face.ru-sv-card--history .ru-sv-card__photo-wrap {
 	border-radius: 0;
+}
+
+/* PC：voice01 の見た目サイズ補正を確実に適用 */
+@media (min-width: 769px) {
+	.ru-sv-card--figma-face.ru-sv-card--philosophy .ru-sv-card__photo-wrap {
+		max-width: min(100%, clamp(130px, calc(320 / var(--ru-sv-board) * 100 * 1cqw), 320px));
+	}
+
+	/* PC：voice02 を拡大（親カード上限も同時に拡張） */
+	.ru-sv-card.ru-sv-card--figma-face.ru-sv-card--history {
+		max-width: min(100%, clamp(157px, calc(383 / var(--ru-sv-board) * 100 * 1cqw), 383px));
+	}
+
+	.ru-sv-card--figma-face.ru-sv-card--history .ru-sv-card__photo-wrap {
+		max-width: min(100%, clamp(157px, calc(383 / var(--ru-sv-board) * 100 * 1cqw), 383px));
+	}
 }
 
 /* SP（768px 以下）：2 列 × 3 段 — 1: voice01|タイトル、2: voice02|voice03、3: voice04|voice05 */
@@ -1614,7 +1635,7 @@ body.ru-modal-open {
 	gap: 0;
 	color: inherit;
 	text-decoration: none;
-	min-width: 40px;
+	min-width: 0;
 }
 
 .ru-footer-pamphlet__col:hover {
