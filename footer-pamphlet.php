@@ -15,7 +15,7 @@ $footer_title = rissho_footer_2752_17145_heading_title_file();
 </main><!-- #primary -->
 </div><!-- .ru-pamphlet-frame -->
 
-<footer class="ru-footer-pamphlet" data-figma-node="2752:17145">
+<footer id="sns" class="ru-footer-pamphlet" data-figma-node="2752:17145">
 	<div class="ru-footer-pamphlet__heading-wrap">
 		<div class="ru-footer-pamphlet__heading">
 			<img

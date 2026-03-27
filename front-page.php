@@ -55,6 +55,84 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 	<h1 id="ru-hero-heading" class="screen-reader-text">
 		<?php esc_html_e( '立正大学文学部デジタルパンフレット', 'rissho-university' ); ?>
 	</h1>
+	<div class="ru-hero__menu-wrap">
+		<button
+			type="button"
+			class="ru-hero__menu-btn"
+			aria-label="<?php esc_attr_e( 'メニュー', 'rissho-university' ); ?>"
+			aria-expanded="false"
+			aria-controls="ru-fmenu"
+		>
+			<img
+				src="<?php echo esc_url( rissho_university_img_url( 'menu-btn-sp.svg' ) ); ?>"
+				alt=""
+				width="56"
+				height="10"
+				loading="eager"
+				decoding="async"
+				aria-hidden="true"
+			>
+		</button>
+	<?php
+	$fmenu_items = array(
+		array(
+			'kind'  => 'link',
+			'href'  => '#students-voice',
+			'label' => __( '学生インタビュー', 'rissho-university' ),
+		),
+		array(
+			'kind'  => 'link',
+			'href'  => '#graduates',
+			'label' => __( '卒業生の声', 'rissho-university' ),
+		),
+		array(
+			'kind'  => 'link',
+			'href'  => 'https://letters.ris.ac.jp/',
+			'label' => __( '立正大学文学部', 'rissho-university' ),
+		),
+		array(
+			'kind'  => 'link',
+			'href'  => 'https://ris.web-opencampus.com/',
+			'label' => __( 'オープンキャンパス', 'rissho-university' ),
+		),
+		array(
+			'kind'  => 'link',
+			'href'  => '#',
+			'label' => __( '交通広告', 'rissho-university' ),
+		),
+		array(
+			'kind'  => 'link',
+			'href'  => 'https://letters.rissho.jp/examination/wp-content/uploads/2025/02/pamphlet2026.pdf',
+			'label' => __( 'デジタルパンフレット', 'rissho-university' ),
+		),
+		array(
+			'kind'  => 'link',
+			'href'  => '#sns',
+			'label' => __( '文学部SNS', 'rissho-university' ),
+		),
+	);
+	?>
+	<div id="ru-fmenu" class="ru-fmenu" aria-hidden="true">
+		<nav class="ru-fmenu__panel" aria-label="<?php esc_attr_e( 'メニュー', 'rissho-university' ); ?>">
+			<?php foreach ( $fmenu_items as $it ) : ?>
+				<?php
+				$is_ext = isset( $it['href'][0] ) && '#' !== $it['href'][0];
+				?>
+				<a
+					class="ru-fmenu__item"
+					href="<?php echo esc_url( $it['href'] ); ?>"
+					<?php if ( $is_ext ) : ?>
+					target="_blank"
+					rel="noopener noreferrer"
+					<?php endif; ?>
+				>
+					<p><?php echo esc_html( $it['label'] ); ?></p>
+				</a>
+			<?php endforeach; ?>
+			<div class="ru-fmenu__footer" aria-hidden="true"></div>
+		</nav>
+	</div>
+	</div>
 	<div class="ru-hero__mv ru-hero__mv--desktop" role="presentation" data-figma-board="2704:9421">
 		<?php foreach ( rissho_mv_2704_9421_layers() as $layer ) : ?>
 			<?php
@@ -324,7 +402,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 			</div>
 		</div>
 		<div class="ru-sv__row ru-sv__row--bottom">
-			<?php foreach ( array( 2, 3, 4 ) as $idx ) : ?>
+			<?php foreach ( array( 4, 3, 2 ) as $idx ) : ?>
 				<?php
 				$row  = $students[ $idx ];
 				$meta = $sv_slots[ $idx ];
@@ -341,6 +419,20 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 						<?php esc_html_e( '（インタビュー動画・YouTubeが別タブで開きます）', 'rissho-university' ); ?>
 					</span>
 					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
+						<?php if ( 'figma-students-voice-2707-10699/voice04.svg' === $meta['photo'] ) : ?>
+						<picture>
+							<source media="(max-width: 768px)" srcset="<?php echo esc_url( rissho_university_img_url( 'figma-graduates-2707-10702/bungaku-sp.svg' ) ); ?>">
+							<img
+								class="ru-sv-card__photo ru-sv-card__photo--rest"
+								src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
+								alt=""
+								width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+								height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+								loading="lazy"
+								decoding="async"
+							>
+						</picture>
+						<?php else : ?>
 						<img
 							class="ru-sv-card__photo ru-sv-card__photo--rest"
 							src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
@@ -350,6 +442,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 							loading="lazy"
 							decoding="async"
 						>
+						<?php endif; ?>
 						<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
 						<img
 							class="ru-sv-card__photo ru-sv-card__photo--hover"

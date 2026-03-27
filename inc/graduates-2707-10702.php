@@ -99,51 +99,63 @@ function rissho_graduates_2707_10702_title_layers() {
 function rissho_graduates_2707_10702_row_columns() {
 	$base   = 'figma-graduates-2707-10702/';
 	$base_s = $base . 'SVG/';
+
+	/*
+	 * 人物枠は interview04 と同じ縦横比に統一。5 列の col_w 合計は従来の Figma 行幅のまま（はみ出し防止）で等分する。
+	 */
+	$ref_w  = 336.299072265625;
+	$ref_h  = 389.00634765625;
+	$sum_w  = 273.9984130859375 + 265.1437683105469 + 292.89678955078125 + $ref_w + $ref_w;
+	$col_w  = $sum_w / 5;
+	$aspect = array(
+		'w' => $col_w,
+		'h' => $col_w * ( $ref_h / $ref_w ),
+	);
+
 	return array(
 		array(
 			'kind'          => 'illo',
-			'col_w'         => 273.9984130859375,
+			'col_w'         => $col_w,
 			'photo'         => $base . 'interview01.webp',
 			'voice_text'    => $base . 'voice-text01.svg',
 			'voice_text_sp' => $base_s . 'voice-text01-sp.svg',
-			'aspect'        => array( 'w' => 273.9984130859375, 'h' => 340.1529846191406 ),
+			'aspect'        => $aspect,
 		),
 		array(
 			'kind'          => 'card',
-			'col_w'         => 265.1437683105469,
+			'col_w'         => $col_w,
 			'photo'         => $base . 'interview02.webp',
 			'flat'          => true,
 			'voice_text'    => $base . 'voice-text02.svg',
 			'voice_text_sp' => $base_s . 'voice-text02-sp.svg',
-			'aspect'        => array( 'w' => 265.1437683105469, 'h' => 341.1289367675781 ),
+			'aspect'        => $aspect,
 		),
 		array(
 			'kind'          => 'card',
-			'col_w'         => 292.89678955078125,
+			'col_w'         => $col_w,
 			'photo'         => $base . 'interview03.webp',
 			'flat'          => true,
 			'voice_text'    => $base . 'voice-text03.svg',
 			'voice_text_sp' => $base_s . 'voice-text03-sp.svg',
-			'aspect'        => array( 'w' => 292.89678955078125, 'h' => 397.3531799316406 ),
+			'aspect'        => $aspect,
 		),
-		// interview04 / 05：同一の枠（画像は flat + contain で収める）
 		array(
 			'kind'          => 'card',
-			'col_w'         => 336.299072265625,
+			'col_w'         => $col_w,
 			'photo'         => $base . 'interview04.webp',
 			'flat'          => true,
 			'voice_text'    => $base . 'voice-text04.svg',
 			'voice_text_sp' => $base_s . 'voice-text04-sp.svg',
-			'aspect'        => array( 'w' => 336.299072265625, 'h' => 389.00634765625 ),
+			'aspect'        => $aspect,
 		),
 		array(
 			'kind'          => 'card',
-			'col_w'         => 336.299072265625,
+			'col_w'         => $col_w,
 			'photo'         => $base . 'interview05.webp',
 			'flat'          => true,
 			'voice_text'    => $base . 'voice-text05.svg',
 			'voice_text_sp' => $base_s . 'voice-text05-sp.svg',
-			'aspect'        => array( 'w' => 336.299072265625, 'h' => 389.00634765625 ),
+			'aspect'        => $aspect,
 		),
 	);
 }

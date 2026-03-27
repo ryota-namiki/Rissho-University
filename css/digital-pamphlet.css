@@ -49,7 +49,7 @@
 }
 
 .ru-pamphlet a {
-	color: var(--ru-green);
+	color: #fff;
 	text-decoration: none;
 }
 
@@ -180,6 +180,46 @@
 	overflow-y: visible;
 }
 
+/* SP のみ表示（768px 以下で配置）。PC では非表示 */
+.ru-hero__menu-btn {
+	display: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	line-height: 0;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.ru-hero__menu-btn:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 4px;
+}
+
+.ru-hero__menu-btn img {
+	display: block;
+	width: 190px;
+	height: auto;
+}
+
+.ru-fmenu {
+	display: none;
+}
+
+.ru-fmenu__panel {
+	display: none;
+}
+
+.ru-fmenu__item,
+.ru-fmenu__footer {
+	display: block;
+}
+
+.ru-fmenu__item {
+	text-decoration: none;
+}
+
 .ru-hero__mv {
 	position: relative;
 	width: 100%;
@@ -201,6 +241,33 @@
 		width: calc(100% - 2 * clamp(10px, 2vw, 20px));
 		--ru-frame-r: min(48px, calc(48 * 100vw / var(--ru-frame-board)));
 		--ru-frame-stroke: 2.5px;
+		margin-top: 0;
+		margin-inline: auto;
+		margin-bottom: 10px;
+	}
+
+	.ru-header__nav {
+		display: none;
+	}
+
+	.ru-header__logo-line {
+		display: none;
+	}
+
+	/* 英字ラインと同じ枠（.ru-header__logo-line と同一数値）で漢字ロゴを表示 */
+	.ru-header__kanji {
+		flex: 0 0 auto;
+		min-width: 0;
+		max-width: none;
+		height: auto;
+	}
+
+	.ru-header__kanji img {
+		width: auto;
+		height: 18.975px;
+		max-width: 271.47px;
+		object-fit: contain;
+		object-position: left bottom;
 	}
 
 	.ru-hero__mv--desktop {
@@ -212,7 +279,88 @@
 	}
 
 	.ru-hero {
+		position: relative;
+		padding-top: 40px;
 		padding-inline: clamp(10px, 4vw, 20px);
+		padding-bottom: 40px;
+	}
+
+	.ru-hero__menu-btn {
+		display: block;
+		position: relative;
+		z-index: 70;
+	}
+
+	.ru-hero__menu-wrap {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 70;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+
+	.ru-fmenu {
+		display: block;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		pointer-events: none;
+		width: 100%;
+		transition: max-height 0.3s ease, opacity 0.3s ease;
+	}
+
+	.ru-fmenu.is-open {
+		max-height: 460px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.ru-fmenu__panel {
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+		position: static;
+		width: 100%;
+		border-radius: 0;
+		overflow: hidden;
+		background: #ffffff;
+		box-shadow: none;
+	}
+
+	.ru-fmenu__item {
+		height: 54px;
+		background: #70bc96;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: -0.1em;
+		color: #fff;
+	}
+
+	.ru-fmenu__item p {
+		display: inline-block;
+		transform: translateY(-0.5px);
+		margin: 0;
+	}
+
+	/* メニュー表示中もボタンは表示したまま */
+
+	.ru-fmenu__item:focus-visible {
+		outline: 3px solid var(--ru-green);
+		outline-offset: 2px;
+	}
+
+	.ru-fmenu__footer {
+		height: 21px;
+		background: #ffffff;
 	}
 
 	.ru-navcards {
@@ -384,7 +532,7 @@ a.ru-hero__layer:focus-visible {
 
 /* セクション見出し */
 .ru-section {
-	padding: clamp(40px, 6vw, 72px) clamp(20px, 4vw, 120px);
+	padding: clamp(30px, 6vw, 72px) clamp(20px, 4vw, 120px);
 	max-width: 1920px;
 	margin: 0 auto;
 }
@@ -545,6 +693,10 @@ a.ru-hero__layer:focus-visible {
 	overflow: hidden;
 }
 
+.ru-sv-card__photo-wrap picture {
+	display: contents;
+}
+
 /* 静止／ホバー画像のクロスフェード（0.5s） */
 .ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--rest,
 .ru-sv-card__photo-wrap--crossfade .ru-sv-card__photo--hover {
@@ -681,18 +833,23 @@ a.ru-hero__layer:focus-visible {
 
 /* SP（768px 以下）：2 列 × 3 段 — 1: voice01|タイトル、2: voice02|voice03、3: voice04|voice05 */
 @media (max-width: 768px) {
+	.ru-section--students-voice {
+		background-image: url("../images/students-voice/bg-sp.svg");
+		background-repeat: no-repeat;
+		background-position: center top;
+		/* 横幅基準で 90%（−10%）、高さは auto で縦横比維持。左右は center で余白 */
+		background-size: 90% auto;
+		/* .ru-section の縦パディングに +20px（当セクション SP のみ） */
+		padding-bottom: calc(clamp(30px, 6vw, 72px) + 20px);
+	}
+
 	/* ::before の固定アスペクト + main:absolute だとグリッド実高さが文書フローに乗らず重なる */
 	.ru-sv__stage::before {
 		display: none;
 	}
 
-	/*
-	 * SP は ::before を外すためステージが縦に伸び、装飾レイヤーの％枠の縦横比が PC アートボードとずれる。
-	 * fill だと SVG が枠に引き伸ばされて歪む → contain で比率を保つ。
-	 */
-	.ru-sv-decor__layer img {
-		object-fit: contain;
-		object-position: center center;
+	.ru-sv__decor {
+		display: none;
 	}
 
 	.ru-sv__main {
@@ -727,17 +884,17 @@ a.ru-hero__layer:focus-visible {
 		grid-row: 1;
 		width: 80%;
 		max-width: 80%;
-		padding: 0;
+		padding: 0 0 40% 0;
 		justify-self: center;
 	}
 
 	.ru-sv__slot--tr {
-		grid-column: 1;
+		grid-column: 2;
 		grid-row: 2;
 	}
 
 	.ru-sv__slot--bl {
-		grid-column: 2;
+		grid-column: 1;
 		grid-row: 2;
 	}
 
@@ -771,6 +928,56 @@ a.ru-hero__layer:focus-visible {
 	.ru-sv-card--figma-face .ru-sv-card__photo-wrap {
 		min-width: 0;
 		max-width: 100%;
+	}
+
+	/*
+	 * voice01：縦長比のため同幅でも他カードより大きく見える → 枠幅を抑えて視覚サイズを近づける。
+	 * contain で足元欠け対策は維持。
+	 */
+	.ru-sv-card--figma-face.ru-sv-card--philosophy .ru-sv-card__photo-wrap {
+		aspect-ratio: 286 / 397;
+		max-width: min(78%, 100%);
+		margin-inline: auto;
+	}
+
+	.ru-sv-card--figma-face.ru-sv-card--philosophy .ru-sv-card__photo {
+		object-fit: contain;
+		object-position: center bottom;
+	}
+
+	/*
+	 * voice02〜05：枠幅 90% 上限・contain でサイズ感を揃える。aspect-ratio は各 SVG 実寸。
+	 */
+	.ru-sv-card--figma-face.ru-sv-card--history .ru-sv-card__photo-wrap,
+	.ru-sv-card--figma-face.ru-sv-card--sociology .ru-sv-card__photo-wrap,
+	.ru-sv-card--figma-face.ru-sv-card--japanese-lit .ru-sv-card__photo-wrap,
+	.ru-sv-card--figma-face.ru-sv-card--english-lit .ru-sv-card__photo-wrap {
+		max-width: min(90%, 100%);
+		margin-inline: auto;
+	}
+
+	.ru-sv-card--figma-face.ru-sv-card--history .ru-sv-card__photo-wrap {
+		aspect-ratio: 383 / 385;
+	}
+
+	.ru-sv-card--figma-face.ru-sv-card--sociology .ru-sv-card__photo-wrap {
+		aspect-ratio: 340 / 404;
+	}
+
+	.ru-sv-card--figma-face.ru-sv-card--japanese-lit .ru-sv-card__photo-wrap {
+		aspect-ratio: 346 / 448;
+	}
+
+	.ru-sv-card--figma-face.ru-sv-card--english-lit .ru-sv-card__photo-wrap {
+		aspect-ratio: 363 / 415;
+	}
+
+	.ru-sv-card--figma-face.ru-sv-card--history .ru-sv-card__photo,
+	.ru-sv-card--figma-face.ru-sv-card--sociology .ru-sv-card__photo,
+	.ru-sv-card--figma-face.ru-sv-card--japanese-lit .ru-sv-card__photo,
+	.ru-sv-card--figma-face.ru-sv-card--english-lit .ru-sv-card__photo {
+		object-fit: contain;
+		object-position: center bottom;
 	}
 
 	.ru-sv-card--figma-face .ru-sv-card__photo {
@@ -897,20 +1104,22 @@ a.ru-hero__layer:focus-visible {
  * display:grid / display:contents が効くようにする（先頭の 768 ブロックだと上書きされる）。
  */
 @media (max-width: 768px) {
+	.ru-section--graduates {
+		background-image: url("../images/figma-graduates-2707-10702/bg-sp.svg");
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 90% auto;
+	}
+
 	.ru-grad__canvas {
 		aspect-ratio: unset;
 		height: auto;
 		min-height: 0;
 	}
 
-	/* 装飾 % は PC アートボード縦横比のエリア前提（縦長 canvas 全体に広げない） */
+	/* SP：PC 用のベクター装飾は非表示。背景は .ru-section--graduates の bg-sp.svg */
 	.ru-grad__decor {
-		inset: auto;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: auto;
-		aspect-ratio: 1606.6954345703125 / 545.7464599609375;
+		display: none;
 	}
 
 	.ru-grad__main {
@@ -1032,7 +1241,6 @@ a.ru-hero__layer:focus-visible {
 	width: 100%;
 	height: auto;
 	max-width: 100%;
-	vertical-align: top;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1057,7 +1265,8 @@ a.ru-hero__layer:focus-visible {
 	display: block;
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
+	object-position: center center;
 }
 
 .ru-grad-illo-btn {
@@ -1084,7 +1293,8 @@ a.ru-hero__layer:focus-visible {
 	display: block;
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
+	object-position: center center;
 }
 
 .ru-grad-card {
@@ -1160,7 +1370,7 @@ a.ru-hero__layer:focus-visible {
 @media (max-width: 768px) {
 	.ru-grad__main .ru-grad__col.ru-grad__col--illo,
 	.ru-grad__main .ru-grad__col.ru-grad__col--card {
-		width: 100%;
+		width: 86%;
 		max-width: 100%;
 		min-width: 0;
 	}
@@ -1404,7 +1614,7 @@ body.ru-modal-open {
 	gap: 0;
 	color: inherit;
 	text-decoration: none;
-	min-width: 0;
+	min-width: 40px;
 }
 
 .ru-footer-pamphlet__col:hover {
