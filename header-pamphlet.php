@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$h = 'figma-header-2703-8728';
+$h = 'header';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -35,7 +35,7 @@ $h = 'figma-header-2703-8728';
 			>
 			<div class="ru-header__kanji">
 				<img
-					src="<?php echo esc_url( rissho_university_img_url( 'ru-header__kanji.svg' ) ); ?>"
+					src="<?php echo esc_url( rissho_university_img_url( 'header/ru-header__kanji.svg' ) ); ?>"
 					alt="<?php esc_attr_e( '立正大学文学部デジタルパンフレット', 'rissho-university' ); ?>"
 					width="657"
 					height="42"

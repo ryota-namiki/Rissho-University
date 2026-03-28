@@ -41,7 +41,7 @@ $graduates = array(
 	),
 );
 
-$placeholder = rissho_university_img_url( 'avatar-placeholder.svg' );
+$placeholder = rissho_university_img_url( 'common/avatar-placeholder.svg' );
 
 $mv_w = 1604;
 $mv_h = 830;
@@ -64,7 +64,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 			aria-controls="ru-fmenu"
 		>
 			<img
-				src="<?php echo esc_url( rissho_university_img_url( 'menu-btn-sp.svg' ) ); ?>"
+				src="<?php echo esc_url( rissho_university_img_url( 'common/menu-btn-sp.svg' ) ); ?>"
 				alt=""
 				width="56"
 				height="10"
@@ -306,7 +306,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 			<div class="ru-sv">
 		<?php
 		$sv_slots     = rissho_students_voice_figma_slots();
-		$sv_title_svg = rissho_university_img_url( 'figma-students-voice-2707-10699/students-voice.svg' );
+		$sv_title_svg = rissho_university_img_url( 'students-voice/students-voice.svg' );
 		?>
 		<div class="ru-sv__row ru-sv__row--middle">
 			<?php
@@ -423,9 +423,9 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 						<?php esc_html_e( '（インタビュー動画・YouTubeが別タブで開きます）', 'rissho-university' ); ?>
 					</span>
 					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
-						<?php if ( 'figma-students-voice-2707-10699/voice04.svg' === $meta['photo'] ) : ?>
+						<?php if ( 'students-voice/voice04.svg' === $meta['photo'] ) : ?>
 						<picture>
-							<source media="(max-width: 768px)" srcset="<?php echo esc_url( rissho_university_img_url( 'figma-graduates-2707-10702/bungaku-sp.svg' ) ); ?>">
+							<source media="(max-width: 768px)" srcset="<?php echo esc_url( rissho_university_img_url( 'graduates/bungaku-sp.svg' ) ); ?>">
 							<img
 								class="ru-sv-card__photo ru-sv-card__photo--rest"
 								src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
@@ -497,7 +497,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 			<div class="ru-grad__title-wrap">
 				<img
 					class="ru-grad__title-sp"
-					src="<?php echo esc_url( rissho_university_img_url( 'figma-graduates-2707-10702/title-sp.svg' ) ); ?>"
+					src="<?php echo esc_url( rissho_university_img_url( 'graduates/title-sp.svg' ) ); ?>"
 					alt=""
 					loading="lazy"
 					decoding="async"

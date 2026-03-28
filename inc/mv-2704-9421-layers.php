@@ -1,7 +1,7 @@
 <?php
 /**
  * Figma MV（2704:9421）レイヤー定義：座標・回転は Dev / メタデータ準拠
- * アセットは images/mv-2704-9421/ を参照
+ * アセットは images/mv/ を参照
  *
  * @package Rissho_University
  */
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array<int, array{file: string, node: string, x: float, y: float, w?: float, h?: float, rot?: float}>
  */
 function rissho_mv_2704_9421_layers() {
-	$dir = 'mv-2704-9421';
+	$dir = 'mv';
 
 	return array(
 		array(
@@ -236,13 +236,13 @@ define( 'RISSHO_MV_SP_FIGMA_H', 595.0 );
 
 /**
  * SP 用 MV レイヤー（Figma 2776:23194 Frame 1000004954）
- * 座標・サイズは同フレーム基準。アセットは PC と同一（mv-2704-9421）。
+ * 座標・サイズは同フレーム基準。アセットは PC と同一（mv/）。
  * 描画順は下から上（配列先頭が奥）。
  *
  * @return array<int, array{file: string, node: string, x: float, y: float, w: float, h: float, rot?: float}>
  */
 function rissho_mv_sp_2776_23194_layers() {
-	$dir = 'mv-2704-9421';
+	$dir = 'mv';
 
 	return array(
 		array(
@@ -282,7 +282,7 @@ function rissho_mv_sp_2776_23194_layers() {
 		),
 		array(
 			/* SP のみ: MV 差し替え用に graph.svg（PC は a013ef26… のまま） */
-			'file' => 'graph.svg',
+			'file' => 'common/graph.svg',
 			'node' => '2703:8356',
 			'x'    => 184,
 			'y'    => 464,

@@ -1,7 +1,7 @@
 <?php
 /**
  * 関連リンクナビ（Figma 2703:4716）— カードごとの SVG レイヤー
- * アセット: images/figma-navcards-2703-4716/card-0N/
+ * アセット: images/navcards/card-0N/
  *
  * @package Rissho_University
  */
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return array<int, array{node: string, kind: 'flat'|'layers', file?: string, layers?: array<int, array{file: string, style: string}>}>
  */
 function rissho_navcards_2703_4716_defs() {
-	$base = 'figma-navcards-2703-4716';
+	$base = 'navcards';
 
 	return array(
 		array(

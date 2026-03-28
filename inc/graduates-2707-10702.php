@@ -21,7 +21,7 @@ define( 'RISSHO_GRAD_FIGMA_H', 545.7464599609375 );
  * @return array<int, array{node: string, file: string, x: float, y: float, w: float, h: float}>
  */
 function rissho_graduates_2707_10702_decor_layers() {
-	$base = 'figma-graduates-2707-10702/';
+	$base = 'graduates/';
 	return array(
 		array( 'node' => '2707:11026', 'file' => $base . '9871ae3de54e70cd4a8313ef8d6450faf1106c19.svg', 'x' => 7.34765625, 'y' => 13.314453125, 'w' => 114.65653991699219, 'h' => 121.86140441894531 ),
 		array( 'node' => '2707:11541', 'file' => $base . '6cb88506f0c16db8816c8e5496699605c5d0bcb3.svg', 'x' => 215.34765625, 'y' => 21.314453125, 'w' => 56.54454040527344, 'h' => 59.05310821533203 ),
@@ -49,7 +49,7 @@ function rissho_graduates_2707_10702_decor_layers() {
  * @return array<int, array{node: string, file: string, left: float, top: float, w: float, h: float}>
  */
 function rissho_graduates_2707_10702_title_layers() {
-	$base = 'figma-graduates-2707-10702/';
+	$base = 'graduates/';
 	$tw   = 620.872802734375;
 	$th   = 83.3932876586914;
 	$to_pct = static function ( $v, $den ) {
@@ -97,7 +97,7 @@ function rissho_graduates_2707_10702_title_layers() {
  * @return array<int, array{kind: string, col_w: float, photo?: string, flat?: bool, voice_text?: string, voice_text_sp?: string, aspect?: array{w: float, h: float}, layers?: array<int, array<string, float|string>>}>
  */
 function rissho_graduates_2707_10702_row_columns() {
-	$base   = 'figma-graduates-2707-10702/';
+	$base   = 'graduates/';
 	$base_s = $base . 'SVG/';
 
 	/*

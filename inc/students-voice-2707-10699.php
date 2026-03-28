@@ -1,7 +1,7 @@
 <?php
 /**
  * 学生インタビュー（Figma 2707:10699 / 2704:10591）レイアウト用メタ
- * 人物画像は images/figma-students-voice-2707-10699/voice01〜05.svg（左上から順）
+ * 人物画像は images/students-voice/voice01〜05.svg（左上から順）
  *
  * @package Rissho_University
  */
@@ -19,8 +19,8 @@ function rissho_students_voice_figma_slots() {
 	return array(
 		array(
 			'slot'         => 'tl',
-			'photo'        => 'figma-students-voice-2707-10699/voice01.svg',
-			'photo_hover'  => 'figma-students-voice-2707-10699/voice01-movie.svg',
+			'photo'        => 'students-voice/voice01.svg',
+			'photo_hover'  => 'students-voice/voice01-movie.svg',
 			'modifier'     => 'ru-sv-card--philosophy',
 			'img_w'        => 285.02,
 			'img_h'        => 396.29,
@@ -28,8 +28,8 @@ function rissho_students_voice_figma_slots() {
 		),
 		array(
 			'slot'         => 'tr',
-			'photo'        => 'figma-students-voice-2707-10699/voice02.svg',
-			'photo_hover'  => 'figma-students-voice-2707-10699/voice02-movie.svg',
+			'photo'        => 'students-voice/voice02.svg',
+			'photo_hover'  => 'students-voice/voice02-movie.svg',
 			'modifier'     => 'ru-sv-card--history',
 			'img_w'        => 382.2,
 			'img_h'        => 383.19,
@@ -37,8 +37,8 @@ function rissho_students_voice_figma_slots() {
 		),
 		array(
 			'slot'         => 'bl',
-			'photo'        => 'figma-students-voice-2707-10699/voice03.svg',
-			'photo_hover'  => 'figma-students-voice-2707-10699/voice03-movie.svg',
+			'photo'        => 'students-voice/voice03.svg',
+			'photo_hover'  => 'students-voice/voice03-movie.svg',
 			'modifier'     => 'ru-sv-card--sociology',
 			'img_w'        => 339.13,
 			'img_h'        => 403.51,
@@ -46,8 +46,8 @@ function rissho_students_voice_figma_slots() {
 		),
 		array(
 			'slot'         => 'bc',
-			'photo'        => 'figma-students-voice-2707-10699/voice04.svg',
-			'photo_hover'  => 'figma-students-voice-2707-10699/voice04-movie.svg',
+			'photo'        => 'students-voice/voice04.svg',
+			'photo_hover'  => 'students-voice/voice04-movie.svg',
 			'modifier'     => 'ru-sv-card--japanese-lit',
 			'img_w'        => 345.37,
 			'img_h'        => 446.27,
@@ -55,8 +55,8 @@ function rissho_students_voice_figma_slots() {
 		),
 		array(
 			'slot'         => 'br',
-			'photo'        => 'figma-students-voice-2707-10699/voice05.svg',
-			'photo_hover'  => 'figma-students-voice-2707-10699/voice05-movie.svg',
+			'photo'        => 'students-voice/voice05.svg',
+			'photo_hover'  => 'students-voice/voice05-movie.svg',
 			'modifier'     => 'ru-sv-card--english-lit',
 			'img_w'        => 362.86,
 			'img_h'        => 412.19,
@@ -114,10 +114,10 @@ function rissho_students_voice_decor_layers() {
  * @param string $subdir 例 n2704-10007
  */
 function rissho_students_voice_decor_asset_relpath( $subdir ) {
-	$glob = trailingslashit( get_template_directory() ) . 'images/students-voice-decor/' . $subdir . '/*.svg';
+	$glob = trailingslashit( get_template_directory() ) . 'images/students-voice/decor/' . $subdir . '/*.svg';
 	$files = glob( $glob );
 	if ( empty( $files ) ) {
 		return '';
 	}
-	return 'students-voice-decor/' . $subdir . '/' . basename( $files[0] );
+	return 'students-voice/decor/' . $subdir . '/' . basename( $files[0] );
 }

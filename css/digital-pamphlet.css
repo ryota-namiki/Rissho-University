@@ -1126,7 +1126,7 @@ a.ru-hero__layer:focus-visible {
  */
 @media (max-width: 768px) {
 	.ru-section--graduates {
-		background-image: url("../images/figma-graduates-2707-10702/bg-sp.svg");
+		background-image: url("../images/graduates/bg-sp.svg");
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-size: 90% auto;

@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * 見出し SVG（文学部公式アカウント・1枚）
  *
- * @return string themes/images/ からの相対パス
+ * @return string get_template_directory_uri()/images/ からの相対パス（例: footer/sns-title.svg）
  */
 function rissho_footer_2752_17145_heading_title_file() {
-	$file = 'figma-footer-2752-17145/sns-title.svg';
+	$file = 'footer/sns-title.svg';
 	/**
 	 * デジタルパンフレットフッター見出し画像
 	 *
@@ -30,7 +30,7 @@ function rissho_footer_2752_17145_heading_title_file() {
  * @return array<int, array{node: string, url: string, label: string, image: string}>
  */
 function rissho_footer_2752_17145_social_columns() {
-	$b = 'figma-footer-2752-17145/';
+	$b = 'footer/';
 	$cols = array(
 		array(
 			'node'  => '2696:5377',
