@@ -402,8 +402,12 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 			</div>
 		</div>
 		<div class="ru-sv__row ru-sv__row--bottom">
-			<?php foreach ( array( 4, 3, 2 ) as $idx ) : ?>
-				<?php
+			<?php
+			/*
+			 * PC：下段グリッドは DOM 順＝左から右。1 番目と 3 番目の並びを [bl][bc][br]（voice03|04|05）にする。
+			 * SP：display:contents ＋ .ru-sv__slot--* でセル固定のため順序変更の影響なし。
+			 */
+			foreach ( array( 2, 3, 4 ) as $idx ) :
 				$row  = $students[ $idx ];
 				$meta = $sv_slots[ $idx ];
 				?>
