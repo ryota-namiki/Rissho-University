@@ -482,14 +482,8 @@ a.ru-hero__layer:focus-visible {
 	border-radius: var(--ru-navcard-radius);
 	overflow: hidden;
 	box-shadow: var(--ru-shadow);
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
 	text-decoration: none;
 	color: inherit;
-}
-
-.ru-navcard--figma:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 8px 24px rgba(56, 111, 107, 0.18);
 }
 
 .ru-navcard--figma:focus-visible {
@@ -505,6 +499,12 @@ a.ru-hero__layer:focus-visible {
 	border-radius: var(--ru-navcard-radius);
 	overflow: hidden;
 	background: transparent;
+	opacity: 1;
+	transition: opacity 0.2s ease;
+}
+
+.ru-navcard--figma:hover .ru-navcard__canvas {
+	opacity: 0.9;
 }
 
 .ru-navcard__layer {
@@ -1150,7 +1150,7 @@ a.ru-hero__layer:focus-visible {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		column-gap: clamp(8px, 3.5vw, 20px);
 		row-gap: clamp(10px, 3vw, 22px);
-		align-items: center;
+		align-items: start;
 		justify-items: center;
 		width: 100%;
 		box-sizing: border-box;
@@ -1161,12 +1161,16 @@ a.ru-hero__layer:focus-visible {
 		display: contents;
 	}
 
+	/* Z 字テレコ：各段で 2 列目を手前・上寄せ、1 列目を左斜め下（下＋やや右）へずらして重ねる */
 	.ru-grad__col--illo {
 		grid-column: 1;
 		grid-row: 1;
 		width: 100%;
 		max-width: 100%;
 		min-width: 0;
+		justify-self: center;
+		z-index: 1;
+		transform: translateX(clamp(4px, 2vw, 16px));
 	}
 
 	.ru-grad__title-wrap {
@@ -1174,9 +1178,13 @@ a.ru-hero__layer:focus-visible {
 		grid-row: 1;
 		display: block;
 		width: 100%;
-		max-width: 100%;
+		max-width: 90%;
 		height: auto;
 		min-width: 0;
+		align-self: center;
+		justify-self: end;
+		z-index: 2;
+		transform: translateX(clamp(-10px, -3vw, -2px));
 	}
 
 	.ru-grad__title-sp {
@@ -1190,41 +1198,76 @@ a.ru-hero__layer:focus-visible {
 		display: none !important;
 	}
 
+	/* テレコ用の translate は列ではなく .ru-grad-card へ（列に transform があると枠外へはみ出す） */
 	.ru-grad__row .ru-grad__col--card:nth-child(2) {
-		grid-column: 1;
-		grid-row: 2;
-		width: 100%;
-		max-width: 100%;
-		min-width: 0;
-	}
-
-	.ru-grad__row .ru-grad__col--card:nth-child(3) {
 		grid-column: 2;
 		grid-row: 2;
 		width: 100%;
 		max-width: 100%;
 		min-width: 0;
+		justify-self: center;
+		z-index: 2;
+		overflow: hidden;
+	}
+
+	/* 1列目：カードを translateX(+) で右へずらすと描画が列の右外へはみ出す。列に hidden だと右端で円が切れ、列内に余白だけ残る → visible */
+	.ru-grad__row .ru-grad__col--card:nth-child(3) {
+		grid-column: 1;
+		grid-row: 2;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		justify-self: center;
+		margin-top: clamp(16px, 7.5vw, 42px);
+		z-index: 1;
+		overflow: visible;
 	}
 
 	.ru-grad__row .ru-grad__col--card:nth-child(4) {
-		grid-column: 1;
-		grid-row: 3;
-		width: 100%;
-		max-width: 100%;
-		min-width: 0;
-	}
-
-	.ru-grad__row .ru-grad__col--card:nth-child(5) {
 		grid-column: 2;
 		grid-row: 3;
 		width: 100%;
 		max-width: 100%;
 		min-width: 0;
+		justify-self: center;
+		z-index: 2;
+		overflow: hidden;
+	}
+
+	.ru-grad__row .ru-grad__col--card:nth-child(5) {
+		grid-column: 1;
+		grid-row: 3;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		justify-self: center;
+		margin-top: clamp(16px, 7.5vw, 42px);
+		z-index: 1;
+		overflow: visible;
 	}
 
 	.ru-grad__col .ru-grad-card,
 	.ru-grad__col .ru-grad-illo-btn {
 		max-width: 100%;
+	}
+
+	.ru-grad__col--illo .ru-grad-illo-btn {
+		width: 95%;
+		margin-inline: auto;
+	}
+
+	/* 2・3行目の2列目：カード幅 80%＋従来どおり横方向オフセット（列内でクリップ） */
+	.ru-grad__row .ru-grad__col--card:nth-child(2) .ru-grad-card,
+	.ru-grad__row .ru-grad__col--card:nth-child(4) .ru-grad-card {
+		width: 80%;
+		margin-inline: auto;
+		transform: translateX(clamp(-10px, -3vw, -2px));
+	}
+
+	/* 2・3行目の1列目：横方向オフセットをカード側へ */
+	.ru-grad__row .ru-grad__col--card:nth-child(3) .ru-grad-card,
+	.ru-grad__row .ru-grad__col--card:nth-child(5) .ru-grad-card {
+		transform: translateX(clamp(4px, 2vw, 16px));
 	}
 }
 
@@ -1274,6 +1317,28 @@ a.ru-hero__layer:focus-visible {
 	flex: 0 0 auto;
 	width: calc(var(--ru-grad-col-w) / var(--ru-grad-board) * 100 * 1cqw);
 	max-width: 100%;
+}
+
+@media (min-width: 769px) {
+	.ru-grad__row > .ru-grad__col:nth-child(1),
+	.ru-grad__row > .ru-grad__col:nth-child(2) {
+		width: calc(var(--ru-grad-col-w) / var(--ru-grad-board) * 100 * 1cqw * 0.9);
+		max-width: 100%;
+	}
+
+	/* 卒業生：PC のみ、行内5枚（イラスト＋4カード）をホバーでやや薄く */
+	.ru-section--graduates .ru-grad__main .ru-grad-illo-btn img,
+	.ru-section--graduates .ru-grad__main .ru-grad-card__flat img,
+	.ru-section--graduates .ru-grad__main .ru-grad-card__photo img {
+		opacity: 1;
+		transition: opacity 0.2s ease;
+	}
+
+	.ru-section--graduates .ru-grad__main .ru-grad-illo-btn:hover img,
+	.ru-section--graduates .ru-grad__main .ru-grad-card:hover .ru-grad-card__flat img,
+	.ru-section--graduates .ru-grad__main .ru-grad-card:hover .ru-grad-card__photo img {
+		opacity: 0.9;
+	}
 }
 
 .ru-grad-illo {
@@ -1398,6 +1463,30 @@ a.ru-hero__layer:focus-visible {
 
 	.ru-grad__stage .ru-grad__voice-text {
 		max-width: 100%;
+	}
+
+	/*
+	 * 2行目2列目：cover＋枠を少し縦長、トリムはやや上寄せ。
+	 */
+	.ru-grad__main .ru-grad__row .ru-grad__col--card:nth-child(2) .ru-grad-card {
+		aspect-ratio: var(--ru-grad-col-w) / calc(var(--ru-grad-col-h) * 1.08) !important;
+	}
+
+	.ru-grad__main .ru-grad__row .ru-grad__col--card:nth-child(2) .ru-grad-card__flat img {
+		object-fit: cover;
+		object-position: center 30%;
+	}
+
+	/*
+	 * 3行目2列目：下欠け対策で bottom 寄せにすると上が切れる → 枠を縦に確保しつつ
+	 * object-position は中央よりやや下（52%）で上下のバランスを取る。
+	 */
+	.ru-grad__main .ru-grad__row .ru-grad__col--card:nth-child(4) .ru-grad-card {
+		aspect-ratio: var(--ru-grad-col-w) / calc(var(--ru-grad-col-h) * 1.16) !important;
+	}
+
+	.ru-grad__main .ru-grad__row .ru-grad__col--card:nth-child(4) .ru-grad-card__flat img {
+		object-position: center 52%;
 	}
 }
 
@@ -1611,6 +1700,11 @@ body.ru-modal-open {
 }
 
 @media (max-width: 767px) {
+	/* 見出し SVG：PC 式より 20% 大きく（親 max-width: 100% でビューポート幅は超えない） */
+	.ru-footer-pamphlet__heading {
+		width: min(calc(386px * 1.2), calc(386 * 1.2 * 100vw / var(--ru-footer-board)));
+	}
+
 	.ru-footer-pamphlet__bar {
 		overflow-x: auto;
 		overflow-y: hidden;
