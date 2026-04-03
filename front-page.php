@@ -621,6 +621,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 		</div>
 		<div id="ru-grad-voice-text" class="ru-grad__voice-text" aria-hidden="true">
 			<div class="ru-grad__voice-text-inner">
+				<button type="button" class="ru-grad__voice-text-close" aria-label="<?php esc_attr_e( '閉じる', 'rissho-university' ); ?>">×</button>
 				<img class="ru-grad__voice-text-img" src="" alt="<?php echo esc_attr__( '卒業生のコメント', 'rissho-university' ); ?>" decoding="async">
 			</div>
 		</div>

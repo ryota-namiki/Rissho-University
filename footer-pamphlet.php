@@ -12,6 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 $footer_title = rissho_footer_2752_17145_heading_title_file();
 ?>
 
+<!-- RU_THEME_MARKER: footer-pamphlet.php 2026-03-30 -->
+
 </main><!-- #primary -->
 </div><!-- .ru-pamphlet-frame -->
 
@@ -34,13 +36,36 @@ $footer_title = rissho_footer_2752_17145_heading_title_file();
 		<div class="ru-footer-pamphlet__social-row">
 			<?php foreach ( rissho_footer_2752_17145_social_columns() as $col ) : ?>
 				<?php
-				$social_href = $col['url'];
-				$social_ext  = $social_href && '#' !== $social_href;
+				// フィルター等で url が '#' に戻るケースがあるため、最終的に data-node-id から強制復元します。
+				$defaults = array(
+					'2696:5377' => 'https://www.facebook.com/profile.php?id=100093303840512',
+					'2696:5390' => 'https://www.instagram.com/rissho_bungakubu?igsh=emh5cnVwbW5xcXMz',
+					'2696:5411' => 'https://x.com/ris_letters?s=11&t=rDnyTSOu4om6v2izSw2uZA',
+					'2696:5419' => 'https://www.tiktok.com/@letkouhou?is_from_webapp=1&sender_device=pc',
+				);
+
+				$social_raw = isset( $col['url'] ) ? trim( (string) $col['url'] ) : '';
+				$social_href = esc_url( $social_raw );
+				if ( '' === $social_href && preg_match( '#\Ahttps?://#i', $social_raw ) ) {
+					$social_href = esc_attr( $social_raw );
+				}
+
+				// '#' のままの場合は強制的に指定URLへ差し替え。
+				if ( '#' === $social_href || '#' === $social_raw ) {
+					$node = isset( $col['node'] ) ? (string) $col['node'] : '';
+					if ( isset( $defaults[ $node ] ) ) {
+						$social_href = esc_url( $defaults[ $node ] );
+						$social_raw  = $defaults[ $node ];
+					}
+				}
+
+				$social_ext = (bool) preg_match( '#\Ahttps?://#i', (string) $social_raw );
 				?>
 			<a
 				class="ru-footer-pamphlet__col"
-				href="<?php echo esc_url( $social_href ); ?>"
+				href="<?php echo $social_href; ?>"
 				data-node-id="<?php echo esc_attr( $col['node'] ); ?>"
+				data-sns-href="<?php echo esc_attr( (string) $social_href ); ?>"
 				<?php if ( $social_ext ) : ?>
 				target="_blank"
 				rel="noopener noreferrer"

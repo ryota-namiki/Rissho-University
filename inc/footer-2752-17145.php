@@ -34,25 +34,25 @@ function rissho_footer_2752_17145_social_columns() {
 	$cols = array(
 		array(
 			'node'  => '2696:5377',
-			'url'   => '#',
+			'url'   => 'https://www.facebook.com/profile.php?id=100093303840512',
 			'label' => __( 'Facebook', 'rissho-university' ),
 			'image' => $b . 'facebook.svg',
 		),
 		array(
 			'node'  => '2696:5390',
-			'url'   => '#',
+			'url'   => 'https://www.instagram.com/rissho_bungakubu?igsh=emh5cnVwbW5xcXMz',
 			'label' => __( 'Instagram', 'rissho-university' ),
 			'image' => $b . 'instagram.svg',
 		),
 		array(
 			'node'  => '2696:5411',
-			'url'   => '#',
+			'url'   => 'https://x.com/ris_letters?s=11&t=rDnyTSOu4om6v2izSw2uZA',
 			'label' => __( 'X', 'rissho-university' ),
 			'image' => $b . 'x.svg',
 		),
 		array(
 			'node'  => '2696:5419',
-			'url'   => '#',
+			'url'   => 'https://www.tiktok.com/@letkouhou?is_from_webapp=1&sender_device=pc',
 			'label' => __( 'TikTok', 'rissho-university' ),
 			'image' => $b . 'ticktock.svg',
 		),

@@ -8,6 +8,7 @@
 	var voicePanel = document.getElementById('ru-grad-voice-text');
 	var voiceImg = voicePanel ? voicePanel.querySelector('.ru-grad__voice-text-img') : null;
 	var voiceButtons = document.querySelectorAll('[data-ru-grad-voice-text]');
+	var voiceCloseBtn = voicePanel ? voicePanel.querySelector('.ru-grad__voice-text-close') : null;
 	var voiceCloseCleanupTimer = null;
 	var gradVoiceSpMql =
 		typeof window.matchMedia === 'function'
@@ -111,6 +112,14 @@
 			}
 		});
 	});
+
+	if (voiceCloseBtn) {
+		voiceCloseBtn.addEventListener('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			closeGradVoicePanel();
+		});
+	}
 
 	function onGradVoiceSpBreakpointChange() {
 		if (!voicePanel || !voiceImg || !gradVoiceIsOpen() || !voiceImg.getAttribute('src')) {

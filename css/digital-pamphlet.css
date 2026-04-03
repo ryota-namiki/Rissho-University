@@ -1296,8 +1296,37 @@ a.ru-hero__layer:focus-visible {
 }
 
 .ru-grad__voice-text-inner {
+	position: relative;
 	min-height: 0;
 	overflow: hidden;
+}
+
+.ru-grad__voice-text-close {
+	position: absolute;
+	inset: 10px 10px auto auto;
+	top: 10px;
+	right: 10px;
+	left: auto;
+	width: 36px;
+	height: 36px;
+	border: none;
+	border-radius: 999px;
+	background: transparent;
+	color: var(--ru-green);
+	font-size: 22px;
+	line-height: 1;
+	cursor: pointer;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+	z-index: 2;
+}
+
+.ru-grad__voice-text-close:hover {
+	background: transparent;
+}
+
+.ru-grad__voice-text-close:focus-visible {
+	outline: 3px solid var(--ru-green);
+	outline-offset: 2px;
 }
 
 .ru-grad__voice-text-img {
@@ -1551,12 +1580,14 @@ a.ru-hero__layer:focus-visible {
 	overflow: auto;
 	opacity: 0;
 	visibility: hidden;
+	pointer-events: none;
 	transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .ru-modal-overlay.is-open {
 	opacity: 1;
 	visibility: visible;
+	pointer-events: auto;
 }
 
 .ru-modal {
