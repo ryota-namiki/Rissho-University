@@ -246,7 +246,7 @@
 		margin-bottom: 10px;
 	}
 
-	.ru-header__nav {
+	.ru-header .ru-header__nav {
 		display: none;
 	}
 
@@ -314,7 +314,7 @@
 	}
 
 	.ru-fmenu.is-open {
-		max-height: 460px;
+		max-height: 520px;
 		opacity: 1;
 		pointer-events: auto;
 	}
@@ -674,6 +674,8 @@ a.ru-hero__layer:focus-visible {
 	padding: 0;
 	border: none;
 	background: none;
+	appearance: none;
+	-webkit-appearance: none;
 	cursor: pointer;
 	font: inherit;
 	text-align: center;
@@ -1664,6 +1666,30 @@ a.ru-hero__layer:focus-visible {
 	margin: 0 0 12px;
 }
 
+/* 学生インタビュー：YouTube をモーダル内で再生 */
+.ru-youtube-modal .ru-modal {
+	max-width: min(990px, calc(100vw - 32px));
+	padding: clamp(16px, 3vw, 60px);
+	background: var(--ru-youtube-modal-panel-bg, var(--ru-modal));
+}
+
+.ru-youtube-modal__embed {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border-radius: 16px;
+	overflow: hidden;
+	background: #000;
+}
+
+.ru-youtube-modal__embed iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
 body.ru-modal-open {
 	overflow: hidden;
 }
@@ -1712,7 +1738,22 @@ body.ru-modal-open {
 	box-sizing: border-box;
 	min-height: min(258px, calc(258 * 100vw / var(--ru-footer-board)));
 	display: flex;
-	align-items: flex-end;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	gap: min(36px, calc(36 * 100vw / var(--ru-footer-board)));
+}
+
+.ru-footer-pamphlet__privacy {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-shrink: 0;
+	box-sizing: border-box;
+	padding-bottom: min(8px, calc(8 * 100vw / var(--ru-footer-board)));
+}
+
+.ru-footer-pamphlet__privacy .ru-header__nav {
 	justify-content: center;
 }
 
@@ -1742,6 +1783,10 @@ body.ru-modal-open {
 		-webkit-overflow-scrolling: touch;
 		overscroll-behavior-x: contain;
 		justify-content: safe center;
+	}
+
+	.ru-footer-pamphlet__privacy {
+		display: none;
 	}
 
 	/* 設計幅いっぱいの一行を保ち、狭い画面ではスクロール */

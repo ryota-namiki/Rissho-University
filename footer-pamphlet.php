@@ -88,6 +88,15 @@ $footer_title = rissho_footer_2752_17145_heading_title_file();
 			</a>
 			<?php endforeach; ?>
 		</div>
+		<div class="ru-footer-pamphlet__privacy">
+			<nav class="ru-header__nav" aria-label="<?php esc_attr_e( 'サイトポリシー', 'rissho-university' ); ?>">
+				<a
+					href="https://letters.ris.ac.jp/privacy-policy/"
+					target="_blank"
+					rel="noopener noreferrer"
+				><?php esc_html_e( 'プライバシーポリシー', 'rissho-university' ); ?><span class="screen-reader-text"><?php esc_html_e( '（別サイトへ移動します）', 'rissho-university' ); ?></span></a>
+			</nav>
+		</div>
 	</div>
 </footer>
 

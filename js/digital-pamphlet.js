@@ -144,6 +144,129 @@
 		}
 	}
 
+	var ytOverlay = document.getElementById('ru-youtube-modal');
+	var ytIframe = ytOverlay ? ytOverlay.querySelector('.ru-youtube-modal__embed iframe') : null;
+	var ytCloseBtn = ytOverlay ? ytOverlay.querySelector('.ru-modal__close') : null;
+
+	function extractYoutubeVideoIdFromString(s) {
+		if (!s) {
+			return '';
+		}
+		var str = String(s).trim();
+		var m = str.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+		if (m) {
+			return m[1];
+		}
+		m = str.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+		if (m) {
+			return m[1];
+		}
+		m = str.match(/\/embed\/([a-zA-Z0-9_-]{11})/);
+		if (m) {
+			return m[1];
+		}
+		m = str.match(/\/shorts\/([a-zA-Z0-9_-]{11})/);
+		return m ? m[1] : '';
+	}
+
+	function normalizeYoutubeVideoId(input) {
+		if (!input) {
+			return '';
+		}
+		var s = String(input).trim();
+		if (/^[a-zA-Z0-9_-]{11}$/.test(s)) {
+			return s;
+		}
+		return extractYoutubeVideoIdFromString(s);
+	}
+
+	function sanitizeYoutubeModalBg(raw) {
+		if (!raw || typeof raw !== 'string') {
+			return '';
+		}
+		var t = raw.trim();
+		if (/^#[0-9A-Fa-f]{6}$/.test(t)) {
+			return t;
+		}
+		if (/^[0-9A-Fa-f]{6}$/.test(t)) {
+			return '#' + t;
+		}
+		return '';
+	}
+
+	function openYoutubeModal(videoIdOrUrl, openerEl) {
+		if (!ytOverlay || !ytIframe) {
+			return;
+		}
+		var id = normalizeYoutubeVideoId(videoIdOrUrl);
+		if (!id) {
+			return;
+		}
+		var bgAttr = openerEl && openerEl.getAttribute('data-youtube-modal-bg');
+		var bg = sanitizeYoutubeModalBg(bgAttr || '');
+		if (bg) {
+			ytOverlay.style.setProperty('--ru-youtube-modal-panel-bg', bg);
+		} else {
+			ytOverlay.style.removeProperty('--ru-youtube-modal-panel-bg');
+		}
+		ytIframe.setAttribute(
+			'src',
+			'https://www.youtube.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0'
+		);
+		ytOverlay.classList.add('is-open');
+		ytOverlay.setAttribute('aria-hidden', 'false');
+		document.body.classList.add('ru-modal-open');
+		if (ytCloseBtn) {
+			ytCloseBtn.focus();
+		}
+	}
+
+	function closeYoutubeModal() {
+		if (!ytOverlay || !ytIframe) {
+			return;
+		}
+		ytOverlay.classList.remove('is-open');
+		ytOverlay.setAttribute('aria-hidden', 'true');
+		document.body.classList.remove('ru-modal-open');
+		ytOverlay.style.removeProperty('--ru-youtube-modal-panel-bg');
+		ytIframe.removeAttribute('src');
+	}
+
+	/* 未同期テーマで <a target="_blank"> のままでも、ここで横取りしてモーダル表示する */
+	document.addEventListener('click', function (e) {
+		if (!ytOverlay || !ytIframe) {
+			return;
+		}
+		var byId = e.target.closest && e.target.closest('.ru-sv-card[data-youtube-id]');
+		if (byId) {
+			e.preventDefault();
+			openYoutubeModal(byId.getAttribute('data-youtube-id'), byId);
+			return;
+		}
+		var link = e.target.closest && e.target.closest('a.ru-sv-card');
+		if (!link) {
+			return;
+		}
+		var href = link.getAttribute('href') || '';
+		if (!/youtu\.be|youtube\.com/i.test(href)) {
+			return;
+		}
+		e.preventDefault();
+		openYoutubeModal(href, link);
+	});
+
+	if (ytCloseBtn) {
+		ytCloseBtn.addEventListener('click', closeYoutubeModal);
+	}
+
+	if (ytOverlay) {
+		ytOverlay.addEventListener('click', function (e) {
+			if (e.target === ytOverlay) {
+				closeYoutubeModal();
+			}
+		});
+	}
+
 	var overlay = document.getElementById('ru-interview-modal');
 	/* voice-text パネル用ボタンと属性が重なってもモーダルを開かない */
 	var openers = overlay
@@ -201,6 +324,10 @@
 		}
 		if (gradVoiceIsOpen()) {
 			closeGradVoicePanel();
+			return;
+		}
+		if (ytOverlay && ytOverlay.classList.contains('is-open')) {
+			closeYoutubeModal();
 			return;
 		}
 		if (overlay && overlay.classList.contains('is-open')) {

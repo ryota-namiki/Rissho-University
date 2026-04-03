@@ -129,6 +129,14 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 					<p><?php echo esc_html( $it['label'] ); ?></p>
 				</a>
 			<?php endforeach; ?>
+			<a
+				class="ru-fmenu__item"
+				href="https://letters.ris.ac.jp/privacy-policy/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<p><?php esc_html_e( 'プライバシーポリシー', 'rissho-university' ); ?></p>
+			</a>
 			<div class="ru-fmenu__footer" aria-hidden="true"></div>
 		</nav>
 	</div>
@@ -307,6 +315,8 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 		<?php
 		$sv_slots     = rissho_students_voice_figma_slots();
 		$sv_title_svg = rissho_university_img_url( 'students-voice/students-voice.svg' );
+		/* YouTube モーダル枠の背景（学生インタビュー 1〜5 枚目） */
+		$sv_youtube_modal_bgs = array( '#F6CAA0', '#C8E2CD', '#F2B18C', '#C9BBD9', '#A4BFE0' );
 		?>
 		<div class="ru-sv__row ru-sv__row--middle">
 			<?php
@@ -315,11 +325,51 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 			$meta = $sv_slots[ $idx ];
 			?>
 			<div class="ru-sv__slot ru-sv__slot--<?php echo esc_attr( $meta['slot'] ); ?>">
+				<?php
+				$sv_yt_id = rissho_youtube_video_id( $meta['youtube_url'] );
+				$sv_card_class = 'ru-sv-card ru-sv-card--figma-face ' . $meta['modifier'];
+				?>
+				<?php if ( $sv_yt_id ) : ?>
+				<button
+					type="button"
+					class="<?php echo esc_attr( $sv_card_class ); ?>"
+					data-youtube-id="<?php echo esc_attr( $sv_yt_id ); ?>"
+					data-youtube-modal-bg="<?php echo esc_attr( $sv_youtube_modal_bgs[ $idx ] ); ?>"
+				>
+					<span class="screen-reader-text">
+						<?php echo esc_html( $row['course'] ); ?>
+						<?php esc_html_e( '（インタビュー動画を再生）', 'rissho-university' ); ?>
+					</span>
+					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--rest"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--hover"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php endif; ?>
+					</span>
+				</button>
+				<?php else : ?>
 				<a
-					class="ru-sv-card ru-sv-card--figma-face <?php echo esc_attr( $meta['modifier'] ); ?>"
+					class="<?php echo esc_attr( $sv_card_class ); ?>"
 					href="<?php echo esc_url( $meta['youtube_url'] ); ?>"
 					target="_blank"
 					rel="noopener noreferrer"
+					data-youtube-modal-bg="<?php echo esc_attr( $sv_youtube_modal_bgs[ $idx ] ); ?>"
 				>
 					<span class="screen-reader-text">
 						<?php echo esc_html( $row['course'] ); ?>
@@ -348,6 +398,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 						<?php endif; ?>
 					</span>
 				</a>
+				<?php endif; ?>
 			</div>
 			<div class="ru-sv__title" aria-hidden="true">
 				<img
@@ -366,11 +417,51 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 			$meta = $sv_slots[ $idx ];
 			?>
 			<div class="ru-sv__slot ru-sv__slot--<?php echo esc_attr( $meta['slot'] ); ?>">
+				<?php
+				$sv_yt_id = rissho_youtube_video_id( $meta['youtube_url'] );
+				$sv_card_class = 'ru-sv-card ru-sv-card--figma-face ' . $meta['modifier'];
+				?>
+				<?php if ( $sv_yt_id ) : ?>
+				<button
+					type="button"
+					class="<?php echo esc_attr( $sv_card_class ); ?>"
+					data-youtube-id="<?php echo esc_attr( $sv_yt_id ); ?>"
+					data-youtube-modal-bg="<?php echo esc_attr( $sv_youtube_modal_bgs[ $idx ] ); ?>"
+				>
+					<span class="screen-reader-text">
+						<?php echo esc_html( $row['course'] ); ?>
+						<?php esc_html_e( '（インタビュー動画を再生）', 'rissho-university' ); ?>
+					</span>
+					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--rest"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--hover"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php endif; ?>
+					</span>
+				</button>
+				<?php else : ?>
 				<a
-					class="ru-sv-card ru-sv-card--figma-face <?php echo esc_attr( $meta['modifier'] ); ?>"
+					class="<?php echo esc_attr( $sv_card_class ); ?>"
 					href="<?php echo esc_url( $meta['youtube_url'] ); ?>"
 					target="_blank"
 					rel="noopener noreferrer"
+					data-youtube-modal-bg="<?php echo esc_attr( $sv_youtube_modal_bgs[ $idx ] ); ?>"
 				>
 					<span class="screen-reader-text">
 						<?php echo esc_html( $row['course'] ); ?>
@@ -399,6 +490,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 						<?php endif; ?>
 					</span>
 				</a>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="ru-sv__row ru-sv__row--bottom">
@@ -412,11 +504,66 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 				$meta = $sv_slots[ $idx ];
 				?>
 			<div class="ru-sv__slot ru-sv__slot--<?php echo esc_attr( $meta['slot'] ); ?>">
+				<?php
+				$sv_yt_id = rissho_youtube_video_id( $meta['youtube_url'] );
+				$sv_card_class = 'ru-sv-card ru-sv-card--figma-face ' . $meta['modifier'];
+				?>
+				<?php if ( $sv_yt_id ) : ?>
+				<button
+					type="button"
+					class="<?php echo esc_attr( $sv_card_class ); ?>"
+					data-youtube-id="<?php echo esc_attr( $sv_yt_id ); ?>"
+					data-youtube-modal-bg="<?php echo esc_attr( $sv_youtube_modal_bgs[ $idx ] ); ?>"
+				>
+					<span class="screen-reader-text">
+						<?php echo esc_html( $row['course'] ); ?>
+						<?php esc_html_e( '（インタビュー動画を再生）', 'rissho-university' ); ?>
+					</span>
+					<span class="ru-sv-card__photo-wrap<?php echo ! empty( $meta['photo_hover'] ) ? ' ru-sv-card__photo-wrap--crossfade' : ''; ?>" aria-hidden="true">
+						<?php if ( 'students-voice/voice04.svg' === $meta['photo'] ) : ?>
+						<picture>
+							<source media="(max-width: 768px)" srcset="<?php echo esc_url( rissho_university_img_url( 'graduates/bungaku-sp.svg' ) ); ?>">
+							<img
+								class="ru-sv-card__photo ru-sv-card__photo--rest"
+								src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
+								alt=""
+								width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+								height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+								loading="lazy"
+								decoding="async"
+							>
+						</picture>
+						<?php else : ?>
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--rest"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php endif; ?>
+						<?php if ( ! empty( $meta['photo_hover'] ) ) : ?>
+						<img
+							class="ru-sv-card__photo ru-sv-card__photo--hover"
+							src="<?php echo esc_url( rissho_university_img_url( $meta['photo_hover'] ) ); ?>"
+							alt=""
+							width="<?php echo esc_attr( round( $meta['img_w'] ) ); ?>"
+							height="<?php echo esc_attr( round( $meta['img_h'] ) ); ?>"
+							loading="lazy"
+							decoding="async"
+						>
+						<?php endif; ?>
+					</span>
+				</button>
+				<?php else : ?>
 				<a
-					class="ru-sv-card ru-sv-card--figma-face <?php echo esc_attr( $meta['modifier'] ); ?>"
+					class="<?php echo esc_attr( $sv_card_class ); ?>"
 					href="<?php echo esc_url( $meta['youtube_url'] ); ?>"
 					target="_blank"
 					rel="noopener noreferrer"
+					data-youtube-modal-bg="<?php echo esc_attr( $sv_youtube_modal_bgs[ $idx ] ); ?>"
 				>
 					<span class="screen-reader-text">
 						<?php echo esc_html( $row['course'] ); ?>
@@ -460,6 +607,7 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 						<?php endif; ?>
 					</span>
 				</a>
+				<?php endif; ?>
 			</div>
 			<?php endforeach; ?>
 		</div>
@@ -627,6 +775,25 @@ $mv_sv_anchor_nodes = array( '2703:8401', '2703:8564', '2703:8730', '2703:9187',
 		</div>
 	</div>
 </section>
+
+<div id="ru-youtube-modal" class="ru-modal-overlay ru-youtube-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ru-youtube-modal-title">
+	<div class="ru-modal">
+		<button type="button" class="ru-modal__close" aria-label="<?php esc_attr_e( '閉じる', 'rissho-university' ); ?>">×</button>
+		<h2 id="ru-youtube-modal-title" class="screen-reader-text"><?php esc_html_e( 'インタビュー動画', 'rissho-university' ); ?></h2>
+		<div class="ru-youtube-modal__embed">
+			<iframe
+				title="<?php echo esc_attr__( 'YouTube 動画プレーヤー', 'rissho-university' ); ?>"
+				width="560"
+				height="315"
+				src=""
+				loading="lazy"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		</div>
+	</div>
+</div>
 
 <div id="ru-interview-modal" class="ru-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ru-modal-title">
 	<div class="ru-modal">
